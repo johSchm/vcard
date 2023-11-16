@@ -211,7 +211,8 @@ $(".portfolio-filter").each(function() {
     }
 	var $grid = e.isotope({
 			layoutMode: "masonry",
-			originLeft: rtlVal
+			originLeft: rtlVal,
+			filter: '.homeomorphism'
 		});
 	$(".portfolio-menu").find("a").on("click", function() {
         var filterValue = $(this).attr("data-filter");
