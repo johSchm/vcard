@@ -297,81 +297,64 @@ $(function () {
 var form = $('#contact-form'); // contact form
 var submit = $('#submit-btn'); // submit button
 
+function sendMail(params) {
+	const serviceID = "ovgu_send";
+	const templateID = "ovgu_temp";
+
+	var loadingText = '<span role="status" aria-hidden="true" class="spinner-border spinner-border-sm align-self-center me-2"></span>Sending.....';
+	if (submit.html() !== loadingText) {
+		submit.data('Sending...', submit.html());
+		submit.html(loadingText);
+	}
+
+	emailjs.send(serviceID, templateID, params)
+		.then(res => {
+			// Reset form fields and show success message
+			$('#name').val("");
+			$('#email').val("");
+			$('#message').val("");
+			console.log(res);
+			alert("Your message sent successfully!!");
+
+			// Reset submit button text
+			submit.html(submit.data('Send'));
+
+			// Additional logic if emailjs send was successful
+			submit.before(data.Message).fadeIn("slow"); // fade in response data
+			submit.removeAttr("disabled", "disabled");
+			form.trigger('reset'); // reset form
+			setTimeout(function () {
+				$('.alert-dismissible').fadeOut('slow', function(){
+					$(this).remove();
+				});
+			}, 3000);
+		})
+		.catch(err => {
+			console.log(err);
+
+			// If there's an error, reset submit button text
+			submit.html(submit.data('Error...'));
+		});
+}
+
 // form submit event
 form.on('submit', function (e) {
 	e.preventDefault(); // prevent default form submit
+	// Get values using jQuery
+	var name = $('#name').val();
+	var email = $('#email').val();
+	var message = $('#form-message').val();
 
+	// Create the 'params' object
+	var params = {
+		name: name,
+		email: email,
+		message: message
+	};
 	if (typeof $('#google-recaptcha-v3').val() != "undefined") {
-		grecaptcha.ready(function () {
-			var site_key = $('#google-recaptcha-v3').attr('src').split("render=")[1];
-			grecaptcha.execute(site_key, {action: 'contact'}).then(function (token) {
-				var gdata = form.serialize() + '&g-recaptcha-response=' + token;
-				$.ajax({
-					url: 'php/mail.php',  // form action url
-					type: 'POST', 		  // form submit method get/post
-					dataType: 'json', 	  // request type html/json/xml
-					data: gdata, 		  // serialize form data
-					beforeSend: function () {
-						submit.attr("disabled", "disabled");
-						var loadingText = '<span role="status" aria-hidden="true" class="spinner-border spinner-border-sm align-self-center me-2"></span>Sending.....'; // change submit button text
-						if (submit.html() !== loadingText) {
-							submit.data('original-text', submit.html());
-							submit.html(loadingText);
-						}
-					},
-					success: function (data) {
-						submit.before(data.Message).fadeIn("slow"); // fade in response data 
-						submit.html(submit.data('original-text'));// reset submit button text
-						submit.removeAttr("disabled", "disabled");
-						if (data.response == 'success') {
-							form.trigger('reset'); // reset form
-						}
-						setTimeout(function () {
-							$('.alert-dismissible').fadeOut('slow', function(){
-								$(this).remove();
-							});
-						}, 3000);
-					},
-					error: function (e) {
-						console.log(e)
-					}
-				});
-			});
-		});
+		sendMail(params);
 	} else {
-		$.ajax({
-			url: 'php/mail.php', // form action url
-			type: 'POST', // form submit method get/post
-			dataType: 'json', // request type html/json/xml
-			data: form.serialize(), // serialize form data
-			beforeSend: function () {
-				submit.attr("disabled", "disabled");
-				var loadingText = '<span role="status" aria-hidden="true" class="spinner-border spinner-border-sm align-self-center me-2"></span>Sending.....'; // change submit button text
-				if (submit.html() !== loadingText) {
-					submit.data('original-text', submit.html());
-					submit.html(loadingText);
-				}
-			},
-			success: function (data) {
-				submit.before(data.Message).fadeIn("slow"); // fade in response data 
-				submit.html(submit.data('original-text'));// reset submit button text
-				submit.removeAttr("disabled", "disabled");
-				if (data.response == 'success') {
-					form.trigger('reset'); // reset form
-				}
-				setTimeout(function () {
-					$('.alert-dismissible').fadeOut('slow', function(){
-						$(this).remove();
-					});
-				}, 3500);
-				if (typeof $('#recaptcha-v2').val() != "undefined") {
-					grecaptcha.reset(); // reset reCaptcha
-				}
-			},
-			error: function (e) {
-				console.log(e)
-			}
-		});
+		sendMail(params);
 	}
 });
 
