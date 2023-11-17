@@ -1683,6 +1683,13 @@ html[dir="rtl"] .side-header.side-header-right .primary-menu {
   color: #fff;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 /* =================================== */
 /*  5. Elements
 /* =================================== */
@@ -1725,6 +1732,7 @@ html[dir="rtl"] .side-header.side-header-right .primary-menu {
   -ms-flex-pack: center !important;
   justify-content: center !important;
   text-align: center;
+  text-justify: auto;
 }
 
 .featured-box.style-2 p {

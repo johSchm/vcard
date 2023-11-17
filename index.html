@@ -381,6 +381,7 @@
 
     <!-- Blog
 ============================================= -->
+    <!-- Image Workflow: PP with images on background #343a40 (use pipette) + pdf2svg -->
     <section id="blog" class="section bg-dark-2">
       <div class="container px-lg-5">
         <!-- Heading -->
@@ -394,21 +395,26 @@
         <ul class="portfolio-menu nav nav-tabs nav-light justify-content-center border-bottom-0 mb-5">
           <li class="nav-item"> <a data-filter=".homeomorphisms" class="nav-link active" href="">Homomorphisms</a></li>
           <li class="nav-item"> <a data-filter=".isomorphisms" href="" class="nav-link">Isomorphisms</a></li>
+          <li class="nav-item"> <a data-filter=".automorphisms" href="" class="nav-link">Automorphisms</a></li>
           <li class="nav-item"> <a data-filter=".diffeomorphisms" href="" class="nav-link">Diffeomorphisms</a></li>
         </ul>
         <!-- Filter Menu end -->
-        <div class="featured-box style-3 mb-5 portfolio-filter">
+        <div class="featured-box style-1 mb-5 portfolio-filter">
           <div class="homeomorphisms">
-            <h5 class="text-white fw-400">Coming</h5>
-            <span class="text-light">...</span>
+            <img src="images/blog/homeomorphism.svg" alt="Homeomorphism" class="center">
+            <span class="text-light">It's a relationship between two shapes or spaces that preserves their essential structure. Imagine you have a rubber band and a circle. A homeomorphism would mean you can stretch, twist, or bend the rubber band to turn it into a circle without tearing it. They might look different, but they have the same fundamental properties.</span>
           </div>
           <div class="isomorphisms">
-            <h5 class="text-white fw-400">Soon</h5>
-            <span class="text-light">...</span>
+            <img src="images/blog/homeomorphism.svg" alt="Homeomorphism" class="center">
+            <span class="text-light">In mathematics, particularly in algebra or structures like groups or graphs, an isomorphism is a way to show that two different things are fundamentally the same. For example, if you have two graphs that have the same connections between nodes, just labeled differently, they are isomorphic. It's like having two jigsaw puzzles with different pictures but the same shapes of pieces.</span>
+          </div>
+          <div class="automorphisms">
+            <img src="images/blog/homeomorphism.svg" alt="Homeomorphism" class="center">
+            <span class="text-light">An automorphism is a specific type of isomorphism. It's like a transformation that something can undergo and still remain itself. In mathematical terms, it's an isomorphism from a mathematical object to itself. For instance, in a square, rotating it by 90 degrees is an automorphism because it's still the same square.</span>
           </div>
           <div class="diffeomorphisms">
-            <h5 class="text-white fw-400">Soon2</h5>
-            <span class="text-light">...</span>
+            <img src="images/blog/homeomorphism.svg" alt="Homeomorphism" class="center">
+            <span class="text-light">In the realm of calculus and differential geometry, a diffeomorphism is a special type of mapping between two differentiable manifolds. It's a transformation that's smooth and has a smooth inverse. Imagine crumpling a piece of paper and then unfolding it back perfectly; if this transformation is smooth and reversible, it's a diffeomorphism.</span>
           </div>
         </div>
       </div>
@@ -599,7 +605,7 @@
                     <input name="email" type="email" class="form-control" required placeholder="Email">
                 </div>
 				<div class="col">
-					<textarea name="form-message" class="form-control" rows="5" required placeholder="Tell us more about your needs........"></textarea>
+					<textarea name="form-message" class="form-control" rows="5" required placeholder="Connect with me..."></textarea>
 				</div>
               </div>
               <p class="text-center mt-4 mb-0">
@@ -726,5 +732,8 @@
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
 <!-- Custom Script --> 
 <script src="js/theme.js"></script>
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcv_REpAAAAAPoYeE1o6n-rjHKHzOueMN42090c" async defer></script>
+
 </body>
 </html>

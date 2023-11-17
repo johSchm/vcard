@@ -212,7 +212,7 @@ $(".portfolio-filter").each(function() {
 	var $grid = e.isotope({
 			layoutMode: "masonry",
 			originLeft: rtlVal,
-			filter: '.homeomorphism'
+			filter: '.homeomorphisms'
 		});
 	$(".portfolio-menu").find("a").on("click", function() {
         var filterValue = $(this).attr("data-filter");
