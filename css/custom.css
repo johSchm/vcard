@@ -8,3 +8,773 @@
 
 
 
+/* Header: the social icons turn the accent green on hover,
+   not the brand colors of the theme (all four carry .social-icons-linkedin)
+-----------------------------------------------------------------*/
+#header .social-icons li a {
+	transition: color .25s ease, transform .25s cubic-bezier(.4, 0, .2, 1);
+}
+#header .social-icons li:hover a,
+#header .social-icons li a:focus-visible {
+	color: #20c997;
+	transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+	#header .social-icons li a {
+		transition: none;
+	}
+	#header .social-icons li:hover a {
+		transform: none;
+	}
+}
+
+
+/* Resume cards: collapsible
+-----------------------------------------------------------------*/
+.resume-card {
+	--resume-accent: #20c997;
+	transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s ease;
+}
+.resume-card:hover,
+.resume-card.is-open {
+	box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+.resume-card:hover {
+	transform: translateY(-3px);
+}
+.resume-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	cursor: pointer;
+	user-select: none;
+}
+.resume-card-header:focus-visible {
+	outline: 2px solid var(--resume-accent);
+	outline-offset: .5rem;
+	border-radius: .25rem;
+}
+.resume-card-header .badge {
+	display: inline-block;
+}
+.resume-card-icon {
+	flex-shrink: 0;
+	color: rgba(255, 255, 255, .5);
+	transition: transform .4s cubic-bezier(.4, 0, .2, 1), color .3s ease;
+}
+.resume-card-header:hover .resume-card-icon,
+.resume-card.is-open .resume-card-icon {
+	color: var(--resume-accent);
+}
+.resume-card.is-open .resume-card-icon {
+	transform: rotate(180deg);
+}
+
+/* Animate to the content's natural height via grid rows 0fr -> 1fr */
+.resume-card-body {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows .4s cubic-bezier(.4, 0, .2, 1);
+}
+.resume-card.is-open .resume-card-body {
+	grid-template-rows: 1fr;
+}
+.resume-card-inner {
+	min-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(-.5rem);
+	transition: opacity .3s ease, transform .4s cubic-bezier(.4, 0, .2, 1);
+}
+.resume-card-inner > :first-child {
+	margin-top: 1rem;
+}
+.resume-card.is-open .resume-card-inner {
+	opacity: 1;
+	transform: none;
+	transition-delay: .1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.resume-card-body,
+	.resume-card-inner,
+	.resume-card-icon {
+		transition: none;
+	}
+}
+
+/* About: profile links
+-----------------------------------------------------------------*/
+.profile-links a {
+	display: inline-flex;
+	align-items: center;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.profile-links a i {
+	width: 1.5rem;
+	margin-right: .75rem;
+	font-size: 1.25rem;
+	text-align: center;
+	color: #20c997;
+	transition: transform .3s ease;
+}
+.profile-links a:hover {
+	color: #20c997;
+}
+.profile-links a:hover i {
+	transform: scale(1.15);
+}
+
+/* Justified prose (publication author/venue lines excluded)
+-----------------------------------------------------------------*/
+#about p.text-white-50,
+#resume p.text-white-50,
+#thesis p.text-white-50,
+#talks p.text-white-50,
+#coding p.text-white-50 {
+	text-align: justify;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
+/* Publications: cards with first-page preview
+-----------------------------------------------------------------*/
+.pub-card {
+	--pub-accent: #20c997;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 1.5rem;
+	align-items: flex-start;
+	transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s ease;
+}
+.pub-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .35);
+}
+
+.pub-card > .pub-body {
+	flex: 1 1 0;
+}
+
+/* Paper thumbnail: page-shaped, with a placeholder icon underneath */
+.pub-thumb {
+	position: relative;
+	flex: 0 0 150px;
+	aspect-ratio: 1 / 1.294;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: .25rem;
+	overflow: hidden;
+	background: #212529;
+	color: rgba(255, 255, 255, .2);
+	font-size: 2.5rem;
+	box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .4);
+	transform-origin: center bottom;
+	transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s ease;
+}
+.pub-thumb img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	background: #fff;
+}
+.pub-card:hover .pub-thumb {
+	transform: rotate(-2deg) scale(1.04);
+	box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .5);
+}
+.pub-thumb:focus-visible {
+	outline: 2px solid var(--pub-accent);
+	outline-offset: 3px;
+}
+
+.pub-body {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	align-self: stretch;
+}
+.pub-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: .5rem 1.5rem;
+	margin-top: auto;
+	padding-top: 1rem;
+}
+.pub-link {
+	color: var(--pub-accent);
+	text-decoration: none;
+	font-weight: 500;
+}
+.pub-link i {
+	margin-left: .35rem;
+	font-size: .85em;
+	transition: transform .3s ease;
+}
+.pub-link:hover {
+	color: var(--pub-accent);
+}
+.pub-link:hover i {
+	transform: translateX(4px);
+}
+
+/* Abstract / BibTeX toggles + collapsible panels (same 0fr -> 1fr technique as the resume cards) */
+/* Code link: active with a repo, greyed out without */
+.pub-code {
+	color: rgba(255, 255, 255, .5);
+	font-weight: 500;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.pub-code i {
+	margin-right: .4rem;
+}
+a.pub-code:hover {
+	color: #fff;
+}
+a.pub-code:focus-visible {
+	outline: 2px solid var(--pub-accent);
+	outline-offset: 3px;
+	border-radius: .25rem;
+}
+.pub-code.is-disabled {
+	color: rgba(255, 255, 255, .2);
+	cursor: not-allowed;
+}
+
+.pub-panel-toggle {
+	padding: 0;
+	border: 0;
+	background: none;
+	color: rgba(255, 255, 255, .5);
+	font-weight: 500;
+	transition: color .3s ease;
+}
+.pub-panel-toggle i {
+	margin-right: .4rem;
+	font-size: .8em;
+}
+.pub-panel-toggle:hover,
+.pub-panel-toggle[aria-expanded="true"] {
+	color: #fff;
+}
+.pub-panel-toggle:focus-visible,
+.pub-bib-copy:focus-visible {
+	outline: 2px solid var(--pub-accent);
+	outline-offset: 3px;
+	border-radius: .25rem;
+}
+.pub-panel {
+	flex: 0 0 100%;
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows .4s cubic-bezier(.4, 0, .2, 1);
+}
+.pub-panel.is-open {
+	grid-template-rows: 1fr;
+}
+.pub-panel-inner {
+	min-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity .3s ease;
+}
+.pub-panel.is-open .pub-panel-inner {
+	opacity: 1;
+	transition-delay: .1s;
+}
+.pub-abstract {
+	margin: 1.25rem 0 0;
+	padding: 1rem 1.25rem;
+	border-left: 3px solid var(--pub-accent);
+	border-radius: 0 .375rem .375rem 0;
+	background: #212529;
+	color: rgba(255, 255, 255, .65);
+	font-size: .9375rem;
+	line-height: 1.7;
+	text-align: justify;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+.pub-bib-box {
+	position: relative;
+	margin-top: 1.25rem;
+	border-radius: .375rem;
+	background: #212529;
+	border: 1px solid rgba(255, 255, 255, .08);
+}
+.pub-bib-box pre {
+	margin: 0;
+	padding: 1rem 1.25rem;
+	padding-right: 6.5rem;
+	overflow-x: auto;
+	color: rgba(255, 255, 255, .75);
+	font-size: .8125rem;
+	line-height: 1.6;
+}
+.pub-bib-copy {
+	position: absolute;
+	top: .75rem;
+	right: .75rem;
+	display: inline-flex;
+	align-items: center;
+	gap: .4rem;
+	padding: .3rem .75rem;
+	border: 1px solid rgba(255, 255, 255, .15);
+	border-radius: 50rem;
+	background: #343a40;
+	color: rgba(255, 255, 255, .75);
+	font-size: .8125rem;
+	transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+}
+.pub-bib-copy:hover {
+	color: #fff;
+	border-color: rgba(255, 255, 255, .35);
+}
+.pub-bib-copy.is-copied {
+	color: #212529;
+	background: var(--pub-accent);
+	border-color: var(--pub-accent);
+}
+
+@media (max-width: 575.98px) {
+	.pub-bib-box pre {
+		padding-right: 1.25rem;
+		padding-top: 3.25rem;
+	}
+	.pub-card {
+		column-gap: 1rem;
+	}
+	.pub-thumb {
+		flex-basis: 84px;
+		font-size: 1.5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.pub-card,
+	.pub-card:hover,
+	.pub-thumb,
+	.pub-card:hover .pub-thumb,
+	.pub-panel,
+	.pub-panel-inner {
+		transition: none;
+		transform: none;
+	}
+}
+
+/* ================================================================
+	Site-wide micro-interactions
+	Same motion language as the publication cards: short, eased,
+	subtle. Everything is disabled for prefers-reduced-motion.
+================================================================ */
+:root {
+	--accent: #20c997;
+	--ease-out: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Reading progress bar */
+.scroll-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	z-index: 1100;
+	background: var(--accent);
+	transform: scaleX(0);
+	transform-origin: left;
+	pointer-events: none;
+}
+
+/* Reveal on scroll (classes added by JS, so content is visible without it).
+   Uses `translate` rather than `transform` so hover transforms still apply. */
+.reveal {
+	opacity: 0;
+	translate: 0 1.25rem;
+	transition: opacity .6s var(--ease-out), translate .6s var(--ease-out);
+	transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+	opacity: 1;
+	translate: none;
+}
+/* Section headings: the accent line draws in after the heading appears */
+.reveal .heading-separator-line {
+	width: 0;
+	transition: width .7s var(--ease-out) .25s;
+}
+.reveal.is-visible .heading-separator-line {
+	width: 80px;
+}
+
+/* Sidebar: profile photo and navigation */
+#header a > span.rounded-pill {
+	transition: box-shadow .4s var(--ease-out);
+}
+#header a > span.rounded-pill img {
+	transition: transform .5s var(--ease-out);
+}
+#header a:hover > span.rounded-pill {
+	box-shadow: 0 0 0 2px var(--accent);
+}
+#header a:hover > span.rounded-pill img {
+	transform: scale(1.04);
+}
+@media (min-width: 992px) {
+	.side-header .primary-menu .navbar-nav > li > a.nav-link::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		bottom: 4px;
+		width: 18px;
+		height: 2px;
+		border-radius: 2px;
+		background: var(--accent);
+		transform: translateX(-50%) scaleX(0);
+		transition: transform .35s var(--ease-out);
+	}
+	.side-header .primary-menu .navbar-nav > li > a.nav-link:hover::before,
+	.side-header .primary-menu .navbar-nav > li > a.nav-link.active::before {
+		transform: translateX(-50%) scaleX(1);
+	}
+}
+
+/* About: CV button icon and stat counters */
+.btn-cv i {
+	transition: transform .3s var(--ease-out);
+}
+.btn-cv:hover i {
+	transform: translateY(2px);
+}
+#about .brands-grid h4 {
+	transition: color .3s ease;
+}
+#about .brands-grid .featured-box:hover h4 {
+	color: var(--accent) !important;
+}
+
+/* Coding, talk and service cards */
+.coding-card,
+.talk-card,
+.service-card {
+	transition: transform .35s var(--ease-out), box-shadow .35s ease;
+}
+.coding-card:hover,
+.talk-card:hover,
+.service-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .35);
+}
+.coding-card .featured-box-icon,
+.talk-card .featured-box-icon,
+.service-card .featured-box-icon {
+	transition: transform .35s var(--ease-out), background-color .35s ease;
+}
+.coding-card .featured-box-icon i,
+.talk-card .featured-box-icon i,
+.service-card .featured-box-icon i {
+	transition: color .35s ease;
+}
+.coding-card:hover .featured-box-icon,
+.talk-card:hover .featured-box-icon,
+.service-card:hover .featured-box-icon {
+	transform: rotate(-6deg) scale(1.06);
+}
+
+/* Thesis: contribution cards. Paper tags (.pub-ref) jump to the publication
+   and are also used in the resume. */
+.thesis-card {
+	transition: transform .35s var(--ease-out), box-shadow .35s ease;
+}
+.thesis-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .35);
+}
+.thesis-card-head {
+	display: flex;
+	align-items: baseline;
+	gap: .75rem;
+}
+.thesis-card-num {
+	flex-shrink: 0;
+	color: rgba(255, 255, 255, .25);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	transition: color .35s ease;
+}
+.thesis-card:hover .thesis-card-num {
+	color: var(--accent);
+}
+.pub-refs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem;
+	margin: 0 0 1rem;
+}
+.thesis-card .pub-refs {
+	margin-top: .75rem;
+}
+.pub-ref {
+	display: inline-flex;
+	align-items: center;
+	padding: .2rem .75rem;
+	border: 1px solid rgba(32, 201, 151, .4);
+	border-radius: 50rem;
+	color: var(--accent);
+	font-size: .8125rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+}
+.pub-ref i {
+	margin-right: .4rem;
+	font-size: .85em;
+}
+a.pub-ref:hover {
+	color: #212529;
+	background: var(--accent);
+	border-color: var(--accent);
+}
+a.pub-ref:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+.pub-ref.is-pending {
+	border-color: rgba(255, 255, 255, .15);
+	color: rgba(255, 255, 255, .5);
+}
+.talk-card .pub-refs {
+	margin: .75rem 0 0;
+}
+/* link in running text that jumps to a publication, [label](paper:Key) */
+.pub-jump {
+	color: var(--accent);
+	text-decoration: none;
+	border-bottom: 1px dotted rgba(32, 201, 151, .6);
+	transition: border-color .3s ease;
+}
+.pub-jump:hover {
+	color: var(--accent);
+	border-bottom-color: var(--accent);
+}
+/* publication card a thesis tag jumped to */
+.pub-card.is-highlighted {
+	box-shadow: 0 0 0 2px var(--accent), 0 .75rem 2rem rgba(0, 0, 0, .35);
+}
+
+/* Service: reviewing rows (tag + detail) */
+.tag-rows {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: .5rem 1rem;
+	align-items: center;
+	margin: 0;
+}
+.tag-rows li {
+	display: contents;
+}
+.tag-rows .pub-ref {
+	justify-self: start;
+}
+
+/* Service: supervised theses, abstract unfolds on click (panel as in the publication cards) */
+.thesis-list {
+	--pub-accent: var(--accent);
+	margin: 1.25rem 0 0;
+	border-top: 1px solid rgba(255, 255, 255, .08);
+}
+.thesis-item {
+	border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.thesis-item-head {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	width: 100%;
+	padding: .8rem 0;
+	border: 0;
+	background: none;
+	color: inherit;
+	text-align: left;
+}
+.thesis-item-text {
+	flex: 1;
+	min-width: 0;
+}
+.thesis-item-title {
+	display: block;
+	color: rgba(255, 255, 255, .85);
+	font-weight: 500;
+	transition: color .3s ease;
+}
+.thesis-item-meta {
+	display: block;
+	color: rgba(255, 255, 255, .45);
+	font-size: .875rem;
+}
+.thesis-item-head i {
+	flex-shrink: 0;
+	color: rgba(255, 255, 255, .35);
+	font-size: .8em;
+	transition: transform .4s var(--ease-out), color .3s ease;
+}
+button.thesis-item-head:hover .thesis-item-title,
+button.thesis-item-head[aria-expanded="true"] .thesis-item-title,
+button.thesis-item-head:hover i,
+button.thesis-item-head[aria-expanded="true"] i {
+	color: var(--accent);
+}
+button.thesis-item-head[aria-expanded="true"] i {
+	transform: rotate(180deg);
+}
+button.thesis-item-head:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+	border-radius: .25rem;
+}
+.thesis-item .pub-abstract {
+	margin: .25rem 0 1rem;
+}
+
+/* Talk cards: video / slides / event links */
+.talk-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem 1.5rem;
+	margin-top: 1rem;
+}
+.talk-links a {
+	color: rgba(255, 255, 255, .5);
+	font-weight: 500;
+	text-decoration: none;
+	transition: color .3s ease;
+}
+.talk-links a i {
+	margin-right: .4rem;
+	font-size: .85em;
+}
+.talk-links a:hover {
+	color: var(--accent);
+}
+.talk-links a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: .25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scroll-progress {
+		display: none;
+	}
+	.reveal,
+	.reveal .heading-separator-line,
+	#header a > span.rounded-pill,
+	#header a > span.rounded-pill img,
+	.side-header .primary-menu .navbar-nav > li > a.nav-link::before,
+	.btn-cv i,
+	.resume-card,
+	.coding-card,
+	.coding-card .featured-box-icon,
+	.thesis-card,
+	.thesis-card-num,
+	.thesis-item-title,
+	.thesis-item-head i,
+	.pub-ref,
+	.talk-card,
+	.service-card,
+	.talk-card .featured-box-icon,
+	.service-card .featured-box-icon,
+	.talk-links a {
+		transition: none;
+	}
+	.resume-card:hover,
+	.coding-card:hover,
+	.coding-card:hover .featured-box-icon,
+	.thesis-card:hover,
+	.talk-card:hover,
+	.service-card:hover,
+	.talk-card:hover .featured-box-icon,
+	.service-card:hover .featured-box-icon,
+	.btn-cv:hover i,
+	#header a:hover > span.rounded-pill img {
+		transform: none;
+	}
+}
+
+/* Hero: "Get in contact" with LinkedIn / email options sliding in below.
+   Colours are set through Bootstrap's button variables for every state
+   (hover, pressed, focus), so neither Bootstrap's blue nor the theme's
+   green-text hover rules can leak in. Text on green is always dark. */
+.hero-contact {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+.hero-contact .btn {
+	--bs-btn-hover-color: #212529;
+	--bs-btn-hover-bg: var(--accent);
+	--bs-btn-hover-border-color: var(--accent);
+	--bs-btn-active-color: #212529;
+	--bs-btn-active-bg: var(--accent);
+	--bs-btn-active-border-color: var(--accent);
+	--bs-btn-focus-shadow-rgb: 32, 201, 151;
+	transition: opacity .3s ease, translate .35s var(--ease-out), color .3s ease,
+		background-color .3s ease, border-color .3s ease;
+}
+.hero-contact-toggle {
+	--bs-btn-color: var(--accent);
+	--bs-btn-border-color: var(--accent);
+}
+.hero-contact.is-open .hero-contact-toggle {
+	color: #212529;
+	background-color: var(--accent);
+	border-color: var(--accent);
+}
+.contact-option {
+	--bs-btn-color: rgba(255, 255, 255, .85);
+	--bs-btn-border-color: rgba(255, 255, 255, .35);
+	--bs-btn-bg: transparent;
+}
+.hero-contact-options {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: .5rem;
+	margin-top: .75rem;
+	/* stays in the layout, so opening doesn't push the hero content around */
+	visibility: hidden;
+}
+.hero-contact-options .btn {
+	opacity: 0;
+	translate: 0 -.5rem;
+}
+.hero-contact.is-open .hero-contact-options {
+	visibility: visible;
+}
+.hero-contact.is-open .hero-contact-options .btn {
+	opacity: 1;
+	translate: none;
+}
+.hero-contact.is-open .hero-contact-options .btn:nth-child(2) {
+	transition-delay: .06s;
+}
+/* revealed email address: selectable, so it can also be copied by hand */
+.contact-email.is-revealed {
+	user-select: all;
+	-webkit-user-select: all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-contact .btn {
+		transition: none;
+	}
+}

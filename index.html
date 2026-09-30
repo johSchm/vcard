@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="images/favicon.png" rel="icon" />
 <title>Johann Schmidt</title>
-<meta name="description" content="Simone is responsive bootstrap 5 one page personal portfolio html template.">
-<meta name="author" content="harnishdesign.net">
+<meta name="description" content="Johann Schmidt, research scientist in deep learning in Magdeburg, Germany: projects, publications, talks and CV.">
+<meta name="author" content="Johann Schmidt">
 
 <!-- Web Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
 <link rel="stylesheet" type="text/css" href="vendor/magnific-popup/magnific-popup.min.css" />
 <!-- Custom Stylesheet -->
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="css/custom.css" />
 </head>
 
 <body class="side-header" data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="1">
@@ -41,6 +42,7 @@
 
 <!-- Document Wrapper   
 =============================== -->
+<div class="scroll-progress" aria-hidden="true"></div>
 <div id="main-wrapper"> 
   <!-- Header
   ============================ -->
@@ -63,16 +65,18 @@
             <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About Me</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#thesis">PhD Thesis</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#publications">Publications</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#talks">Talks</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#service">Service</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#coding">Coding</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
           </ul>
         </div>
         <ul class="social-icons social-icons-muted social-icons-sm mt-lg-auto ms-auto ms-lg-0 d-flex">
           <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" title="LinkedIn" href="https://www.linkedin.com/in/johann-schmidt/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" title="ResearchGate" href="https://www.researchgate.net/profile/Johann-Schmidt-5" target="_blank"><i class="fab fa-researchgate"></i></a></li>
           <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" title="GitHub" data-bs-placement="top" href="https://github.com/johSchm" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" title="AiLab" data-bs-placement="top" href="https://ai.ovgu.de/Staff/Schmidt.html" target="_blank" ><i class="fab fa-firefox"></i></a></li>
+          <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" title="AILab" data-bs-placement="top" href="https://ai.ovgu.de/Staff/Schmidt.html" target="_blank" ><i class="fab fa-firefox"></i></a></li>
         </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"><span></span><span></span><span></span></button>
       </div>
@@ -95,16 +99,24 @@
           <div class="container my-auto">
             <div class="row">
               <div class="col-12 text-center">
+                <!-- BUILD:home (generated from content/home.md, do not edit here) -->
                 <div class="typed-strings">
-                  <p>I'm Johann Schmidt</p>
-                  <p>I'm a Scientist.</p>
-                  <p>I'm a Researcher.</p>
+                  <p>I'm Johann Schmidt.</p>
+                  <p>I'm a Research Scientist.</p>
                   <p>I'm a Developer.</p>
+                  <p>I'm a Father of Two.</p>
                 </div>
                 <p class="text-7 fw-500 text-white mb-2 mb-md-3">Welcome</p>
                 <h2 class="text-16 fw-600 text-white mb-2 mb-md-3"><span class="typed"></span></h2>
-                <p class="text-5 text-light mb-4">based in Magdeburg, Germany.</p>
-				<a href="#contact" class="btn btn-outline-primary rounded-pill shadow-none smooth-scroll mt-2">Get in contact</a>
+                <p class="text-5 text-light mb-4">based in Magdeburg, Germany.<br>Open to research lead roles in industry from 2027.</p>
+                <div class="hero-contact mt-2">
+                  <button class="btn rounded-pill shadow-none hero-contact-toggle" type="button" aria-expanded="false" aria-controls="hero-contact-options">Get in contact</button>
+                  <div class="hero-contact-options" id="hero-contact-options">
+                    <a class="btn btn-sm rounded-pill shadow-none contact-option" href="https://www.linkedin.com/in/johann-schmidt/" target="_blank" rel="noopener" tabindex="-1"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+                    <button class="btn btn-sm rounded-pill shadow-none contact-option contact-email" type="button" data-user="tdimhcs.nnahoj" data-domain="ed.ugvo" tabindex="-1"><i class="fas fa-envelope me-2"></i><span>Email</span></button>
+                  </div>
+                </div>
+                <!-- /BUILD:home -->
               </div>
             </div>
           </div>
@@ -126,48 +138,61 @@
         
         <div class="row gy-5">
           <div class="col-lg-7 col-xl-8 text-center text-lg-start">
-            <h2 class="text-7 text-white fw-600 mb-3">I'm <span class="text-primary">Johann Schmidt,</span> PhD Student in Deep Learning</h2>
-            <p class="text-white-50">I work in the AILab of the Otto-von-Guericke University in Magdeburg, Germany as a researcher, where my daily business are deep neural network. My research focuses on fortifying these networks against vulnerabilities caused by variances in the input.</p>
-            <p class="text-white-50">Take, for instance, an image classifier. It will break if issued with a rotated replicate of the training data. I develop solutions using the immense power of group theory. Join me on my quest to make neural nets exponentially more powerful and stable.</p>
+            <!-- BUILD:about (generated from content/about.md, do not edit here) -->
+            <h2 class="text-7 text-white fw-600 mb-3">I'm <span class="text-primary">Johann Schmidt,</span><br>Research Scientist in Deep Learning</h2>
+            <p class="text-white-50">Since 2020 I have worked full time as a research scientist at the Artificial Intelligence Lab (AILab) of Otto von Guericke University Magdeburg (OVGU), Germany. I build deep learning systems in collaboration with universities, research institutes and industry partners. These projects range from production scheduling to traffic signal control and acoustic traffic sensing.</p>
+            <p class="text-white-50">I pursue my PhD alongside this work. A strong vision model can change its answer once the view of an object changes. I develop small modules that sit in front of a frozen pretrained model and undo such transformations, which makes the model more robust to them.</p>
+            <p class="text-white-50"><span class="text-primary">I am looking for a research lead position in industry.</span> I will submit my thesis at the end of 2026 and am open to new roles from then on. My current funding ends in April 2027. I am a father of two, so a family-friendly employer matters to me. I speak German (native) and English (daily working language).</p>
+            <!-- /BUILD:about -->
           </div>
           <div class="col-lg-5 col-xl-4">
             <div class="ps-lg-4">
-              <ul class="list-style-2 list-style-light text-light">
-                <li><span class="fw-600 me-2">Name:</span>Johann Schmidt</li>
-                <li><span class="fw-600 me-2">Email:</span><a href="mailto:johann.schmidt@ovgu.de">johann.schmidt@ovgu.de</a></li>
-                <li><span class="fw-600 me-2">Born:</span>1995</li>
-                <li class="border-0"><span class="fw-600 me-2">From:</span>Magdeburg, Germany</li>
+              <ul class="list-style-2 list-style-light text-light profile-links">
+                <li><a href="https://scholar.google.com/citations?user=VmKtXYoAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i>Google Scholar</a></li>
+                <li><a href="https://www.researchgate.net/profile/Johann-Schmidt-5" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i>ResearchGate</a></li>
+                <li><a href="https://www.linkedin.com/in/johann-schmidt/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+                <li class="border-0"><a href="https://github.com/johSchm" target="_blank" rel="noopener"><i class="fab fa-github"></i>GitHub</a></li>
               </ul>
-              <a href="./res/CV_Johann_Schmidt.pdf" download="CV_Johann_Schmidt.pdf" class="btn btn-primary rounded-pill">Download CV</a> </div>
+              <a href="./res/CV_Johann_Schmidt.pdf" download="CV_Johann_Schmidt.pdf" class="btn btn-primary rounded-pill btn-cv">Download CV <i class="fas fa-download ms-1"></i></a> </div>
           </div>
         </div>
         <div class="brands-grid separator-border separator-border-light mt-5">
+          <!-- BUILD:about-numbers (generated from content/about.md, do not edit here) -->
           <div class="row">
             <div class="col-6 col-md-3">
               <div class="featured-box text-center">
-                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="10">10</span>+</h4>
+                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="12" data-since="2014">12</span>+</h4>
                 <p class="text-light mb-0">Years Coding Experience</p>
               </div>
             </div>
             <div class="col-6 col-md-3">
               <div class="featured-box text-center">
-                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="30">30</span>+</h4>
-                <p class="text-light mb-0">Students Supervised</p>
+                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="18">18</span>+</h4>
+                <p class="text-light mb-0">Theses Supervised</p>
               </div>
             </div>
             <div class="col-6 col-md-3">
               <div class="featured-box text-center">
-                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="100">100</span>+</h4>
-                <p class="text-light mb-0">Sessions Moderated</p>
+                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="18">18</span>+</h4>
+                <p class="text-light mb-0">Papers Reviewed</p>
               </div>
             </div>
             <div class="col-6 col-md-3">
               <div class="featured-box text-center">
-                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="7">7</span></h4>
+                <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="12">12</span>+</h4>
                 <p class="text-light mb-0">Papers Published</p>
               </div>
             </div>
           </div>
+          <!-- /BUILD:about-numbers -->
+          <script>
+            // "{years since ...}" counters: recompute from today's date, so they stay right without a rebuild
+            document.querySelectorAll('.counter[data-since]').forEach(function (el) {
+              var years = Math.max(new Date().getFullYear() - el.dataset.since, 0);
+              el.dataset.to = years;
+              el.textContent = years;
+            });
+          </script>
         </div>
       </div>
     </section>
@@ -184,77 +209,105 @@
         </div>
         <!-- Heading end-->
         
-        <div class="row gx-5"> 
-          <!-- My Education -->
-          <div class="col-md-6">
-            <h2 class="text-6 text-white fw-600 mb-4">Education</h2>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2007 - 2014</p>
-              <h3 class="text-5 text-white">A Levels</h3>
-              <p class="text-primary">Privatgymnasium Tangermünde, Germany</p>
-              <p class="text-white-50 mb-0">During this shaping period, my fascination with electrical circuits, programming and math emerged, igniting a passion that continues to fuel my academic and professional pursuits.</p>
+        <div class="row gx-5">
+          <!-- Education & Experience -->
+          <div class="col-lg-11 mx-auto">
+            <!-- BUILD:resume (generated from content/resume.md, do not edit here) -->
+            <div class="bg-dark rounded p-4 mb-4 resume-card">
+              <div class="resume-card-header" role="button" tabindex="0" aria-expanded="false">
+                <div>
+                  <p class="badge bg-danger text-2 fw-400 mb-2">2014 - 2018</p>
+                  <h3 class="text-5 text-white mb-0">Bachelor: Electrical Engineering</h3>
+                </div>
+                <i class="fas fa-chevron-down resume-card-icon"></i>
+              </div>
+              <div class="resume-card-body">
+                <div class="resume-card-inner">
+                <p class="text-primary">Magdeburg-Stendal University of Applied Sciences, Germany</p>
+                <p class="text-white-50 mb-0">While I enjoyed designing electrical circuits, I discovered my real passion in computer science. It gave me the power to bring those static circuits to life, and it still motivates me today.</p>
+                <h3 class="text-5 text-white mt-4">Internships and Student Jobs <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2013 - 2016</span></h3>
+                <p class="text-primary">TCS AG Genthin, Bachmann GmbH Magdeburg, Enercon GmbH Magdeburg</p>
+                <p class="text-white-50 mb-0">I first came into contact with the development and assembly of electrical circuit boards. I analyzed and evaluated wind turbine data and helped with the cabling of wind turbine control cabinets.</p>
+                <h3 class="text-5 text-white mt-4">Bachelor Thesis <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2017 - 2018</span></h3>
+                <p class="text-primary">Institute for Automation and Communication (ifak) e.V. Magdeburg, Germany</p>
+                <p class="text-white-50 mb-0">I developed a GUI in C for a clamp-on ultrasonic sensor system on an embedded controller, and analyzed and evaluated the overall measurement system.</p>
+                </div>
+              </div>
             </div>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2014 - 2018</p>
-              <h3 class="text-5 text-white">Bachelor: Electrical Engineering</h3>
-              <p class="text-primary">University of applied Science Magdeburg-Stendal, Germany</p>
-              <p class="text-white-50 mb-0">Although adept at designing electrical circuits, my true passion was unveiled in computer science - breathing life into these circuits.</p>
-              <br></br>
-              <h3 class="text-5 text-white">Bachelor Thesis</h3>
-              <p class="text-primary">Institut for Automation and Communication (ifak) e.V. Magdeburg, Germany</p>
-              <p class="text-white-50 mb-0">I developed a GUI for a clamp-on ultrasonic sensor system on an embedded controller in C, as well as analysed and evaluated the overall measurement system.</p>
+            <div class="bg-dark rounded p-4 mb-4 resume-card">
+              <div class="resume-card-header" role="button" tabindex="0" aria-expanded="false">
+                <div>
+                  <p class="badge bg-danger text-2 fw-400 mb-2">2018 - 2020</p>
+                  <h3 class="text-5 text-white mb-0">Master: Digital Engineering</h3>
+                </div>
+                <i class="fas fa-chevron-down resume-card-icon"></i>
+              </div>
+              <div class="resume-card-body">
+                <div class="resume-card-inner">
+                <p class="text-primary">Otto von Guericke University Magdeburg, Germany</p>
+                <p class="text-white-50 mb-0">I delved into advanced computer science courses, dedicating countless hours to self-study to bridge gaps in my knowledge. I truly found my passion when I dove into artificial intelligence, specifically deep learning.</p>
+                <h3 class="text-5 text-white mt-4">Master Thesis <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2019 - 2020</span></h3>
+                <p class="text-primary">Fraunhofer Institute for Factory Operation and Automation IFF, Magdeburg, Germany</p>
+                <p class="pub-refs"><a class="pub-ref" href="#pub-Bexten2021" title="Human Action Recognition as part of a Natural Machine Operation Framework" aria-label="ETFA 2021, go to publication: Human Action Recognition as part of a Natural Machine Operation Framework"><i class="fas fa-file-alt"></i>ETFA 2021</a></p>
+                <p class="text-white-50 mb-0">I developed and integrated a vision-based deep learning model for real-time human action recognition, used for human-machine interaction in an industrial environment.</p>
+                </div>
+              </div>
             </div>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2018 - 2020</p>
-              <h3 class="text-5 text-white">Master: Digital Engineering</h3>
-              <p class="text-primary">Otto-von-Guericke University Magdeburg, Germany</p>
-              <p class="text-white-50 mb-0">I delved into advanced computer science courses, dedicating countless hours to self-study to bridge gaps in my knowledge. It was within the realm of deep learning that I found my niche—a domain where I finally felt at home.</p>
-              <br></br>
-              <h3 class="text-5 text-white">Master Thesis</h3>
-              <p class="text-primary">Fraunhofer Institute for Factory Operation and Automation IFF Magdeburg, Germany</p>
-              <p class="text-white-50 mb-0">I developed and integrated a vision-based human action recognition deep learning model for human-machine interaction in an industrial environment.</p>
+            <div class="bg-dark rounded p-4 mb-4 resume-card">
+              <div class="resume-card-header" role="button" tabindex="0" aria-expanded="false">
+                <div>
+                  <p class="badge bg-danger text-2 fw-400 mb-2">2020 - today</p>
+                  <h3 class="text-5 text-white mb-0">Research Scientist at OVGU</h3>
+                </div>
+                <i class="fas fa-chevron-down resume-card-icon"></i>
+              </div>
+              <div class="resume-card-body">
+                <div class="resume-card-inner">
+                <p class="text-primary">AILab, Otto von Guericke University Magdeburg, Germany</p>
+                <p class="text-white-50 mb-0">Full-time position on funded R&amp;D projects with industry partners. These projects span a wide range of topics, from production scheduling to traffic signal control and acoustic sensing. This diversity has given me a broad knowledge base. I pursue my PhD alongside this work.</p>
+                <h3 class="text-5 text-white mt-4">SENECA <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2020 - 2022</span></h3>
+                <p class="text-primary">BMBF-funded project with Thorsis Technologies GmbH and TECTRON GmbH</p>
+                <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2021" title="Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning" aria-label="IFAC INCOM 2021, go to publication: Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning"><i class="fas fa-file-alt"></i>IFAC INCOM 2021</a> <a class="pub-ref" href="#pub-Lang2021" title="NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies" aria-label="ESWA 2021, go to publication: NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies"><i class="fas fa-file-alt"></i>ESWA 2021</a></p>
+                <p class="text-white-50 mb-0">Real-time decision support for production scheduling at the electronics manufacturer Tectron, an NP-hard problem with up to 200 open orders per planning run. I developed deep learning approaches that find solution candidates with larger gains than existing heuristics. Not everything worked: a permutation-invariant network trained on optimal schedules solved small instances but did not scale. The final system therefore lets the planner choose among several algorithms, including reinforcement learning and a genetic algorithm. In Tectron's production, it beat manual planning on late orders and total tardiness.</p>
+                <h3 class="text-5 text-white mt-4">AI-Engineering <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2022</span></h3>
+                <p class="text-primary">BMBF-funded project of five universities in Saxony-Anhalt</p>
+                <p class="text-white-50 mb-0">A new Bachelor's program that combines AI with engineering, built jointly by five universities. I contributed to the curriculum in the first project year and led the development of the internal platform for open educational resources, which lets students and teachers share course material across the universities. Students learn through team projects with regional companies and open course material instead of classic lectures. The program has been running since 2023.</p>
+                <h3 class="text-5 text-white mt-4">Sustainable Supply Chain DeepHack <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2022</span></h3>
+                <p class="text-primary">2nd place, Transatlantic AI Hackathon</p>
+                <p class="text-white-50 mb-0">In one weekend our team built a system that estimates the volume of parcels automatically and uses it to pack delivery vehicles more efficiently. The route is planned together with the loading order. Parcels are loaded first in, last out, so the next delivery is always within reach.</p>
+                <h3 class="text-5 text-white mt-4">PASCAL <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2022 - 2025</span></h3>
+                <p class="text-primary">BMBF-funded project with Thorsis Technologies GmbH</p>
+                <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2025a" title="TransferLight: Zero-Shot Traffic Signal Control on any Road-Network" aria-label="AAAI: MALTA 2025, go to publication: TransferLight: Zero-Shot Traffic Signal Control on any Road-Network"><i class="fas fa-file-alt"></i>AAAI: MALTA 2025</a></p>
+                <p class="text-white-50 mb-0">AI-based traffic signal control on real-time V2X data, built for Magdeburg's urban testbed. I developed the core component, a single reinforcement learning policy on a hierarchical graph neural network that controls any intersection layout. Trained only on synthetic road networks, it transfers zero-shot to real ones (Cologne, Ingolstadt). It outperforms heuristic and learned baselines on travel time, waiting time and CO₂ emissions. TransferLight was integrated with Thorsis into an operator-assistance prototype running on edge hardware.</p>
+                <h3 class="text-5 text-white mt-4">KIVA-NET <span class="badge bg-danger text-2 fw-400 align-middle ms-1">2025 - 2027</span></h3>
+                <p class="text-primary">ZIM-funded project with Thorsis Technologies GmbH</p>
+                <p class="text-white-50 mb-0">Follow-up to PASCAL with the same industry partner. We are building a low-cost acoustic sensor that counts and classifies vehicles and rates traffic flow from sound alone, in real time on edge hardware. A video tracker labels the audio automatically and has labeled more than 16,000 vehicle passes so far. On this data I benchmark models from compact CNNs to pretrained audio transformers to size the model for the edge device. First models detect passing vehicles with 96.5% accuracy.</p>
+                </div>
+              </div>
             </div>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2020 - today</p>
-              <h3 class="text-5 text-white">PhD in Deep Learning</h3>
-              <p class="text-primary">Otto-von-Guericke University Magdeburg, Germany</p>
-              <p class="text-white-50 mb-0">I cultivated a robust expertise in deep learning, immersing myself in diverse research domains. I mentored students, refined scientific writing through conference publications, delivered presentations, and adeptly facilitated and guided small groups, cementing both theoretical and practical facets of the field.</p>
-              <br></br>
-              <h3 class="text-5 text-white">PhD Thesis</h3>
-              <p class="text-primary">AILab, Otto-von-Guericke University Magdeburg, Germany</p>
-              <p class="text-white-50 mb-0">I invent algorithms to efficiently search the Affine Group and canonicalize input signals of Deep Neural Networks boosting their stability when issued with out-of-distribution data.</p>
+            <div class="bg-dark rounded p-4 mb-4 resume-card">
+              <div class="resume-card-header" role="button" tabindex="0" aria-expanded="false">
+                <div>
+                  <p class="badge bg-danger text-2 fw-400 mb-2">2022 - 2026</p>
+                  <h3 class="text-5 text-white mb-0">PhD in Deep Learning at OVGU</h3>
+                </div>
+                <i class="fas fa-chevron-down resume-card-icon"></i>
+              </div>
+              <div class="resume-card-body">
+                <div class="resume-card-inner">
+                <p class="text-primary">Otto von Guericke University Magdeburg, Germany</p>
+                <p class="text-white-50 mb-0">Thesis research since 2022, alongside my full-time project work. It began with the work on radial beam sampling. I will submit the thesis at the end of 2026.</p>
+                <h3 class="text-5 text-white mt-4">OxML Summer School <span class="badge bg-danger text-2 fw-400 align-middle ms-1">August 2025</span></h3>
+                <p class="text-primary">Oxford, United Kingdom</p>
+                <p class="text-white-50 mb-0">I attended the Oxford Machine Learning Summer School (OxML) on Representation Learning.</p>
+                <h3 class="text-5 text-white mt-4">PhD Thesis</h3>
+                <p class="text-primary">AILab, Otto von Guericke University Magdeburg, Germany</p>
+                <p class="text-white-50 mb-0"><span class="text-primary">Robust and Efficient Discriminative Deep Learning by Canonicalizing and Lifting Symmetry-Degenerated Signals.</span> A strong vision model can change its answer once the view of an object changes. My thesis develops canonicalization modules as a remedy. A small module in front of a frozen pretrained model undoes the transformation of each input, so robustness becomes an add-on that does not require retraining the downstream model. <a href="#thesis" class="smooth-scroll">Read the summary</a>.</p>
+                </div>
+              </div>
             </div>
+            <!-- /BUILD:resume -->
           </div>
-          
-          <!-- My Experience -->
-          <div class="col-md-6">
-            <h2 class="text-6 text-white fw-600 mb-4">Experience</h2>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2013 - 2016</p>
-              <h3 class="text-5 text-white">Internships and Student Jobs</h3>
-              <p class="text-primary">TCS AG Genthin, Bachmann GmbH Magdeburg, Enercon GmbH Magdeburg</p>
-              <p class="text-white-50 mb-0">I first came in touch with the development and assembling of electrical circuit boards. I analysed and evaluated of wind turbine data and helped with cabling of control cabinets of wind turbines.</p>
-            </div>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2020 - 2022</p>
-              <h3 class="text-5 text-white">SENECA</h3>
-              <p class="text-primary">BMBF-funded Project</p>
-              <p class="text-white-50 mb-0">During this BMBF-funded project we supported a regional semi-conductor company (Tectron Worbis GmbH) by developing an AI to tackle an NP-hard scheduling problem.</p>
-            </div>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2022 - 2022</p>
-              <h3 class="text-5 text-white">AI-Engineering</h3>
-              <p class="text-primary">BMBF-funded Project</p>
-              <p class="text-white-50 mb-0">We created a novel Bachelors study program teaching the theories of artificial engineering intertwined with practical applications in several engineering disciplines (hands-on and student-centred with OERs).</p>
-            </div>
-            <div class="bg-dark rounded p-4 mb-4">
-              <p class="badge bg-danger text-2 fw-400">2022 - today</p>
-              <h3 class="text-5 text-white">PASCAL</h3>
-              <p class="text-primary">BMBF-funded Project</p>
-              <p class="text-white-50 mb-0">Currently, we are lifting traffic control to the 21st century by developing an AI-based traffic signal control system using real-time V2X data.</p>
-            </div>
-          </div>
-
         </div>
         <!-- My Skills -->
 <!--		<h2 class="text-6 text-white fw-600 mt-4 mb-4">My Skills</h2>-->
@@ -293,9 +346,69 @@
     </section>
     <!-- Resume end -->
 
+    <!-- PhD Thesis -->
+    <section id="thesis" class="section bg-dark-1">
+      <div class="container px-lg-5">
+        <!-- Heading -->
+        <div class="position-relative d-flex text-center mb-5">
+          <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Research</h2>
+          <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">PhD Thesis<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+        </div>
+        <!-- Heading end-->
+        <!-- BUILD:thesis (generated from content/thesis.md, do not edit here) -->
+        <h3 class="text-white mb-2">Robust and Efficient Discriminative Deep Learning by Canonicalizing and Lifting Symmetry-Degenerated Signals</h3>
+        <p class="text-primary mb-4">Otto von Guericke University Magdeburg · submission planned for the end of 2026</p>
+        <p class="text-white-50 mb-4">Vision models fail on inputs a person finds trivial. Rotate or rescale an image and a strong classifier can change its answer. In my experiments a ResNet-50 falls from 66% to 39% accuracy on ImageNet-200 once the test images are rotated. The standard fixes are expensive. Retraining with augmented data cost that model five points on upright images. Symmetry-aware architectures give guarantees but have to be designed for each transformation and trained from scratch. Neither helps a team that already owns a large pretrained model.</p>
+        <p class="text-white-50 mb-4">My thesis develops canonicalization as a third route. A small module in front of the model undoes the transformation of each input and hands over a familiar view. People do the same when they step closer to see an object of interest more sharply. The model stays frozen, so robustness becomes an add-on and requires no retraining or fine-tuning of the downstream model.</p>
+        <h4 class="text-6 text-white fw-600 mt-5 mb-4">Main contributions</h4>
+        <div class="thesis-card bg-dark rounded p-4 mb-4">
+          <div class="thesis-card-head">
+            <span class="thesis-card-num" aria-hidden="true">01</span>
+            <h3 class="text-5 text-white mb-0">A rotation canonicalizer that is capable and cheap</h3>
+          </div>
+          <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2025b" title="Robust Canonicalization through Bootstrapped Data Re-Alignment" aria-label="EurIPS: UPLB 2025, go to publication: Robust Canonicalization through Bootstrapped Data Re-Alignment"><i class="fas fa-file-alt"></i>EurIPS: UPLB 2025</a> <span class="pub-ref is-pending"><i class="far fa-clock"></i>Under review</span></p>
+          <p class="text-white-50 mb-0">A canonicalizer is usually trained with a prior that treats every training image as upright. Real datasets break this alignment assumption. My bootstrapping algorithm re-aligns the training samples step by step, with convergence guarantees under mild conditions for arbitrary compact groups. On four fine-grained benchmarks it outperforms equivariant and canonicalization baselines and performs on par with augmentation. A second approach replaces the prior itself. I precompute the orientations at which a pretrained model errs least and distill them into a small rotation-equivariant network. The large model never enters the training loop. The same ResNet-50 recovers from 39% to 63% on rotated images and loses one point on upright ones.</p>
+        </div>
+        <div class="thesis-card bg-dark rounded p-4 mb-4">
+          <div class="thesis-card-head">
+            <span class="thesis-card-num" aria-hidden="true">02</span>
+            <h3 class="text-5 text-white mb-0">Robustness at test time with no training</h3>
+          </div>
+          <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2024b" title="Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers" aria-label="ICML 2024, go to publication: Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers"><i class="fas fa-file-alt"></i>ICML 2024</a> <a class="pub-ref" href="#pub-Lindner2026" title="Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring" aria-label="ECML-PKDD 2026, go to publication: Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring"><i class="fas fa-file-alt"></i>ECML-PKDD 2026</a></p>
+          <p class="text-white-50 mb-0">Inverse Transformation Search shows a frozen model several transformed versions of an input and keeps the one it finds most familiar. To my knowledge it was the first canonicalizer that needs no training. A follow-up treats the problem as out-of-distribution detection and lifts accuracy on transformed MNIST from 38% to 90%. A gate corrects only inputs that look unfamiliar, which preserves most of the accuracy on normal ones.</p>
+        </div>
+        <div class="thesis-card bg-dark rounded p-4 mb-4">
+          <div class="thesis-card-head">
+            <span class="thesis-card-num" aria-hidden="true">03</span>
+            <h3 class="text-5 text-white mb-0">Stable spatial transformers and saccadic canonicalization</h3>
+          </div>
+          <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2026a" title="Geometrically Constrained and Token-Based Probabilistic Spatial Transformers" aria-label="ECCV: BISCUIT 2026, go to publication: Geometrically Constrained and Token-Based Probabilistic Spatial Transformers"><i class="fas fa-file-alt"></i>ECCV: BISCUIT 2026</a> <a class="pub-ref" href="#pub-Schmidt2026b" title="PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification" aria-label="BMVC 2026, go to publication: PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification"><i class="fas fa-file-alt"></i>BMVC 2026</a></p>
+          <p class="text-white-50 mb-0">Learned image canonicalization without any inductive biases is brittle and likely to collapse during training. I split the transformation into bounded primitives such as rotation and scale, and prove that the bounds rule out degenerate warps. The module shares weights with a vision transformer and was evaluated on biodiversity and medical imaging data. With translation and scale alone, the same idea yields a multi-view spatial transformer that zooms in like a saccade. When a label-aware oracle picks a single crop, a pretrained ConvNeXtV2-L reaches 98% on ImageNet. The features are there but the model looks in the wrong place. I build a saccader that learns to focus using a small priority head, which selects a few high-resolution regions. One attention block fuses the crops with the global view. This improves on the plain backbone across nine fine-grained benchmarks with few exceptions, and memory no longer grows with input resolution.</p>
+        </div>
+        <div class="thesis-card bg-dark rounded p-4 mb-4">
+          <div class="thesis-card-head">
+            <span class="thesis-card-num" aria-hidden="true">04</span>
+            <h3 class="text-5 text-white mb-0">Symmetries in production scheduling</h3>
+          </div>
+          <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2021" title="Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning" aria-label="IFAC INCOM 2021, go to publication: Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning"><i class="fas fa-file-alt"></i>IFAC INCOM 2021</a> <a class="pub-ref" href="#pub-Schmidt2024a" title="Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling" aria-label="HICSS 2024, go to publication: Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling"><i class="fas fa-file-alt"></i>HICSS 2024</a></p>
+          <p class="text-white-50 mb-0">Symmetries also shape problems outside vision. In job scheduling the open jobs form a set, and parallel machines can be swapped without changing the cost of a schedule. Many optimal schedules are therefore equivalent, which leaves a learning model without a unique target. I encode the jobs with permutation-invariant layers and sort the machines into a canonical order. In a later simulated annealing heuristic, breaking the symmetry between tardy and early jobs lifts degenerate optima and yields schedules in real time.</p>
+        </div>
+        <div class="thesis-card bg-dark rounded p-4 mb-4">
+          <div class="thesis-card-head">
+            <span class="thesis-card-num" aria-hidden="true">05</span>
+            <h3 class="text-5 text-white mb-0">Symmetries in traffic signal control</h3>
+          </div>
+          <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2025a" title="TransferLight: Zero-Shot Traffic Signal Control on any Road-Network" aria-label="AAAI: MALTA 2025, go to publication: TransferLight: Zero-Shot Traffic Signal Control on any Road-Network"><i class="fas fa-file-alt"></i>AAAI: MALTA 2025</a></p>
+          <p class="text-white-50 mb-0">Traffic signal control has the same structure. The lanes, movements and signal phases of an intersection are sets with no natural order. I model them as abstraction levels of a hierarchical graph neural network with permutation-invariant aggregation, so a single policy controls any intersection layout. Where order matters, the symmetry is broken on purpose. A positional encoding relative to the center of the intersection tells the model where along a lane the vehicles are. Trained only on synthetic road networks, the policy transfers zero-shot to real ones.</p>
+        </div>
+        <!-- /BUILD:thesis -->
+        <br><br><br>
+      </div>
+    </section>
+
     <!-- Services
 ============================================= -->
-    <section id="publications" class="section bg-dark-1">
+    <section id="publications" class="section bg-dark-2">
       <div class="container px-lg-5">
         <!-- Heading -->
         <div class="position-relative d-flex text-center mb-5">
@@ -303,83 +416,474 @@
           <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Publications<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
         </div>
         <!-- Heading end-->
+        <!-- PDF is generated by tools/publications_pdf.py -->
+        <div class="text-center mb-5"><a href="./res/Publications_Johann_Schmidt.pdf" download="Publications_Johann_Schmidt.pdf" class="btn btn-primary rounded-pill btn-cv">Download as PDF <i class="fas fa-download ms-1"></i></a></div>
 
         <div class="row">
           <div class="col-lg-11 mx-auto">
             <div class="row">
               <div class="col-md-12">
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/publication/356673665_Human_Action_Recognition_as_part_of_a_Natural_Machine_Operation_Framework"><i class="fas fa-file"></i></a>
+                <!-- BUILD:publications (generated from publications.bib, do not edit here) -->
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Bexten2021">
+                  <a class="pub-thumb" href="https://ieeexplore.ieee.org/document/9613331" target="_blank" rel="noopener" aria-label="Open paper: Human Action Recognition as part of a Natural Machine Operation Framework">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/HAR.webp" alt="First page of Human Action Recognition as part of a Natural Machine Operation Framework" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2021</span> <span class="badge bg-secondary text-2 fw-400">ETFA</span></p>
+                    <h3 class="text-5 text-white mb-2">Human Action Recognition as part of a Natural Machine Operation Framework</h3>
+                    <p class="text-white-50 mb-1">S. Bexten, <strong class="text-white fw-500">J. Schmidt</strong>, C. Walter, and N. Elkmann</p>
+                    <p class="pub-venue text-primary mb-0">IEEE International Conference on Emerging Technologies and Factory Automation</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://ieeexplore.ieee.org/document/9613331" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <span class="pub-code is-disabled" aria-disabled="true" title="Code not available"><i class="fab fa-github"></i>Code</span>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Bexten2021"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Bexten2021"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2021</p>
-                  <h3 class="text-white">Human Action Recognition as part of a Natural Machine Operation Framework</h3>
-                  <p class="text-white-50 mb-0">S. Bexten, J. Schmidt, C. Walter, and N. Elkmann</p>
-                  <p class="text-white-50 mb-0">IEEE International Conference on Emerging Technologies and Factory Automation (ETFA)</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/publication/349069446_NeuroEvolution_of_Augmenting_Topologies_for_Solving_a_Two-Stage_Hybrid_Flow_Shop_Scheduling_Problem_A_Comparison_of_Different_Solution_Strategies?_sg%5B0%5D=47eXuPLmqt1rrk2OKgIlz0rvFmHdHEyeozsw09roczwOD8OUNxvXBE19q5KYaUrs7YCGjRTayZsoNoCf4er0ZzX1NllfYAClBtmpJrDM.7ECTVcK62ipcLdJ-lH4AdLfs68FPN4MDn2RATlGjZcH0Xj8Q4UmX8q3Hvgr5tO880X6BkQaoaE606w5m-mGtfg&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoicHJvZmlsZSIsInByZXZpb3VzUGFnZSI6InByb2ZpbGUiLCJwb3NpdGlvbiI6InBhZ2VDb250ZW50In19"><i class="fas fa-file"></i></a>
+                  <div class="pub-panel" id="abstract-Bexten2021">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">The reliability of systems that use machine learning to recognize the human working in an industrial environment is of high importance for employee safety. We present a framework which is capable of recognizing the person&#x27;s natural interaction with an industrial machine. We focus on the application of human action recognition in the context of machine operation by skilled workers in industrial or commercial environments. We propose a framework that includes action recognition as part of a software component for understanding behavior. For our use case, we defined an exemplary machine operation workflow which we use to compare five different neural networks in terms of prediction accuracy and real-time capabilities. Moreover, we compare different input shapes, such as the resolution of input images and the size of the possible 3D-volume in order to study the robustness of the models. For our evaluation, we created our own custom dataset containing six action classes. Our analysis shows that the best model is the I3D with color images, a resolution of 112 x 112 pixels and 16 consecutive frames. The I3D also exhibited the best run-time performance for real-time applications.</p>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2021</p>
-                  <h3 class="text-white">NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop</h3>
-                  <p class="text-white-50 mb-0">S. Lang, T. Reggelin, J. Schmidt, M. Müller, and A. Nahhas</p>
-                  <p class="text-white-50 mb-0">Expert Systems with Applications</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/publication/356059266_Approaching_Scheduling_Problems_via_a_Deep_Hybrid_Greedy_Model_and_Supervised_Learning?_sg%5B0%5D=u-Tk6crlaujYCRL6iqeYYpC3ss7toGcdKRiP1vV71oUFZS0fyRfWSNxfTiRrbgxrBSQuRV37ICmJ9f5fnZMDpI3igC1n2ZNHg_MQhKu9.JSLL1w1ku5QRHTeahiVZy-gPrQSA2_bAK6xhKFwXdtTiLgr8QL53mp5BeMzop3BOAVCxYAkH5ZMfQ48oToKA4g&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoicHJvZmlsZSIsInByZXZpb3VzUGFnZSI6InByb2ZpbGUiLCJwb3NpdGlvbiI6InBhZ2VDb250ZW50In19"><i class="fas fa-file"></i></a>
+                  <div class="pub-panel" id="bib-Bexten2021">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Bexten2021,
+  title     = {Human Action Recognition as part of a Natural Machine Operation Framework},
+  author    = {Bexten, Simone and Schmidt, Johann and Walter, Christoph and Elkmann, Norbert},
+  booktitle = {IEEE International Conference on Emerging Technologies and Factory Automation},
+  year      = {2021},
+  doi       = {10.1109/ETFA45728.2021.9613331},
+  url       = {https://ieeexplore.ieee.org/document/9613331}
+}</code></pre>
+                      </div>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2021</p>
-                  <h3 class="text-white">Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning</h3>
-                  <p class="text-white-50 mb-0">J. Schmidt and S. Stober</p>
-                  <p class="text-white-50 mb-0">IFAC Symposium on Information Control Problems in Manufacturing</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/profile/Johann-Schmidt-5"><i class="fas fa-file"></i></a>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Lang2021">
+                  <a class="pub-thumb" href="https://www.sciencedirect.com/science/article/pii/S095741742100107X" target="_blank" rel="noopener" aria-label="Open paper: NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/NEAT.webp" alt="First page of NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2021</span> <span class="badge bg-secondary text-2 fw-400">ESWA</span></p>
+                    <h3 class="text-5 text-white mb-2">NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies</h3>
+                    <p class="text-white-50 mb-1">S. Lang, T. Reggelin, <strong class="text-white fw-500">J. Schmidt</strong>, M. Müller, and A. Nahhas</p>
+                    <p class="pub-venue text-primary mb-0">Expert Systems with Applications</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S095741742100107X" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <span class="pub-code is-disabled" aria-disabled="true" title="Code not available"><i class="fab fa-github"></i>Code</span>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Lang2021"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Lang2021"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2023</p>
-                  <h3 class="text-white">Learning Continuous Rotation Canonicalization with Radial Beam Sampling</h3>
-                  <p class="text-white-50 mb-0">J. Schmidt and S. Stober</p>
-                  <p class="text-white-50 mb-0">ArXiv</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/profile/Johann-Schmidt-5"><i class="fas fa-file"></i></a>
+                  <div class="pub-panel" id="abstract-Lang2021">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">The article investigates the application of NeuroEvolution of Augmenting Topologies (NEAT) to generate and parameterize artificial neural networks (ANN) on determining allocation and sequencing decisions in a two-stage hybrid flow shop scheduling environment with family setup times. NEAT is a machine-learning and neural architecture search algorithm, which generates both the structure and the hyper-parameters of an ANN. Our experiments show that NEAT can compete with state-of-the-art approaches in terms of solution quality and outperforms them regarding computational efficiency. The main contributions of this article are: (i) A comparison of five different strategies, evaluated with 14 different experiments, on how ANNs can be applied for solving allocation and sequencing problems in a hybrid flow shop environment, (ii) a comparison of the best identified NEAT strategy with traditional heuristic and metaheuristic approaches concerning solution quality and computational efficiency.</p>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2024</p>
-                  <h3 class="text-white">Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling</h3>
-                  <p class="text-white-50 mb-0">J. Schmidt, B. Köhler, H. Borstell</p>
-                  <p class="text-white-50 mb-0">The Hawaii International Conference on System Sciences (HICSS)</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/profile/Johann-Schmidt-5"><i class="fas fa-file"></i></a>
+                  <div class="pub-panel" id="bib-Lang2021">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@article{Lang2021,
+  title   = {NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies},
+  author  = {Lang, Sebastian and Reggelin, Tobias and Schmidt, Johann and M{\&quot;u}ller, Marcel and Nahhas, Abdulrahman},
+  journal = {Expert Systems with Applications},
+  year    = {2021},
+  url     = {https://www.sciencedirect.com/science/article/pii/S095741742100107X},
+  doi     = {10.1016/j.eswa.2021.114666},
+  volume  = {172},
+  pages   = {114666}
+}</code></pre>
+                      </div>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2024</p>
-                  <h3 class="text-white">Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning</h3>
-                  <p class="text-white-50 mb-0">J. Perschewski, J. Schmidt, S. Stober</p>
-                  <p class="text-white-50 mb-0">International Workshop on Self-Organizing Maps and Learning Vector Quantization, Clustering and Data Visualization (WSOM+)</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/profile/Johann-Schmidt-5"><i class="fas fa-file"></i></a>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2021">
+                  <a class="pub-thumb" href="https://www.sciencedirect.com/science/article/pii/S2405896321008417" target="_blank" rel="noopener" aria-label="Open paper: Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/Greedy.webp" alt="First page of Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2021</span> <span class="badge bg-secondary text-2 fw-400">IFAC INCOM</span></p>
+                    <h3 class="text-5 text-white mb-2">Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong> and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">IFAC Symposium on Information Control Problems in Manufacturing</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S2405896321008417" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <a class="pub-code" href="https://github.com/johSchm/deep-hybrid-greedy-scheduling-model" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2021"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2021"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2024</p>
-                  <h3 class="text-white">Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers</h3>
-                  <p class="text-white-50 mb-0">J. Schmidt and S. Stober</p>
-                  <p class="text-white-50 mb-0">International Conference on Machine Learning (ICML)</p>
-                </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.researchgate.net/profile/Johann-Schmidt-5"><i class="fas fa-file"></i></a>
+                  <div class="pub-panel" id="abstract-Schmidt2021">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Scheduling still constitutes a challenging problem, especially for complex problem settings involving due dates and sequence-dependent setups. The majority of existing approaches use heuristics or meta-heuristics, like Genetic Algorithms or Reinforcement Learning. We show that a supervised learning framework can learn and generalize from generated optimal target schedules, which amplifies convergence compared to unsupervised methods. We present a deep hybrid greedy framework, which can predict near-optimal schedules by utilizing the following key mechanisms: (i) Through the interplay between heuristics and a deep neural network our hybrid model can combine the benefits. Specifically, complex patterns from optimal schedules can be learned by a neural network. We reduce the computational costs by outsourcing trivial decisions to heuristics, thereby allowing consistent decisions during training. (ii) The problem complexity can be reduced by employing a greedy prediction scheme, where one job at a time is predicted. (iii) We propose a re-scheduling mechanism for idle jobs, which enables long-term cost reduction and renders the framework reactive and dynamic. Through the heuristics and the neural network, our model is real-time capable during inference. We compare our model against prevailing scheduling heuristics and our model outperformed one of them in terms of makespan and lateness minimization. The key purpose of this work is to give a proof of concept that supervised learning is applicable for complex scheduling problems.</p>
+                    </div>
                   </div>
-                  <p class="text-primary-50 mb-0">2024</p>
-                  <h3 class="text-white">Image Canonicalisation in Log-Polar Space</h3>
-                  <p class="text-white-50 mb-0">J. Schmidt, S. Stober and others</p>
-                  <p class="text-white-50 mb-0">Draft Phase</p>
-                </div>
+                  <div class="pub-panel" id="bib-Schmidt2021">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2021,
+  title     = {Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning},
+  author    = {Schmidt, Johann and Stober, Sebastian},
+  booktitle = {IFAC Symposium on Information Control Problems in Manufacturing},
+  year      = {2021},
+  url       = {https://www.sciencedirect.com/science/article/pii/S2405896321008417},
+  doi       = {https://doi.org/10.1016/j.ifacol.2021.08.095},
+  pages     = {805--810},
+  volume    = {54}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2023">
+                  <a class="pub-thumb" href="https://arxiv.org/abs/2206.10690" target="_blank" rel="noopener" aria-label="Open paper: Learning Continuous Rotation Canonicalization with Radial Beam Sampling">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/RadialBeams.webp" alt="First page of Learning Continuous Rotation Canonicalization with Radial Beam Sampling" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2023</span> <span class="badge bg-secondary text-2 fw-400">ArXiv</span></p>
+                    <h3 class="text-5 text-white mb-2">Learning Continuous Rotation Canonicalization with Radial Beam Sampling</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong> and S. Stober</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://arxiv.org/abs/2206.10690" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <a class="pub-code" href="https://github.com/johSchm/RadialBeams" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2023"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2023"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2023">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Nearly all state-of-the-art vision models are sensitive to image rotations. Existing methods often compensate for missing inductive biases by using augmented training data to learn pseudo-invariances. Alongside the resource-demanding data inflation process, predictions often poorly generalize. The inductive biases inherent to convolutional neural networks allow for translation equivariance through kernels acting parallel to the horizontal and vertical axes of the pixel grid. This inductive bias, however, does not allow for rotation equivariance. We propose a radial beam sampling strategy along with radial kernels operating on these beams to inherently incorporate center-rotation covariance. Together with an angle distance loss, we present a radial beam-based image canonicalization model, short BIC. Our model allows for maximal continuous angle regression and canonicalizes arbitrary center-rotated input images. As a pre-processing model, this enables rotation-invariant vision pipelines with model-agnostic rotation-sensitive downstream predictions. We show that our end-to-end trained angle regressor is able to predict continuous rotation angles on several vision datasets, namely FashionMNIST, CIFAR10, COIL100, and LFW.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2023">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@misc{Schmidt2023,
+  title  = {Learning Continuous Rotation Canonicalization with Radial Beam Sampling},
+  author = {Schmidt, Johann and Stober, Sebastian},
+  year   = {2023},
+  url    = {https://arxiv.org/abs/2206.10690},
+  doi    = {10.48550/arXiv.2206.10690}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2024a">
+                  <a class="pub-thumb" href="https://aisel.aisnet.org/hicss-57/da/digital_twins/3/" target="_blank" rel="noopener" aria-label="Open paper: Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/SimAnneal.webp" alt="First page of Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2024</span> <span class="badge bg-secondary text-2 fw-400">HICSS</span></p>
+                    <h3 class="text-5 text-white mb-2">Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong>, B. Köhler, and H. Borstell</p>
+                    <p class="pub-venue text-primary mb-0">Hawaii International Conference on System Sciences (HICSS)</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://aisel.aisnet.org/hicss-57/da/digital_twins/3/" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <span class="pub-code is-disabled" aria-disabled="true" title="Code not available"><i class="fab fa-github"></i>Code</span>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2024a"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2024a"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2024a">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Inspired by the success of Simulated Annealing in physics, we transfer insights and adaptations to the scheduling domain, specifically addressing the one-stage job scheduling problem with an arbitrary number of parallel machines. In optimization, challenges arise from local optima, plateaus in the loss surface, and computationally complex Hamiltonian (cost) functions. To overcome these issues, we propose the integration of corrective actions, including symmetry breaking, restarts, and freezing out non-optimal fluctuations, into the Metropolis-Hastings algorithm. Additionally, we introduce a generalized Hamiltonian that efficiently fuses straightforward but widely applied processing-time cost functions. Our approach outperforms decision rules, meta-heuristics, and novel reinforcement learning algorithms. Notably, our method achieves these superior results in real-time, thanks to its computationally efficient evaluation of the Hamiltonian.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2024a">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2024a,
+  title     = {Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling},
+  author    = {Schmidt, Johann and K{\&quot;o}hler, B. and Borstell, H.},
+  booktitle = {Hawaii International Conference on System Sciences (HICSS)},
+  year      = {2024},
+  url       = {https://aisel.aisnet.org/hicss-57/da/digital_twins/3/},
+  doi       = {10.24251/HICSS.2024.208}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Perschewski2024">
+                  <a class="pub-thumb" href="https://link.springer.com/chapter/10.1007/978-3-031-67159-3_6" target="_blank" rel="noopener" aria-label="Open paper: Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/PPP.webp" alt="First page of Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2024</span> <span class="badge bg-secondary text-2 fw-400">WSOM+</span></p>
+                    <h3 class="text-5 text-white mb-2">Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning</h3>
+                    <p class="text-white-50 mb-1">J. Perschewski, <strong class="text-white fw-500">J. Schmidt</strong>, and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">International Workshop on Self-Organizing Maps and Learning Vector Quantization, Clustering and Data Visualization (WSOM+)</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://link.springer.com/chapter/10.1007/978-3-031-67159-3_6" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <span class="pub-code is-disabled" aria-disabled="true" title="Code not available"><i class="fab fa-github"></i>Code</span>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Perschewski2024"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Perschewski2024"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Perschewski2024">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">The curse of dimensionality refers to phenomena occurring with increasing dimensionality such as marginal differences in distances. Projection pursuit solves this issue by projecting high-dimensional data into a low-dimensional space where meaningful distances allow unbiased function estimation. However, projection pursuit only considers projections onto lines and the unbiased function depends on the sample size. We introduce deep projection pursuit (DPP) to remedy these limitations by using an ensemble of projections on parameterized surfaces combined with neural networks to solve the learning task. Furthermore, we demonstrate the capabilities of the DPP framework by training principal component curves and solving supervised tasks with interpretable models. Finally, we show the ability to maintain group properties in the projection space. Due to these applications, deep projection pursuit is a flexible design paradigm with various use cases.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Perschewski2024">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Perschewski2024,
+  title     = {Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning},
+  author    = {Perschewski, J. and Schmidt, Johann and Stober, Sebastian},
+  booktitle = {International Workshop on Self-Organizing Maps and Learning Vector Quantization, Clustering and Data Visualization (WSOM+)},
+  year      = {2024},
+  url       = {https://link.springer.com/chapter/10.1007/978-3-031-67159-3_6},
+  doi       = {10.1007/978-3-031-67159-3_6},
+  pages     = {43--52}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2024b">
+                  <a class="pub-thumb" href="https://proceedings.mlr.press/v235/schmidt24a.html" target="_blank" rel="noopener" aria-label="Open paper: Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/ITS.webp" alt="First page of Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2024</span> <span class="badge bg-secondary text-2 fw-400">ICML</span></p>
+                    <h3 class="text-5 text-white mb-2">Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong> and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">International Conference on Machine Learning (ICML)</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://proceedings.mlr.press/v235/schmidt24a.html" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <a class="pub-code" href="https://github.com/johSchm/ITS" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2024b"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2024b"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2024b">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Deep neural networks are applied in more and more areas of everyday life. However, they still lack essential abilities, such as robustly dealing with spatially transformed input signals. Approaches to mitigate this severe robustness issue are limited to two pathways: Either models are implicitly regularized by increased sample variability (data augmentation) or explicitly constrained by hard-coded inductive biases. The limiting factor of the former is the size of the data space, which renders sufficient sample coverage intractable. The latter is limited by the engineering effort required to develop such inductive biases for every possible scenario. Instead, we take inspiration from human behavior, where percepts are modified by mental or physical actions during inference. We propose a novel technique to emulate such an inference process. This is achieved by traversing a sparsified inverse transformation tree during inference using parallel energy-based evaluations. Our proposed inference algorithm, called Inverse Transformation Search (ITS), is model-agnostic and equips the model with zero-shot pseudo-invariance to spatially transformed inputs. We evaluated our method on several benchmark datasets, including a synthesized ImageNet test set. ITS outperforms the utilized baselines on all zero-shot test scenarios.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2024b">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2024b,
+  title     = {Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers},
+  author    = {Schmidt, Johann and Stober, Sebastian},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  volume    = {235},
+  pages     = {43705--43722},
+  year      = {2024},
+  url       = {https://proceedings.mlr.press/v235/schmidt24a.html}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2025a">
+                  <a class="pub-thumb" href="https://arxiv.org/abs/2412.09719" target="_blank" rel="noopener" aria-label="Open paper: TransferLight: Zero-Shot Traffic Signal Control on any Road-Network">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/TransferLight.webp" alt="First page of TransferLight: Zero-Shot Traffic Signal Control on any Road-Network" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2025</span> <span class="badge bg-secondary text-2 fw-400">AAAI: MALTA</span></p>
+                    <h3 class="text-5 text-white mb-2">TransferLight: Zero-Shot Traffic Signal Control on any Road-Network</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong>, F. Dreyer, S. A. Hashimi, and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">Association for the Advancement of Artificial Intelligence: Multi-Agent Reinforcement Learning for Transportation Autonomy Workshop</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://arxiv.org/abs/2412.09719" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <span class="pub-code is-disabled" aria-disabled="true" title="Code not available"><i class="fab fa-github"></i>Code</span>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2025a"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2025a"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2025a">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Traffic signal control plays a crucial role in urban mobility. However, existing methods often struggle to generalize beyond their training environments to unseen scenarios with varying traffic dynamics. We present TransferLight, a novel framework designed for robust generalization across road networks, diverse traffic conditions and intersection geometries. At its core, we propose a log-distance reward function, offering spatially aware signal prioritization while remaining adaptable to varied lane configurations, overcoming the limitations of traditional pressure-based rewards. Our hierarchical, heterogeneous, and directed graph neural network architecture effectively captures granular traffic dynamics, enabling transferability to arbitrary intersection layouts. Using a decentralized multi-agent approach, global rewards, and novel state transition priors, we develop a single, weight-tied policy that scales zero-shot to any road network without re-training. Through domain randomization during training, we additionally enhance generalization capabilities. Experimental results validate TransferLight&#x27;s superior performance in unseen scenarios, advancing practical, generalizable intelligent transportation systems to meet evolving urban traffic demands.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2025a">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2025a,
+  title     = {TransferLight: Zero-Shot Traffic Signal Control on any Road-Network},
+  author    = {Johann Schmidt and Frank Dreyer and Sayed Abid Hashimi and Sebastian Stober},
+  booktitle = {Association for the Advancement of Artificial Intelligence: Multi-Agent Reinforcement Learning for Transportation Autonomy Workshop},
+  year      = {2025},
+  doi       = {10.48550/arXiv.2412.09719},
+  url       = {https://arxiv.org/abs/2412.09719}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2025b">
+                  <a class="pub-thumb" href="https://arxiv.org/abs/2510.08178" target="_blank" rel="noopener" aria-label="Open paper: Robust Canonicalization through Bootstrapped Data Re-Alignment">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/Bootstrapping.webp" alt="First page of Robust Canonicalization through Bootstrapped Data Re-Alignment" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2025</span> <span class="badge bg-secondary text-2 fw-400">EurIPS: UPLB</span></p>
+                    <h3 class="text-5 text-white mb-2">Robust Canonicalization through Bootstrapped Data Re-Alignment</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong> and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">Conference on Neural Information Processing Systems (European Satellite): Unifying Perspectives on Learning Biases Workshop</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://arxiv.org/abs/2510.08178" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <span class="pub-code is-disabled" aria-disabled="true" title="Code not available"><i class="fab fa-github"></i>Code</span>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2025b"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2025b"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2025b">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Fine-grained visual classification (FGVC) tasks, such as insect and bird identification, demand sensitivity to subtle visual cues while remaining robust to spatial transformations. A key challenge is handling geometric biases and noise, such as different orientations and scales of objects. Existing remedies rely on heavy data augmentation, which demands powerful models, or on equivariant architectures, which constrain expressivity and add cost. Canonicalization offers an alternative by shielding such biases from the downstream model. In practice, such functions are often obtained using canonicalization priors, which assume aligned training data. Unfortunately, real-world datasets never fulfill this assumption, causing the obtained canonicalizer to be brittle. We propose a bootstrapping algorithm that iteratively re-aligns training samples by progressively reducing variance and recovering the alignment assumption. We establish convergence guarantees under mild conditions for arbitrary compact groups, and show on four FGVC benchmarks that our method consistently outperforms equivariant and canonicalization baselines while performing on par with augmentation.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2025b">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2025b,
+  title     = {Robust Canonicalization through Bootstrapped Data Re-Alignment},
+  author    = {Johann Schmidt and Sebastian Stober},
+  booktitle = {Conference on Neural Information Processing Systems (European Satellite): Unifying Perspectives on Learning Biases Workshop},
+  year      = {2025},
+  doi       = {10.48550/arXiv.2510.08178},
+  url       = {https://arxiv.org/abs/2510.08178}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2026a">
+                  <a class="pub-thumb" href="https://openreview.net/forum?id=8C4vVAbMW8" target="_blank" rel="noopener" aria-label="Open paper: Geometrically Constrained and Token-Based Probabilistic Spatial Transformers">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/TokenSTN.webp" alt="First page of Geometrically Constrained and Token-Based Probabilistic Spatial Transformers" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2026</span> <span class="badge bg-secondary text-2 fw-400">ECCV: BISCUIT</span></p>
+                    <h3 class="text-5 text-white mb-2">Geometrically Constrained and Token-Based Probabilistic Spatial Transformers</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong>, T. Siegl, M. Becker, and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">European Conference on Computer Vision: International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://openreview.net/forum?id=8C4vVAbMW8" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <a class="pub-code" href="https://github.com/johSchm/TokenSTN" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2026a"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2026a"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2026a">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Spatial transformations such as rotation and scale obscure the morphological cues needed for accurate image classification. Careful consideration is required for reliable use in high-stakes settings. A model should stay robust under such transformations, expose why a correction was applied, and signal when its input is ambiguous. While geometrically equivariant architectures provide a mathematically grounded solution, they often limit model flexibility through strict symmetry constraints and incur significant computational overhead. Spatial Transformer Networks (STNs) offer a data-driven, flexible alternative for learning pseudo-equivariances to affine transformations. However, STNs have historically been restricted to convolutional architectures and suffer from training instability. To address this, we introduce a novel STN framework. It leverages the global modeling capabilities of transformers to regress the affine transformation acting on the input. For this, we decompose affine transformations into interpretable primitives, regressed under adaptable geometric constraints, thereby preventing the training instability typically caused by degenerate transformations. By sharing weights between the localization network and the classification backbone, the framework requires minimal computational overhead. Extensive experiments on challenging insect biodiversity and medical imaging benchmarks demonstrate that our approach achieves superior predictive performance under diverse spatial transformations while maintaining high efficiency.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2026a">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2026a,
+  title     = {Geometrically Constrained and Token-Based Probabilistic Spatial Transformers},
+  author    = {Schmidt, Johann and Siegl, Tom and Becker, Martin and Stober, Sebastian},
+  booktitle = {European Conference on Computer Vision: International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=8C4vVAbMW8}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Schmidt2026b">
+                  <a class="pub-thumb" href="https://arxiv.org/abs/2509.15688" target="_blank" rel="noopener" aria-label="Open paper: PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/PPS.webp" alt="First page of PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2026</span> <span class="badge bg-secondary text-2 fw-400">BMVC</span></p>
+                    <h3 class="text-5 text-white mb-2">PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification</h3>
+                    <p class="text-white-50 mb-1"><strong class="text-white fw-500">J. Schmidt</strong>, S. Stober, J. Denzler, and P. Bodesheim</p>
+                    <p class="pub-venue text-primary mb-0">British Machine Vision Conference</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://arxiv.org/abs/2509.15688" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <a class="pub-code" href="https://github.com/johSchm/Saccader" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Schmidt2026b"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Schmidt2026b"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Schmidt2026b">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Fine-grained visual classification benefits from high-resolution inputs to resolve subtle, localized cues, but at the cost of large compute and memory budgets. Inspired by human saccadic vision, we propose a lightweight extension that turns any pretrained backbone with spatial feature maps into a saccadic classifier through glimpse-induced inference. The only architectural additions are a small priority head and a single cross-attention fusion block. The same weight-tied encoder encodes a downsampled peripheral glance, exposes the spatial feature map from which the priority head predicts a glimpse-priority distribution and re-encodes high-resolution glimpse crops sampled from that distribution in parallel. A sequential sampler with non-maximum suppression draws a runtime-configurable number of glimpses. A residual multi-head cross-attention block then fuses the glance against the glimpses. To improve the quality of the priority maps, we train the priority head by a per-glimpse information-gain target from a lightweight per-image memory bank. This requires no reinforcement learning. Complexity is linear in the number of glimpses and peak memory is decoupled from input resolution. Across nine benchmarks our framework improves consistently over its backbones.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Schmidt2026b">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Schmidt2026b,
+  author    = {Johann Schmidt and Sebastian Stober and Joachim Denzler and Paul Bodesheim},
+  title     = {PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification},
+  year      = {2026},
+  booktitle = {British Machine Vision Conference},
+  url       = {https://arxiv.org/abs/2509.15688}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="pub-card bg-dark rounded p-3 p-md-4 mb-4" id="pub-Lindner2026">
+                  <a class="pub-thumb" href="https://link.springer.com/chapter/10.1007/978-3-032-37673-2_10" target="_blank" rel="noopener" aria-label="Open paper: Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="images/publications/ITS2.webp" alt="First page of Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring" loading="lazy" onerror="this.remove()">
+                  </a>
+                  <div class="pub-body">
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2026</span> <span class="badge bg-secondary text-2 fw-400">ECML-PKDD</span></p>
+                    <h3 class="text-5 text-white mb-2">Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring</h3>
+                    <p class="text-white-50 mb-1">D. Lindner, <strong class="text-white fw-500">J. Schmidt</strong>, T. Siegl, M. Becker, and S. Stober</p>
+                    <p class="pub-venue text-primary mb-0">Machine Learning and Knowledge Discovery in Databases</p>
+                    <div class="pub-actions">
+                      <a class="pub-link" href="https://link.springer.com/chapter/10.1007/978-3-032-37673-2_10" target="_blank" rel="noopener">Read paper <i class="fas fa-arrow-right"></i></a>
+                      <a class="pub-code" href="https://github.com/johschm/its" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="abstract-Lindner2026"><i class="fas fa-align-left"></i>Abstract</button>
+                      <button class="pub-panel-toggle" type="button" aria-expanded="false" aria-controls="bib-Lindner2026"><i class="fas fa-quote-right"></i>BibTeX</button>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="abstract-Lindner2026">
+                    <div class="pub-panel-inner">
+                      <p class="pub-abstract">Pretrained vision models often misclassify inputs that are rotated, scaled, or sheared, even though these affine transformations leave the object class unchanged. Robustness is usually restored either by building equivariance into the architecture or by retraining with augmentation, both of which require changing or retraining the model. Test-time canonicalization instead leaves the classifier untouched. It undoes the transformation of each input, mapping it to a canonical form near the training distribution before classification. Existing canonicalizers, however, rely on a narrow set of logit-based energy scores and bespoke search procedures, leaving the design space of scoring functions and optimizers unexplored. We reframe canonicalization as out-of-distribution (OOD) detection, which lets any OOD score serve as the energy minimized over transformations. Across benchmarks ranging from handwritten characters and sketches to natural images and 3D point clouds, we systematically evaluate around twenty OOD scores and nine search algorithms, finding that distance-based scores paired with random search and local refinement perform best overall. Because canonicalizing an already-aligned input can hurt accuracy, we add a gated mechanism that transforms an input only when its OOD score indicates this is needed, preserving most in-distribution accuracy while retaining the robustness gains on transformed inputs.</p>
+                    </div>
+                  </div>
+                  <div class="pub-panel" id="bib-Lindner2026">
+                    <div class="pub-panel-inner">
+                      <div class="pub-bib-box">
+                        <button class="pub-bib-copy" type="button"><i class="far fa-copy"></i><span>Copy</span></button>
+<pre><code>@inproceedings{Lindner2026,
+  title     = {Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring},
+  author    = {Lindner, Dominik and Schmidt, Johann and Siegl, Tom and Becker, Martin and Stober, Sebastian},
+  booktitle = {Machine Learning and Knowledge Discovery in Databases},
+  doi       = {10.1007/978-3-032-37673-2_10},
+  pages     = {168--185},
+  year      = {2026},
+  url       = {https://link.springer.com/chapter/10.1007/978-3-032-37673-2_10}
+}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- /BUILD:publications -->
               </div>
             </div>
           </div>
@@ -388,88 +892,543 @@
     </section>
     <!-- Services end -->
 
-    <section id="coding" class="section bg-dark-2">
+    <section id="talks" class="section bg-dark-1">
+      <div class="container px-lg-5">
+        <!-- Heading -->
+        <div class="position-relative d-flex text-center mb-5">
+          <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Speaking</h2>
+          <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Talks<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+        </div>
+        <!-- Heading end-->
+        <!-- BUILD:talks-intro (generated from content/talks.md, do not edit here) -->
+        <p class="text-white-50 mb-5">Beyond writing papers, I enjoy presenting research to an audience, from conference talks and invited presentations to seminars at the university. I also took formal training in science communication and university teaching.</p>
+        <!-- /BUILD:talks-intro -->
+
+        <div class="row">
+          <div class="col-lg-11 mx-auto">
+            <div class="row">
+              <div class="col-md-12">
+                <!-- BUILD:talks (generated from content/talks.md, do not edit here) -->
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">September 2026</span> <span class="badge bg-secondary text-2 fw-400">Conference Oral</span></p>
+                    <h3 class="text-5 text-white mb-2">Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring</h3>
+                    <p class="text-primary mb-0">ECML-PKDD (Main Research Track and QCDS Workshop)</p>
+                    <p class="pub-refs"><a class="pub-ref" href="#pub-Lindner2026" title="Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring" aria-label="ECML-PKDD 2026, go to publication: Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring"><i class="fas fa-file-alt"></i>ECML-PKDD 2026</a></p>
+                    <p class="text-white-50 mt-2 mb-0">I presented our paper in two oral presentations (main track and workshop) and as a poster (main track).</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">December 2025</span> <span class="badge bg-secondary text-2 fw-400">Invited Talk</span></p>
+                    <h3 class="text-5 text-white mb-2">Iterative Spatial Canonicalization Modules for Deep Neural Networks</h3>
+                    <p class="text-primary mb-0">Friedrich Schiller University Jena</p>
+                    <p class="text-white-50 mt-2 mb-0">I presented our current work on <a class="pub-jump" href="#pub-Schmidt2024b" title="Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers">ITS</a> and the first ideas for <a class="pub-jump" href="#pub-Schmidt2026b" title="PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification">PPS</a>.</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">February 2025</span> <span class="badge bg-secondary text-2 fw-400">Conference Oral</span></p>
+                    <h3 class="text-5 text-white mb-2">TransferLight: Zero-Shot Traffic Signal Control on any Road-Network</h3>
+                    <p class="text-primary mb-0">AAAI (MALTA Workshop)</p>
+                    <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2025a" title="TransferLight: Zero-Shot Traffic Signal Control on any Road-Network" aria-label="AAAI: MALTA 2025, go to publication: TransferLight: Zero-Shot Traffic Signal Control on any Road-Network"><i class="fas fa-file-alt"></i>AAAI: MALTA 2025</a></p>
+                    <p class="text-white-50 mt-2 mb-0">I gave an oral presentation of our paper at the workshop.</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">Winter Semester 2024/25</span> <span class="badge bg-secondary text-2 fw-400">Seminar</span></p>
+                    <h3 class="text-5 text-white mb-2">Deep Learning Project Seminar: Smart Traffic Light Control</h3>
+                    <p class="text-primary mb-0">Otto von Guericke University Magdeburg, Germany</p>
+                    <p class="text-white-50 mt-2 mb-0">In three 90-minute lectures, I taught the basics of deep reinforcement learning and graph neural networks, using traffic signal control as the example. The students then formed small teams and implemented their own solutions for toy problems in a sandbox (using PyTorch and Weights &amp; Biases). I designed, planned and supervised the seminar entirely on my own.</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">January 2024</span> <span class="badge bg-secondary text-2 fw-400">Conference Oral</span></p>
+                    <h3 class="text-5 text-white mb-2">Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling</h3>
+                    <p class="text-primary mb-0">HICSS</p>
+                    <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2024a" title="Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling" aria-label="HICSS 2024, go to publication: Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling"><i class="fas fa-file-alt"></i>HICSS 2024</a></p>
+                    <p class="text-white-50 mt-2 mb-0">I gave an oral presentation of our paper.</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-award"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">March 2023</span> <span class="badge bg-secondary text-2 fw-400">Training</span></p>
+                    <h3 class="text-5 text-white mb-2">Presentation Seminar</h3>
+                    <p class="text-primary mb-0">National Institute for Science Communication (NaWik), Germany</p>
+                    <p class="text-white-50 mt-2 mb-0">Two-day seminar on professional science communication. It covered the core message, structure and storytelling, addressing different audiences, body language, and presenting online and on stage.</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-award"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">September 2021</span> <span class="badge bg-secondary text-2 fw-400">Training</span></p>
+                    <h3 class="text-5 text-white mb-2">University Teaching Workshops</h3>
+                    <p class="text-primary mb-0">Herbstakademie, Otto von Guericke University Magdeburg, Germany</p>
+                    <p class="text-white-50 mt-2 mb-0">Eleven workshops on academic teaching. Topics were activating students in small and large groups, hybrid teaching, course design in Moodle, visualizations for teaching and copyright in teaching.</p>
+                  </div>
+                </div>
+                <div class="talk-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">June 2021</span> <span class="badge bg-secondary text-2 fw-400">Conference Oral</span></p>
+                    <h3 class="text-5 text-white mb-2">Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning</h3>
+                    <p class="text-primary mb-0">IFAC INCOM</p>
+                    <p class="pub-refs"><a class="pub-ref" href="#pub-Schmidt2021" title="Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning" aria-label="IFAC INCOM 2021, go to publication: Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning"><i class="fas fa-file-alt"></i>IFAC INCOM 2021</a></p>
+                    <p class="text-white-50 mt-2 mb-0">I gave an oral presentation of our paper.</p>
+                  </div>
+                </div>
+                <!-- /BUILD:talks -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="section bg-dark-2">
+      <div class="container px-lg-5">
+        <!-- Heading -->
+        <div class="position-relative d-flex text-center mb-5">
+          <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Community</h2>
+          <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Service<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+        </div>
+        <!-- Heading end-->
+        <!-- BUILD:service-intro (generated from content/service.md, do not edit here) -->
+        <p class="text-white-50 mb-5">Research depends on people who read, question and guide the work of others. This is my part in it.</p>
+        <!-- /BUILD:service-intro -->
+
+        <div class="row">
+          <div class="col-lg-11 mx-auto">
+            <div class="row">
+              <div class="col-md-12">
+                <!-- BUILD:service (generated from content/service.md, do not edit here) -->
+                <div class="service-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-5 text-white mb-3">Reviewing</h3>
+                    <p class="text-white-50">I review full and short papers for machine learning and computer vision conferences.</p>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">ICLR 2027</span><span>6 full papers</span></li>
+                      <li><span class="pub-ref">NeurIPS 2026</span><span>4 full papers</span></li>
+                      <li><span class="pub-ref">ECCV 2026</span><span>1 full paper</span></li>
+                      <li><span class="pub-ref">ECCV: BISCUIT 2026</span><span>3 full papers (workshop)</span></li>
+                      <li><span class="pub-ref">NLDL 2026</span><span>4 short papers</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="service-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-comments"></i>
+                    </div>
+                    <p class="mb-2"><span class="badge bg-danger text-2 fw-400">2022 - 2026</span></p>
+                    <h3 class="text-5 text-white mb-3">Machine Learning Paper Club</h3>
+                    <p class="text-white-50">I initiated the paper club at Otto von Guericke University Magdeburg and moderated it together with colleagues. We met every two weeks to present and discuss recent papers in machine learning.</p>
+                  </div>
+                </div>
+                <div class="service-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-5 text-white mb-3">Thesis Supervision</h3>
+                    <p class="text-white-50">I supervise Bachelor's and Master's theses at the AILab, many of them together with partners from industry and research institutes. The theses themselves are not public. Select a title to read its abstract.</p>
+                    <ul class="thesis-list list-unstyled">
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-0">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Ablation Study: Adaptation of YOLO11 for 3D Object Detection on Point Cloud Data</span>
+                            <span class="thesis-item-meta">March 2026 · Master thesis · with Fraunhofer IFF</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-0">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">This thesis is part of a bigger project that attempts to secure a fenceless robot cell according to human safety standards with LiDAR sensors and a connected object detection system. The focus of this thesis is on the object detection solution, which operates on point cloud data in 3D space and uses a derived YOLO model architecture for fast and accurate bounding box predictions. Besides preserving YOLO's inherently high inference speed, high detection recall and precision are of utmost importance for the industrial human safety application. Hence, this thesis conducts an ablation study on the adaptation of the state-of-the-art 2D object detector YOLO11 to generate reliable 3D detections for the project's use case. The ablation study evaluates the feasibility and impact of different strategies for various neural network components of the newly proposed YOLO3D11 framework. Finally, the overall goal of this thesis is the proposal of a fast, precise, and reliable neural network architecture that shows superior detection performance and overcomes the limitations of the baseline model, Complex-YOLOv4.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-1">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Canonicalization-Based Adaptation of Pretrained Models to Affine Transformations via Out-of-Distribution Detection</span>
+                            <span class="thesis-item-meta">December 2025 · Master thesis · with University of Rostock</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-1">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Many real-world classification tasks require invariance to specific transformations. Pretrained classifiers, however, are usually not trained on data exhibiting different transformations, leading to poor performance on transformed data. This thesis investigates the adaptation of models to achieve robustness against such transformations, specifically affine transformations, without additional training or fine-tuning on augmented data. Our approach builds on the idea of canonicalization, mapping transformed versions of the same image to a representative. If the network can categorize the representative, it can categorize the original data point. In our case the representative is chosen as the one minimizing an out-of-distribution (OOD) score. We show that the use of more general OOD detection methods that make use of earlier-layer features improves accuracy in comparison to previous methods using only the logits. This is done for several datasets including MNIST, EMNIST and SI-Score. In addition, we assess which search algorithms are suitable for finding the minima of continuous transformations. We show that choosing a search algorithm appropriate for a given budget can lead to higher accuracy. We compare against a supervised baseline that trains a classifier on augmented data, and a baseline model that is trained to distinguish between transformed and untransformed data while still using canonicalization. While canonicalization cannot match an augmented classifier in accuracy, it does not require the training or fine-tuning of a large model. When compared to an augmented model, canonicalization loses more accuracy on data that is not transformed. To address this, we examine whether the inlier score can be used to determine if the data is transformed, and only canonicalize data deemed to be out-of-distribution. We show that this can reduce the accuracy loss on untransformed data while still recovering most of the accuracy on transformed data compared to always canonicalizing. We also investigate whether this method is capable of detecting and correcting mispredicted transformations generated by regression-based approaches.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-2">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Transformation-Invariant Neural Networks through Modulation</span>
+                            <span class="thesis-item-meta">May 2025 · Master thesis</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-2">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Convolutional Neural Networks (CNNs) have achieved remarkable success in computer vision tasks, yet they remain vulnerable to spatial transformations such as rotations and translations that are irrelevant to the semantic content of images. While data augmentation and architectural modifications like Spatial Transformer Networks have been proposed to address this limitation, they often require extensive retraining, introduce significant computational overhead, or fail to leverage the hierarchical representations already learned by pretrained models. This thesis presents a novel approach to achieving spatial transformation invariance through lightweight modulation modules that augment existing pretrained networks without modifying their core architecture. We thus introduce the Modulator, a recurrent neural network-based auxiliary module that operates alongside frozen pretrained models to provide input-conditional transformations. Unlike existing approaches that attempt to undo transformations in a single step or require complete architectural redesign, our method performs iterative, layer-wise corrections that progressively refine the feature representations. Our experimental evaluation on transformed versions of MNIST and FashionMNIST demonstrates significant improvements over baseline approaches. Our analysis also reveals that Modulators naturally learn to distribute transformations hierarchically, applying larger corrections at early layers where spatial information is abundant and minimal adjustments at deeper layers where representations are more abstract.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-3">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Head and Gaze Controllable Implicit Motions</span>
+                            <span class="thesis-item-meta">April 2025 · Master thesis · with Casablanca.AI GmbH</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-3">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Animating human heads with controllable head pose and gaze is a crucial task for applications in virtual avatars, video conferencing, and telepresence. In this thesis, we build upon the Implicit Motion Function (IMF) framework by introducing a novel pose-aware token architecture that enables fine-grained control over head and gaze direction while preserving expressions and identity. Our method includes a pose-aware token encoder that disentangles motion representations into three distinct tokens: pose, gaze, and expression-identity, derived from head pose and gaze vectors. These tokens guide a pose-aware decoder, which not only generates temporally coherent frames but also regresses head pose and gaze vectors to enforce alignment between control signals and visual output. To further enhance control over head motion, we propose an adversarial token disentanglement strategy that encourages separation of pose and expression features within the latent space. In addition, we introduce efficiency-oriented modifications to the IMF architecture, incorporating Linear Attention, PixelShuffle operations, and anti-aliasing techniques such as BlurPool-based downsampling and PixelShuffle upsampling. The proposed system is trained on the VoxCeleb1 dataset and demonstrates improved motion control, expression preservation, and computational efficiency. These contributions collectively extend the IMF framework with new capabilities, making it more expressive, controllable, and practical for real-world animation tasks.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-4">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Employing Hand and Object Information for Human Action Recognition in Industrial Assembly Scenarios</span>
+                            <span class="thesis-item-meta">September 2024 · Master thesis · with Fraunhofer IFF</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-4">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">The field of Human Action Recognition is primarily focused on the analysis of extensive datasets containing a comprehensive range of human actions. However, actions that are particularly subtle and challenging to distinguish, such as those observed in industrial assembly scenarios, remain underexplored. This thesis presents an action recognition model and the corresponding data pipeline that address this research gap. To this end, a model that works on pre-extracted hand poses, object coordinates and tool coordinates was developed. These were transformed to heatmaps by adapting the methodology presented by Duan et al. (2022). These heatmaps were integrated into the common human action recognition model SlowFast by Feichtenhofer et al. (2018). On a custom-recorded dataset containing approximately 700 action instances of an example scenario, the developed method increased action recognition accuracy by 5.5% compared to the standard SlowFast model.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-5">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Untersuchung von künstlichen neuronalen Netzen zur Detektion von Abweichungen in der Spurerkennung einer querführenden Fahrerassistenzfunktion</span>
+                            <span class="thesis-item-meta">May 2024 · Bachelor thesis</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-5">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Thanks to recent advances, automated and assisted driving has become one of the key future technologies in mobility. In this context, environmental perception through sensors plays a pivotal role in driver assistance functions. Typically, lane detection for lateral control is carried out using a camera. Deviations in lane recognition can lead to undesirable behavior. Therefore, it is important to detect anomalies in the lane data and deactivate the function in time if necessary. Due to the complexity of scenarios, rule-based approaches may reach their limits, making it advisable to deploy machine learning algorithms. Given their ability to learn patterns and relationships in data, they have great potential for application in error detection. This research aims to investigate the suitability of artificial neural networks for detecting deviations in lane recognition from the actual lane markings in the context of a lateral driver assistance function. First, a corresponding dataset is generated from test drives and processed. This is followed by the development of artificial neural networks, which will be trained, tested, and evaluated. The goal is to keep the scope of the procedure regarding storage capacity and runtime costs as low as possible to ensure suitability for real-time capability. Additionally, a rule-based algorithm is designed and tested. Finally, both methods are compared in terms of performance and critically assessed based on quality criteria and evaluation metrics. The results of the investigation show that the neural network is capable of effectively detecting lane recognition errors while achieving higher precision than the rule-based approach.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <div class="thesis-item-head">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Improving Interpolation in VAE using Riemannian Geometry</span>
+                            <span class="thesis-item-meta">March 2024 · Bachelor thesis</span>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-7">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Domain Randomization of Deep Reinforcement Learning Environments for Zero-Shot Traffic Signal Control</span>
+                            <span class="thesis-item-meta">December 2023 · Master thesis · with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-7">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">The escalating traffic demand in urban areas necessitates intelligent transportation engineering solutions that can regulate traffic more efficiently. The optimization of traffic signal control is considered a crucial factor in this regard. In recent years, deep reinforcement learning has gained traction as a potential solution concept to learn an adaptive signal controller, with promising initial results demonstrating its superiority over conventional solutions. However, the practical utility of such solutions is often constrained by a rigid model representation for the signal controller and a limited representation of traffic scenarios during the training phase. As a result, these methods severely overfit to the idiosyncrasies of the traffic environment used during training and fail to adapt to changing traffic conditions. To enhance adaptability, this thesis introduces TransferLight, a model architecture that employs neural message passing on a graph-structured state representation of an intersection to predict its next phase. This approach facilitates adaptability to arbitrarily structured intersections and is implemented for both a Q-learning and an advantage actor-critic algorithm. Additionally, a domain randomization mechanism is proposed, perturbing specific parameters associated with the road network and traffic within the environment during each training episode. This deliberate randomization aims to enhance the variability of traffic conditions encountered during the training phase. The efficacy of the proposed techniques is assessed by comparing them to established baseline solutions derived from conventional transportation engineering theories and reinforcement learning on both synthetically generated and real-world test scenarios. The findings reveal that TransferLight exhibits pronounced overfitting when trained on identical scenarios in each episode. Conversely, when the proposed domain randomization mechanism is leveraged to train TransferLight, generalization markedly improves and enables a zero-shot transfer to the test scenarios with a more consistent and robust performance, often being superior to the benchmark solutions, with respect to average travel time and throughput. However, upon closer examination within the context of an arterial road network scenario, the behavior of the trained model does not consistently align well with solutions specifically calibrated for this scenario. The latter exhibit improved signal progression, necessitating fewer stops for vehicles to traverse the arterial roadway. An estimation of model uncertainty using Monte Carlo dropout further indicates that despite the application of domain randomization during training, TransferLight's confidence in its predictions is not consistently high across traffic conditions, as the uncertainty distribution for some scenarios shows a noticeable shift or spread towards higher uncertainties. These observations imply that although the proposed domain randomization mechanism enhances the transfer performance of TransferLight to a wide range of traffic conditions, it does not implicitly equip the model with the necessary knowledge to act optimally and with a high degree of certainty on a consistent basis.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-8">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Deep Reinforcement Learning for Universal Quantum Gates</span>
+                            <span class="thesis-item-meta">October 2023 · Master thesis · with SaxonQ</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-8">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Quantum computers have the potential to lead to a paradigm shift in computing technology. However, while theoretical algorithms for quantum computers with which a range of computing problems previously deemed infeasible can be solved have been around for decades, their practical implementation is still an open problem. One of the main challenges in the construction of the required quantum computers is the implementation of universal, high-fidelity quantum gates. The controllability of quantum systems is limited by complex physical constraints which are difficult to overcome with classical methods. In recent years, Reinforcement Learning has gained increasing importance in quantum control and has been proven to be an effective tool in constrained environments. Additionally, due to the fault rates in current quantum computing technology, the length of feasible quantum circuits is limited. A quantum control method that is able to produce universal quantum gates with high fidelity would significantly shorten control circuits and make real-world applications more realistic. In this work, we apply a Dueling Double Deep Q-learning (DDDQL) approach to two quantum gate control tasks that are relevant for the development of universal quantum gates. We conduct our experiments in a restrictive environment with discretized control amplitudes and time steps for which we show that numerical control methods face difficulties. In the first task, we train DDDQL agents to generalize over changing physical environments. Our evaluation on the preparation of X and CNOT gates shows that this form of training leads to an overall more stable behavior. In the second task, we develop a training strategy based on curriculum learning that allows for DDDQL to generate control pulses for arbitrary single-qubit gates. We show that our learning strategy is able to produce control pulses that are adapted in length to a wide range of operations. We reach median fidelities above 0.999 for Rotational X gates and median fidelities above 0.99 for universal single-qubit gates. This shows that Deep Reinforcement Learning is able to produce high-fidelity control sequences for quantum gates and can generalize over a vast range of tasks. Therefore, on the road towards fault-tolerant universal quantum computing, Reinforcement Learning methods can be a crucial building block.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-9">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Employing Neural Radiance Fields in Robotics</span>
+                            <span class="thesis-item-meta">August 2023 · Master thesis · with Fraunhofer IFF</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-9">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">One key factor for successfully using robotics to automate complex tasks is a capable perception system. While there are a multitude of methods for the perception of the geometry of a robot's surroundings, most of these perform poorly for glossy or transparent surfaces. This thesis examines whether employing neural radiance fields (NeRFs), a deep learning approach of generating an object model from posed RGB images, can be beneficial in these cases. It also investigates which modifications to the method might be useful when using NeRFs for robot perception. It concludes that NeRFs are better suited than traditional methods for recovering the geometric shape of challenging objects with non-Lambertian surfaces. The input encoding appears to be crucial for a good reconstruction quality with an anti-aliased, trainable encoding likely performing best. An advanced sampling scheme appears to be beneficial for the reduction of noise in the recovered geometry. Another finding of this thesis is that the quality of the data is essential for a successful reconstruction. The fidelity of the background removal and the accuracy of recovered camera parameters seem to be particularly impactful. Joint optimization of camera parameters is possible, but needs to be done carefully to ensure that the found values are physically sound. The best reconstruction quality can be reached with many training views, but depth supervision or a semantic consistency loss might help to increase the quality when few views are available. While the reconstruction results of NeRFs are impressive, an efficient implementation is deemed indispensable for making the method competitive in terms of computational cost when compared to traditional depth sensing approaches. It can be expected that future research will further improve the usefulness of NeRFs, simplifying their integration into a robotic system and rendering their use beneficial for many scenarios of robot perception.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-10">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Solving Sequencing Problems Using Deep Reinforcement Learning</span>
+                            <span class="thesis-item-meta">June 2023 · Master thesis · with Trumpf</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-10">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">This master's thesis focuses on solving combinatorial optimization problems, specifically the Traveling Salesman Problem (TSP) with instances consisting of 10 and 20 cities, using the model-free A3C (Asynchronous Advantage Actor-Critic) algorithm implemented in the Ray framework. The research investigates the effectiveness of two different DRL agents: one with a pointer network as the actor and another with a transformer as the actor. The objective is to leverage the capabilities of DRL to predict optimal tours for the TSP and compare the results with known optimal tours. Combinatorial optimization problems pose computational challenges, requiring lengthy algorithms to be rerun for each new instance. By implementing the A3C algorithm on the Ray framework, the thesis explores the efficiency and scalability of the solution. The TSP is reformulated as a Markov decision process to enable the DRL agents to learn a meta-policy applicable to various TSP instances, eliminating the need for instance-specific policies. The implementation on Ray provides a distributed and scalable training environment, allowing for efficient utilization of computational resources. The performance of the proposed DRL agents is evaluated and compared against each other, as well as against existing DRL agents developed by Bello et al. The experimental results showcase the effectiveness of DRL in solving combinatorial optimization problems and highlight the advantages of leveraging the Ray framework for distributed and parallel training.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-11">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Ampelsteuerung mit Graph Attention Networks und Deep Reinforcement Learning für Fahrzeitminimierung</span>
+                            <span class="thesis-item-meta">May 2023 · Bachelor thesis · with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-11">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Ongoing urbanization poses a variety of challenges to many areas of life. In particular, the growing traffic density in urban areas is a complex problem. Meeting this challenge requires advanced solutions that improve the efficiency of traffic flow and at the same time minimize environmental impact. Traffic lights are a central component of this optimization, as they directly influence traffic flow and road safety. This thesis presents an approach to traffic signal control based on Graph Attention Networks and Deep Reinforcement Learning. It evaluates whether such a model can realize a state-of-the-art traffic signal controller. In particular, it examines whether established methods such as Fixed Time or Max Pressure can be surpassed in control effectiveness. The main goal of the controller is to minimize the travel time of the individual vehicles. To evaluate the effectiveness of the model, several experiments were conducted that recreate different traffic scenarios such as nighttime or rush-hour traffic. The results show that, under the conditions set in this thesis, it was not possible to realize a more efficient traffic signal controller. For medium traffic volumes the controller is clearly less efficient than Fixed Time and Max Pressure. At extremely high traffic density it is about as effective as Max Pressure. For particularly low traffic volumes the model is entirely unsuitable. The literature suggests that implementing such systems is feasible in principle. (Translated from German.)</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-12">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Deep Reinforcement Learning-Based Proactive Traffic Light Control with Graph Neural Networks to Minimize CO2 Emissions</span>
+                            <span class="thesis-item-meta">May 2023 · Master thesis · with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-12">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Deep Reinforcement Learning (DRL) algorithms have recently been used extensively to create solutions for adaptive traffic signal control for reducing traffic congestion, improving travel time and improving throughput of intersections. Many of the methods are multi-agent reinforcement learning approaches which assign an agent to each intersection for effective traffic control. With these methods it becomes difficult to establish a cooperation between agents as the number increases. Some works also propose single-agent solutions which accept the entire environment as its state space, which again suffers from the problem of scalability when it comes to implementation to a large number of intersections. This thesis proposes a method which uses a single-agent solution with parameter sharing for all intersections, which is both scalable and generalizable over different kinds of intersections. The main objective is to explore whether these methods can minimize the CO2 emissions in a network of intersections without compromising on traffic flow as compared to some of the classical traffic control algorithms. Additionally, it suggests the use of Graph Neural Networks (GNN) along with the DRL methods to improve communication and interaction between neighboring intersections. The results show that DRL methods can successfully minimize CO2 emissions without compromising the traffic flow and also provide solutions that are scalable and generalizable and work on larger networks as well as intersections with different numbers of incoming lanes. The GNN-based DRL methods also work better than the classical traffic control algorithms for most of the scenarios and give a slight advantage in performance over the original DRL method. They outperform the DRL methods marginally in terms of minimizing the emissions. They work better in larger networks and can also generalize well over different types of intersections. The correlation between the traffic flow metrics and the emission also shows how improving traffic flows overall by reducing waiting time or the number of waiting vehicles leads to lower emissions.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-13">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Proaktive Ampelschaltung mithilfe von Deep Multi-Agent Reinforcement Learning zur Fahrzeitminimierung</span>
+                            <span class="thesis-item-meta">May 2023 · Bachelor thesis · with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-13">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Urban traffic problems are a major challenge of the 21st century, manifesting in congestion, longer travel times and negative environmental effects. Intelligent transportation systems offer promising approaches to make traffic more efficient and to overcome these problems. This Bachelor's thesis investigates the proactive control of traffic lights with Deep Multi-Agent Reinforcement Learning to improve the efficiency of traffic flow and the adaptability of traffic signal control systems. The Multi-Agent Advantage Actor-Critic (MA2C) algorithm is presented and its performance is analyzed in different traffic scenarios, with particular attention to the effects of traffic volumes and traffic topologies. In addition, the influence of the MA2C algorithm on traffic-related emissions is examined. The results show that the MA2C algorithm is able to control traffic lights effectively and proactively, and that its application leads to a significant reduction in travel times and environmental impact. This thesis contributes to a deeper understanding of Deep Multi-Agent Reinforcement Learning in traffic control and points to new approaches for a more sustainable and efficient design of urban traffic systems. (Translated from German.)</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-14">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Sim-to-Real Transfer für eine mit Reinforcement-Learning programmierte Robotersteuerung</span>
+                            <span class="thesis-item-meta">April 2023 · Master thesis</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-14">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Reinforcement Learning has in recent years successfully been applied to many tasks. However, most development has been in simulated environments, which have the advantage of autonomously collecting samples faster than real time and avoid safety concerns. In domains such as robotics, a simulation is not sufficient due to unpredictable influences. The trained policies need to be applicable on a real robot as well, which leads to new problems, referred to as domain transfer. In this thesis, a robot controller is trained only in simulation. For the purpose of evaluation a Sim-to-Sim transfer is done, before testing it on a real robot. To improve the transfer, a combination of domain randomization and an improved simulation is used. It achieves a state-of-the-art success rate of 92.0 ± 5.3% on the transfer without any prior knowledge and no further training on the real robot.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-15">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">A Neural Network Performance Study: 3D Object Detection on Point Cloud Data for a Fenceless Robot Safety Application</span>
+                            <span class="thesis-item-meta">March 2023 · Bachelor thesis · with Fraunhofer IFF</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-15">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">This thesis is part of a bigger project that attempts to secure a fenceless robot cell according to human safety standards with LiDAR sensors and a connected object detection system. The focus of this thesis is on the object detection solution, which operates on 3D point cloud data and uses machine learning methods for fast and accurate bounding box predictions. This thesis investigates the state-of-the-art deep learning approaches to reliably detect objects in 3D point cloud data. Fast inference speeds as well as high detection and classification accuracy are of utmost importance for the industrial human safety application. Based on the project requirements the two best-suited neural networks are adapted to the project's use case and further improvements to their architecture are made. The resulting networks are evaluated on different data sets in order to deeply analyze their detection and classification performance with an emphasis on human safety. Finally, the overall goal of this thesis is the proposal of a fast and accurate neural network architecture that can be deployed in the project’s industrial human safety application for fenceless robot cells.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-16">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Visualization and Evaluation of High-Dimensional Structures as Associations of Clusters in Subspaces</span>
+                            <span class="thesis-item-meta">January 2023 · Master thesis</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-16">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">Visualizing, interpreting and clustering high-dimensional data is a challenging task in the field of information visualization. One major problem when clustering high-dimensional data is that it suffers from the curse of dimensionality, which means that in order to analyze high-dimensional data either an enormous amount of data is needed, or the dimensionality has to be reduced using dimension reduction techniques or subspace clustering. There have been many approaches that use different projection techniques in order to show high-dimensional data in two dimensions and use interaction methods such as zooming, dragging or transforming dimensions. For visualizing subspace clusterings, there have been different approaches that try to compare and visualize different subspaces or assess the quality of the subspace clustering results. In this thesis, I develop a new approach for visualizing cluster connections between different subspaces using the concept of association rules. A user interface is created in order to test the approach on different data sets and to change the parameters of the algorithm. In the end, I evaluate the stability of the approach and test its sensitivity to the curse of dimensionality.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="thesis-item">
+                        <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-17">
+                          <span class="thesis-item-text">
+                            <span class="thesis-item-title">Forecasting Gasket Failures in H2 Refueling Stations Using Deep Multi-Task Learning</span>
+                            <span class="thesis-item-meta">March 2022 · Master thesis · with Dr. Ecklebe GmbH</span>
+                          </span>
+                          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="pub-panel" id="thesis-abstract-17">
+                          <div class="pub-panel-inner">
+                            <p class="pub-abstract">In the current day and age, a popular alternative to Internal Combustion Engine Vehicles (ICEVs) is Electric Vehicles (EVs). While the former use internal combustion of a highly flammable liquid like gasoline or diesel to generate the rotational force required to turn the wheels of an automobile, the latter use electric motors for the same purpose. EVs can be categorized into two major subcategories: those that use a battery as a power source, called Battery Electric Vehicles (BEVs), and those that use a gas like H2 in combination with a fuel cell, called Fuel Cell Electric Vehicles (FCEVs). FCEVs are often referred to as environmentally neutral since the byproducts of an H2-powered automobile are water and oxygen. H2 is difficult to store in large amounts because it needs to be stored at high pressures, both at the fuel station and in the fuel tank of an automobile. These pressures range from 300 to 700 bar. With the advent of Industry 4.0, more and more manufacturers of H2 compressors use onboard intelligent systems to log data readings, which creates an inflow of sensor data. Many quantities, such as pressure and temperature readings at sealing gaskets and drive pressures during H2 compression, are logged constantly during the various phases of the refueling process and are used to monitor the running statistics of an H2 refueling system. Currently, such systems are monitored by humans to detect potential risk events in the near future, which is error-prone and often requires expert knowledge. This thesis models the current running state of a system to produce accurate near-future forecasts for one such component, and proposes a method to detect future anomalies that can be used to mitigate or detect risk events. Considering the inherent time-series nature of the logged data, the work proposes a novel approach for this preemptive warning solution. We model it as a multivariate, multi-step time-series forecasting problem, using a combination of Convolutional Neural Network (CNN) layers and Long Short-Term Memory (LSTM) cells to produce the forecasts in a regressive formulation. The risk-event detection is then formulated as a rule-based post-processing step involving expert knowledge, which is provided as a runtime-configurable parameter. Further, the forecasts are compared with naive statistical forecasting approaches like Exponential Smoothing. For the scope of this work, datasets from seven H2 refueling stations across Switzerland are considered. Furthermore, this thesis lays out the extraction, transformation and preprocessing of the sensor measurements from these compressors.</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /BUILD:service -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="coding" class="section bg-dark-1">
       <div class="container px-lg-5">
         <!-- Heading -->
         <div class="position-relative d-flex text-center mb-5">
           <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Coding</h2>
-          <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Languages<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+          <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">Stack &amp; Tools<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
         </div>
         <!-- Heading end-->
-        <p class="text-white-50 mb-0">Fluent in German (native) and English (daily use), I seamlessly navigate international
-          professional environments. My linguistic repertoire extends to multiple programming languages, acquired throughout
-          my career. This diverse language skill set, both human and computer, enables me to adapt quickly to various technical
-          challenges and communicate effectively across disciplines. </p>
+        <!-- BUILD:coding-intro (generated from content/coding.md, do not edit here) -->
+        <p class="text-white-50 mb-0">These are the tools I work with every day, followed by the languages I have picked up since 2014.</p>
+        <!-- /BUILD:coding-intro -->
         <br><br><br>
 
         <div class="row">
           <div class="col-lg-11 mx-auto">
             <div class="row">
               <div class="col-md-12">
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
+                <!-- BUILD:coding (generated from content/coding.md, do not edit here) -->
+                <div class="coding-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-layer-group"></i>
+                    </div>
+                    <p class="text-primary-50 mb-0">current</p>
+                    <h3 class="text-white">Foundation Models</h3>
+                    <p class="text-white-50">I build on pretrained foundation models, either adapting them to new tasks or keeping them frozen and adding small modules in front of them.</p>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">Vision</span><span>Swin, SAM, EVA, ConvNeXtV2</span></li>
+                      <li><span class="pub-ref">Vision and text</span><span>CLIP</span></li>
+                      <li><span class="pub-ref">Audio</span><span>EnCodec</span></li>
+                      <li><span class="pub-ref">Audio and text</span><span>CLAP</span></li>
+                    </ul>
                   </div>
-                  <p class="text-primary-50 mb-0">since 2020</p>
-                  <h3 class="text-white">Prototyping with Python</h3>
-                  <p class="text-white-50 mb-0">During my Master's program, I was introduced to Python, which quickly became an
-                    invaluable tool in my programming arsenal. Its intuitive syntax and extensive libraries allow me to quickly
-                    implement and test concepts, making it an ideal language for experimental work.
-                    I primarily leverage Python for rapid prototyping, especially when
-                    working on publications or exploring new ideas. While I have utilized Python's
-                    just-in-time (JIT) compilation to enhance performance in certain scenarios, I would still prefer to turn to low-level
-                    languages like C or C++ when speed is a critical factor.</p>
                 </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://cplusplus.com/"><i class="fas fa-copyright"></i></a>
+                <div class="coding-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-robot"></i>
+                    </div>
+                    <p class="text-primary-50 mb-0">current</p>
+                    <h3 class="text-white">LLM Tooling</h3>
+                    <p class="text-white-50">I use large language models as development tools, both hosted and on my own hardware.</p>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">Local models</span><span>llama.cpp</span></li>
+                      <li><span class="pub-ref">Coding agents</span><span>Claude Code with MCP, agents and skills</span></li>
+                    </ul>
                   </div>
-                  <p class="text-primary-50 mb-0">2014-2018</p>
-                  <h3 class="text-white">Efficiency with C/C++ and Assembler</h3>
-                  <p class="text-white-50 mb-0">I self-taught C programming from Dirk Louis's book, meticulously coding every
-                    example to build a solid foundation from the ground up. During my Bachelor's, I solidified my knowledge by taking
-                    courses in Assembler, C, C++, and Software Engineering. This academic pursuit culminated in a project where I programmed a
-                    Rubik's Cube solver in C++, showcasing my ability to apply complex algorithms and problem-solving skills in a practical context.</p>
                 </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://cplusplus.com/"><i class="fab fa-java"></i></a>
+                <div class="coding-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-brain"></i>
+                    </div>
+                    <p class="text-primary-50 mb-0">since 2020</p>
+                    <h3 class="text-white">Deep Learning Stack</h3>
+                    <p class="text-white-50">New projects run on PyTorch. My earlier projects and papers were built with TensorFlow.</p>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">Training</span><span>PyTorch, PyTorch Lightning, Hugging Face (Hub, Accelerate), Torch Hub, timm</span></li>
+                      <li><span class="pub-ref">Vision</span><span>torchvision, OpenCV, Kornia, einops</span></li>
+                      <li><span class="pub-ref">Geometry</span><span>escnn / e2cnn (equivariant networks), PyTorch Geometric</span></li>
+                      <li><span class="pub-ref">Experiments</span><span>Weights &amp; Biases, MLflow, Optuna, Hydra, TorchMetrics</span></li>
+                      <li><span class="pub-ref">Data and analysis</span><span>NumPy, pandas, SciPy, scikit-learn, Matplotlib, seaborn</span></li>
+                      <li><span class="pub-ref">Earlier work</span><span>TensorFlow</span></li>
+                    </ul>
                   </div>
-                  <p class="text-primary-50 mb-0">2014-2021</p>
-                  <h3 class="text-white">App and Game Dev with C# and Java</h3>
-                  <p class="text-white-50 mb-0">Similar to C/C++ I self-taught Java from a book by Hans-Peter Habelitz.
-                    My primary motivation was to develop Android applications, leveraging Java's widespread use in mobile development.
-                    My exploration extended to mobile game development, where I challenged myself to create an
-                    Android game using C# and Unity (apps can be found on GitHub).
-                    While I found the experience engaging and instructive, I ultimately decided to refocus my efforts on
-                    areas more aligned with my long-term career goals.
-                  </p>
                 </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://cplusplus.com/"><i class="fab fa-html5"></i></a>
+                <div class="coding-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-code-branch"></i>
+                    </div>
+                    <p class="text-primary-50 mb-0">since 2018</p>
+                    <h3 class="text-white">Software Engineering and Backend</h3>
+                    <p class="text-white-50">Every project lives in its own repository. In PASCAL I built the multi-node system with FastAPI. I track experiment results in SQL databases, which also back the open educational resources platform of the AI-Engineering project.</p>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">Version control</span><span>Git, GitHub, self-hosted GitLab</span></li>
+                      <li><span class="pub-ref">Services</span><span>FastAPI, Flask</span></li>
+                      <li><span class="pub-ref">Databases</span><span>PostgreSQL, MySQL</span></li>
+                      <li><span class="pub-ref">Web</span><span>Next.js, Tailwind CSS, Shibboleth SAML SSO (AI-Engineering platform)</span></li>
+                    </ul>
                   </div>
-                  <p class="text-primary-50 mb-0">since 2018</p>
-                  <h3 class="text-white">Web Dev with HTML, JS and many more</h3>
-                  <p class="text-white-50 mb-0">I possess fundamental skills in HTML and CSS, and have published several
-                    small games using JavaScript. My experience extends to working with Jekyll, Hexo, NodeJS, and Flask.
-                    Additionally, I supervised a web development project utilizing NextJS with a MySQL backend, Tailwind CSS,
-                    and Shibboleth SAML SSO, demonstrating my ability to manage complex, full-stack web applications.
-                  </p>
                 </div>
-                <div class="featured-box style-3 mb-5">
-                  <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-                    <a href="https://cplusplus.com/"><i class="fab fa-linux"></i></a>
+                <div class="coding-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fab fa-linux"></i>
+                    </div>
+                    <p class="text-primary-50 mb-0">since 2016</p>
+                    <h3 class="text-white">Multi-GPU Training on Linux</h3>
+                    <p class="text-white-50">I train my models on a multi-GPU cluster, in parallel across several GPUs with Hugging Face Accelerate. I have worked on Linux and in the shell since my Bachelor's degree.</p>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">Compute</span><span>multi-GPU cluster, distributed training with Accelerate</span></li>
+                      <li><span class="pub-ref">Deployment</span><span>TensorRT, edge hardware</span></li>
+                    </ul>
                   </div>
-                  <p class="text-primary-50 mb-0">since 2016</p>
-                  <h3 class="text-white">Unix-based Shells and Linux</h3>
-                  <p class="text-white-50 mb-0">I have been working with Unix-based systems since my Bachelor's degree,
-                    developing a solid foundation in shell interactions and command-line operations. My experience includes
-                    working with various Linux distributions, which has broadened my understanding of different environments.
-                    I've applied these skills in practical scenarios, such as running experiments on GPU clusters through remote
-                    connections, demonstrating my ability to utilize computing resources for research purposes.
-                  </p>
                 </div>
+                <div class="coding-card bg-dark rounded p-4 mb-4">
+                  <div class="featured-box style-3">
+                    <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
+                      <i class="fas fa-code"></i>
+                    </div>
+                    <p class="text-primary-50 mb-0">since 2014</p>
+                    <h3 class="text-white">Programming Languages</h3>
+                    <ul class="tag-rows list-unstyled text-white-50">
+                      <li><span class="pub-ref">Python</span><span>my main language for research and project work, since my Master's</span></li>
+                      <li><span class="pub-ref">C / C++</span><span>Bachelor's courses (with Assembler), an embedded GUI in C for my Bachelor thesis, a Rubik's Cube solver in C++</span></li>
+                      <li><span class="pub-ref">Java / C#</span><span>Android apps and a Unity game, on GitHub</span></li>
+                      <li><span class="pub-ref">Web</span><span>JavaScript, HTML and CSS for small browser games, Jekyll, Hexo, Node.js</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /BUILD:coding -->
               </div>
             </div>
           </div>
@@ -672,60 +1631,17 @@
 <!--    </section>-->
 <!--    &lt;!&ndash; Testimonial end &ndash;&gt; -->
     
-    <!-- Contact Me
-    ============================================= -->
-    <section id="contact" class="section bg-dark-1">
-      <div class="container px-lg-5">
-        <!-- Heading -->
-        <div class="featured-box style-3 mb-5">
-          <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-            <a href="https://ai.ovgu.de/Staff/Schmidt.html"><i class="fas fa-address-book"></i></a>
-          </div>
-          <h3 class="text-white">Work Address</h3>
-          <p class="text-white-50 mb-0">Otto-von-Guericke University, Universitätsplatz 2, Magdeburg, Germany</p>
-          <p class="text-white-50 mb-0">Institute of Intelligent and Cooperating Systems</p>
-          <p class="text-white-50 mb-0">Artificial Intelligence Lab, G29-022</p>
-        </div>
-        <div class="featured-box style-3 mb-5">
-          <div class="featured-box-icon text-primary bg-dark-1 shadow-sm rounded">
-            <a href="mailto:johann.schmidt@ovgu.de"><i class="fas fa-envelope"></i></a>
-          </div>
-          <h3 class="text-white">Mail</h3>
-          <p class="text-white-50 mb-0">johann.schmidt@ovgu.de</p>
-        </div>
-<!--          <div class="col-md-8 col-xl-9 order-0 order-md-1">-->
-<!--            <h2 class="mb-3 text-5 text-white text-uppercase text-center text-md-start">Send us a note</h2>-->
-<!--			<form id="contact-form" class="form-dark" action="php/mail.php" method="post">-->
-<!--			  <div class="row g-4">-->
-<!--                <div class="col-xl-6">-->
-<!--                    <input name="name" type="text" class="form-control" required placeholder="Name">-->
-<!--                </div>-->
-<!--                <div class="col-xl-6">-->
-<!--                    <input name="email" type="email" class="form-control" required placeholder="Email">-->
-<!--                </div>-->
-<!--				<div class="col">-->
-<!--					<textarea name="form-message" class="form-control" rows="5" required placeholder="Connect with me..."></textarea>-->
-<!--				</div>-->
-<!--              </div>-->
-<!--              <p class="text-center mt-4 mb-0">-->
-<!--				<button id="submit-btn" class="btn btn-primary rounded-pill d-inline-flex" type="submit">Send Message</button>-->
-<!--              </p>-->
-<!--            </form>-->
-<!--          </div>-->
-        </div>
-    </section>
-    <!-- Contact Me end --> 
     
   </div>
   <!-- Content end --> 
   
   <!-- Footer
   ============================================= -->
-  <footer id="footer" class="section footer-dark bg-dark-1">
+  <footer id="footer" class="section footer-dark bg-dark-2">
     <div class="container px-lg-5">
       <div class="row">
         <div class="col-lg-6 text-center text-lg-start">
-          <p class="mb-3 mb-lg-0">Copyright © 2024 <a href="#" class="fw-500">Johann Schmidt</a>. All Rights Reserved.</p>
+          <p class="mb-3 mb-lg-0">Copyright © <span class="current-year">2024</span> <a href="#" class="fw-500">Johann Schmidt</a>. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6">
           <ul class="nav nav-separator nav-separator-light justify-content-center justify-content-lg-end">
@@ -745,67 +1661,62 @@
 ============================================= --> 
 <a id="back-to-top" class="rounded-circle" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
 
-<!-- Terms & Policy Modal
-================================== -->
+<!-- BUILD:legal (generated from content/legal.md, do not edit here) -->
 <div id="terms-policy" class="modal fade" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content bg-dark-2 text-light">
       <div class="modal-header border-secondary">
-        <h5 class="modal-title text-white">Terms & Policy</h5>
+        <h5 class="modal-title text-white">Terms &amp; Policy</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-4">
-        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        <h3 class="text-white mb-3 mt-4 mt-4">Terms of Use</h3>
-        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Simply dummy text of the printing and typesetting industry.</p>
-        <h5 class="text-white text-4 mt-4">Part I – Information Simone collects and controls</h5>
-        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <h5 class="text-white text-4 mt-4">Part II – Information that Simone processes on your behalf</h5>
-        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <h5 class="text-white text-4 mt-4">Part III – General</h5>
-        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <h3 class="text-white mb-3 mt-4">Privacy Policy</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-        <ol class="lh-lg">
-          <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
-          <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
-          <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-        </ol>
+      <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      <h3 class="text-white mb-3 mt-4">Terms of Use</h3>
+      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Simply dummy text of the printing and typesetting industry.</p>
+      <h5 class="text-white text-4 mt-4">Part I – Information Simone collects and controls</h5>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <h5 class="text-white text-4 mt-4">Part II – Information that Simone processes on your behalf</h5>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <h5 class="text-white text-4 mt-4">Part III – General</h5>
+      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <h3 class="text-white mb-3 mt-4">Privacy Policy</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <ol class="lh-lg">
+        <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
+        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
+        <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+      </ol>
       </div>
     </div>
   </div>
 </div>
-<!-- Terms & Policy Modal End --> 
-
-<!-- Disclaimer Modal
-================================== -->
 <div id="disclaimer" class="modal fade" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content bg-dark-2 text-light">
       <div class="modal-header border-secondary">
-        <h5 class="modal-title text-white">Copyright & Disclaimer</h5>
-		<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title text-white">Copyright &amp; Disclaimer</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-4">
-        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-        <ul class="lh-lg">
-          <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
-          <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
-          <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-          <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
-        </ul>
+      <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <ul class="lh-lg">
+        <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
+        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
+        <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+        <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+      </ul>
       </div>
     </div>
   </div>
 </div>
-<!-- Disclaimer Modal End --> 
+<!-- /BUILD:legal --> 
 
 <!-- JavaScript --> 
 <script src="vendor/jquery/jquery.min.js"></script> 
@@ -830,6 +1741,180 @@
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
 <!-- Custom Script --> 
 <script src="js/theme.js"></script>
+<script>
+  // Resume cards: expand / collapse
+  document.querySelectorAll('.resume-card-header').forEach(function (header) {
+    function toggle() {
+      var card = header.closest('.resume-card');
+      var open = card.classList.toggle('is-open');
+      header.setAttribute('aria-expanded', open);
+    }
+    header.addEventListener('click', toggle);
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Subtle entrance animations: fade elements in as they scroll into view
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var groups = [
+      '#content section:not(#home) .position-relative.d-flex.text-center.mb-5',
+      '#about .col-lg-7, #about .col-lg-5',
+      '#about .brands-grid .featured-box',
+      '#resume .resume-card',
+      '#thesis > .container > h3, #thesis > .container > h4, #thesis > .container > p, #thesis .thesis-card',
+      '#publications .pub-card',
+      '#talks > .container > p, #talks .talk-card',
+      '#service > .container > p, #service .service-card',
+      '#coding > .container > p, #coding .coding-card'
+    ];
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    groups.forEach(function (selector) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        // stagger siblings slightly so lists cascade in
+        var index = Array.prototype.indexOf.call(el.parentElement.children, el);
+        el.style.setProperty('--reveal-delay', Math.min(index, 4) * 70 + 'ms');
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+    });
+  })();
+
+  // Thin reading-progress bar at the top
+  (function () {
+    var bar = document.querySelector('.scroll-progress');
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+
+  document.querySelectorAll('.current-year').forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+
+  // Hero: "Get in contact" reveals LinkedIn / email options
+  (function () {
+    var wrap = document.querySelector('.hero-contact');
+    if (!wrap) return;
+    var toggle = wrap.querySelector('.hero-contact-toggle');
+    var options = wrap.querySelectorAll('.hero-contact-options .btn');
+    function setOpen(open) {
+      wrap.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open);
+      options.forEach(function (a) { a.tabIndex = open ? 0 : -1; });
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!wrap.classList.contains('is-open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && wrap.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
+    });
+    // Email: show the address in the button and copy it (works without a mail app)
+    wrap.querySelectorAll('.contact-email').forEach(function (btn) {
+      var rev = function (s) { return s.split('').reverse().join(''); };
+      var address = rev(btn.dataset.user) + '@' + rev(btn.dataset.domain);
+      var icon = btn.querySelector('i'), label = btn.querySelector('span');
+      btn.addEventListener('click', function () {
+        label.textContent = address;
+        btn.classList.add('is-revealed');
+        btn.setAttribute('aria-label', 'Copy email address ' + address);
+        var copied = function () {
+          icon.className = 'fas fa-check me-2';
+          clearTimeout(btn._reset);
+          btn._reset = setTimeout(function () { icon.className = 'far fa-copy me-2'; }, 1800);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(address).then(copied, function () { icon.className = 'far fa-copy me-2'; });
+        } else {
+          icon.className = 'far fa-copy me-2';
+        }
+      });
+    });
+  })();
+
+  // Paper tags and in-text paper links scroll to the publication card and highlight it briefly
+  document.querySelectorAll('a.pub-ref, a.pub-jump').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var card = document.getElementById(link.getAttribute('href').slice(1));
+      if (!card) return;
+      e.preventDefault();
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      card.classList.add('is-highlighted');
+      clearTimeout(card._highlight);
+      card._highlight = setTimeout(function () { card.classList.remove('is-highlighted'); }, 2600);
+    });
+  });
+
+  // Service: supervised theses, click to unfold the abstract
+  document.querySelectorAll('button.thesis-item-head').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open);
+      document.getElementById(btn.getAttribute('aria-controls')).classList.toggle('is-open', open);
+    });
+  });
+
+  // Publications: Abstract / BibTeX panels (one open per card) + copy to clipboard
+  document.querySelectorAll('.pub-panel-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.closest('.pub-card').querySelectorAll('.pub-panel-toggle').forEach(function (other) {
+        var isThis = other === btn;
+        other.setAttribute('aria-expanded', isThis && open);
+        document.getElementById(other.getAttribute('aria-controls')).classList.toggle('is-open', isThis && open);
+      });
+    });
+  });
+  document.querySelectorAll('.pub-bib-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.parentElement.querySelector('code');
+      var done = function () {
+        btn.classList.add('is-copied');
+        btn.querySelector('i').className = 'fas fa-check';
+        btn.querySelector('span').textContent = 'Copied';
+        clearTimeout(btn._reset);
+        btn._reset = setTimeout(function () {
+          btn.classList.remove('is-copied');
+          btn.querySelector('i').className = 'far fa-copy';
+          btn.querySelector('span').textContent = 'Copy';
+        }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code.textContent).then(done);
+      } else {
+        var range = document.createRange();
+        range.selectNodeContents(code);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand('copy');
+        sel.removeAllRanges();
+        done();
+      }
+    });
+  });
+</script>
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcv_REpAAAAAPoYeE1o6n-rjHKHzOueMN42090c" async defer></script>
 

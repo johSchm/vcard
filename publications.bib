@@ -1,0 +1,168 @@
+% Publications shown on the website.
+%
+% Paste entries straight from Google Scholar / DBLP / the publisher, then add:
+%   abbr = {ICML}          short venue tag on the card   (optional)
+%   pdf  = {ITS.pdf}       file in res/papers/ used for the preview image (optional)
+%   code = {https://github.com/...}   repository, enables the "Code" link (optional)
+% An `abstract` field adds an "Abstract" button to the card.
+% abbr, pdf, abstract and code are removed from the BibTeX that visitors copy.
+%
+% The card links to `url`, else `doi`, else the arXiv `eprint`.
+% After editing run:  python3 tools/build.py
+%                     python3 tools/publications_pdf.py   (PDF list for the download button)
+
+@inproceedings{Bexten2021,
+  title     = {Human Action Recognition as part of a Natural Machine Operation Framework},
+  author    = {Bexten, Simone and Schmidt, Johann and Walter, Christoph and Elkmann, Norbert},
+  booktitle = {IEEE International Conference on Emerging Technologies and Factory Automation},
+  year      = {2021},
+  doi       = {10.1109/ETFA45728.2021.9613331},
+  url       = {https://ieeexplore.ieee.org/document/9613331},
+  abbr      = {ETFA},
+  pdf       = {HAR.pdf},
+  abstract  = {The reliability of systems that use machine learning to recognize the human working in an industrial environment is of high importance for employee safety. We present a framework which is capable of recognizing the person's natural interaction with an industrial machine. We focus on the application of human action recognition in the context of machine operation by skilled workers in industrial or commercial environments. We propose a framework that includes action recognition as part of a software component for understanding behavior. For our use case, we defined an exemplary machine operation workflow which we use to compare five different neural networks in terms of prediction accuracy and real-time capabilities. Moreover, we compare different input shapes, such as the resolution of input images and the size of the possible 3D-volume in order to study the robustness of the models. For our evaluation, we created our own custom dataset containing six action classes. Our analysis shows that the best model is the I3D with color images, a resolution of 112 x 112 pixels and 16 consecutive frames. The I3D also exhibited the best run-time performance for real-time applications.}
+}
+
+@article{Lang2021,
+  title     = {NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies},
+  author    = {Lang, Sebastian and Reggelin, Tobias and Schmidt, Johann and M{\"u}ller, Marcel and Nahhas, Abdulrahman},
+  journal   = {Expert Systems with Applications},
+  year      = {2021},
+  url = {https://www.sciencedirect.com/science/article/pii/S095741742100107X},
+  doi       = {10.1016/j.eswa.2021.114666},
+  abbr      = {ESWA},
+  pdf       = {NEAT.pdf},
+  volume = {172},
+  pages = {114666},
+  abstract = {The article investigates the application of NeuroEvolution of Augmenting Topologies (NEAT) to generate and parameterize artificial neural networks (ANN) on determining allocation and sequencing decisions in a two-stage hybrid flow shop scheduling environment with family setup times. NEAT is a machine-learning and neural architecture search algorithm, which generates both the structure and the hyper-parameters of an ANN. Our experiments show that NEAT can compete with state-of-the-art approaches in terms of solution quality and outperforms them regarding computational efficiency. The main contributions of this article are: (i) A comparison of five different strategies, evaluated with 14 different experiments, on how ANNs can be applied for solving allocation and sequencing problems in a hybrid flow shop environment, (ii) a comparison of the best identified NEAT strategy with traditional heuristic and metaheuristic approaches concerning solution quality and computational efficiency.}
+}
+
+@inproceedings{Schmidt2021,
+  title     = {Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning},
+  author    = {Schmidt, Johann and Stober, Sebastian},
+  booktitle = {IFAC Symposium on Information Control Problems in Manufacturing},
+  year      = {2021},
+  url       = {https://www.sciencedirect.com/science/article/pii/S2405896321008417},
+  abbr      = {IFAC INCOM},
+  doi = {https://doi.org/10.1016/j.ifacol.2021.08.095},
+  pdf       = {Greedy.pdf},
+  pages = {805--810},
+  volume = {54},
+  abstract = {Scheduling still constitutes a challenging problem, especially for complex problem settings involving due dates and sequence-dependent setups. The majority of existing approaches use heuristics or meta-heuristics, like Genetic Algorithms or Reinforcement Learning. We show that a supervised learning framework can learn and generalize from generated optimal target schedules, which amplifies convergence compared to unsupervised methods. We present a deep hybrid greedy framework, which can predict near-optimal schedules by utilizing the following key mechanisms: (i) Through the interplay between heuristics and a deep neural network our hybrid model can combine the benefits. Specifically, complex patterns from optimal schedules can be learned by a neural network. We reduce the computational costs by outsourcing trivial decisions to heuristics, thereby allowing consistent decisions during training. (ii) The problem complexity can be reduced by employing a greedy prediction scheme, where one job at a time is predicted. (iii) We propose a re-scheduling mechanism for idle jobs, which enables long-term cost reduction and renders the framework reactive and dynamic. Through the heuristics and the neural network, our model is real-time capable during inference. We compare our model against prevailing scheduling heuristics and our model outperformed one of them in terms of makespan and lateness minimization. The key purpose of this work is to give a proof of concept that supervised learning is applicable for complex scheduling problems.},
+  code      = {https://github.com/johSchm/deep-hybrid-greedy-scheduling-model}
+}
+
+@misc{Schmidt2023,
+  title     = {Learning Continuous Rotation Canonicalization with Radial Beam Sampling},
+  author    = {Schmidt, Johann and Stober, Sebastian},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2206.10690},
+  abbr      = {ArXiv},
+  doi = {10.48550/arXiv.2206.10690},
+  abstract = {Nearly all state-of-the-art vision models are sensitive to image rotations. Existing methods often compensate for missing inductive biases by using augmented training data to learn pseudo-invariances. Alongside the resource-demanding data inflation process, predictions often poorly generalize. The inductive biases inherent to convolutional neural networks allow for translation equivariance through kernels acting parallel to the horizontal and vertical axes of the pixel grid. This inductive bias, however, does not allow for rotation equivariance. We propose a radial beam sampling strategy along with radial kernels operating on these beams to inherently incorporate center-rotation covariance. Together with an angle distance loss, we present a radial beam-based image canonicalization model, short BIC. Our model allows for maximal continuous angle regression and canonicalizes arbitrary center-rotated input images. As a pre-processing model, this enables rotation-invariant vision pipelines with model-agnostic rotation-sensitive downstream predictions. We show that our end-to-end trained angle regressor is able to predict continuous rotation angles on several vision datasets, namely FashionMNIST, CIFAR10, COIL100, and LFW.},
+  pdf       = {RadialBeams.pdf},
+  code      = {https://github.com/johSchm/RadialBeams}
+}
+
+@inproceedings{Schmidt2024a,
+  title     = {Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling},
+  author    = {Schmidt, Johann and K{\"o}hler, B. and Borstell, H.},
+  booktitle = {Hawaii International Conference on System Sciences (HICSS)},
+  year      = {2024},
+  url       = {https://aisel.aisnet.org/hicss-57/da/digital_twins/3/},
+  abbr      = {HICSS},
+  pdf       = {SimAnneal.pdf},
+  doi = {10.24251/HICSS.2024.208},
+  abstract = {Inspired by the success of Simulated Annealing in physics, we transfer insights and adaptations to the scheduling domain, specifically addressing the one-stage job scheduling problem with an arbitrary number of parallel machines. In optimization, challenges arise from local optima, plateaus in the loss surface, and computationally complex Hamiltonian (cost) functions. To overcome these issues, we propose the integration of corrective actions, including symmetry breaking, restarts, and freezing out non-optimal fluctuations, into the Metropolis-Hastings algorithm. Additionally, we introduce a generalized Hamiltonian that efficiently fuses straightforward but widely applied processing-time cost functions. Our approach outperforms decision rules, meta-heuristics, and novel reinforcement learning algorithms. Notably, our method achieves these superior results in real-time, thanks to its computationally efficient evaluation of the Hamiltonian.}
+}
+
+@inproceedings{Perschewski2024,
+  title     = {Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning},
+  author    = {Perschewski, J. and Schmidt, Johann and Stober, Sebastian},
+  booktitle = {International Workshop on Self-Organizing Maps and Learning Vector Quantization, Clustering and Data Visualization (WSOM+)},
+  year      = {2024},
+  url       = {https://link.springer.com/chapter/10.1007/978-3-031-67159-3_6},
+  abbr      = {WSOM+},
+  pdf       = {PPP.pdf},
+  doi = {10.1007/978-3-031-67159-3_6},
+  pages= {43--52},
+  abstract = {The curse of dimensionality refers to phenomena occurring with increasing dimensionality such as marginal differences in distances. Projection pursuit solves this issue by projecting high-dimensional data into a low-dimensional space where meaningful distances allow unbiased function estimation. However, projection pursuit only considers projections onto lines and the unbiased function depends on the sample size. We introduce deep projection pursuit (DPP) to remedy these limitations by using an ensemble of projections on parameterized surfaces combined with neural networks to solve the learning task. Furthermore, we demonstrate the capabilities of the DPP framework by training principal component curves and solving supervised tasks with interpretable models. Finally, we show the ability to maintain group properties in the projection space. Due to these applications, deep projection pursuit is a flexible design paradigm with various use cases.}
+}
+
+@inproceedings{Schmidt2024b,
+  title     = {Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers},
+  author    = {Schmidt, Johann and Stober, Sebastian},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  volume    = {235},
+  pages = 	 {43705--43722},
+  year      = {2024},
+  abbr      = {ICML},
+  pdf       = {ITS.pdf},
+  abstract  = {Deep neural networks are applied in more and more areas of everyday life. However, they still lack essential abilities, such as robustly dealing with spatially transformed input signals. Approaches to mitigate this severe robustness issue are limited to two pathways: Either models are implicitly regularized by increased sample variability (data augmentation) or explicitly constrained by hard-coded inductive biases. The limiting factor of the former is the size of the data space, which renders sufficient sample coverage intractable. The latter is limited by the engineering effort required to develop such inductive biases for every possible scenario. Instead, we take inspiration from human behavior, where percepts are modified by mental or physical actions during inference. We propose a novel technique to emulate such an inference process. This is achieved by traversing a sparsified inverse transformation tree during inference using parallel energy-based evaluations. Our proposed inference algorithm, called Inverse Transformation Search (ITS), is model-agnostic and equips the model with zero-shot pseudo-invariance to spatially transformed inputs. We evaluated our method on several benchmark datasets, including a synthesized ImageNet test set. ITS outperforms the utilized baselines on all zero-shot test scenarios.},
+  code      = {https://github.com/johSchm/ITS},
+  url = {https://proceedings.mlr.press/v235/schmidt24a.html}
+}
+
+@inproceedings{Schmidt2025a,
+  title     = {TransferLight: Zero-Shot Traffic Signal Control on any Road-Network},
+  author    = {Johann Schmidt and Frank Dreyer and Sayed Abid Hashimi and Sebastian Stober},
+  booktitle={Association for the Advancement of Artificial Intelligence: Multi-Agent Reinforcement Learning for Transportation Autonomy Workshop},
+  abbr      = {AAAI: MALTA},
+  year={2025},
+  doi = {10.48550/arXiv.2412.09719},
+  pdf       = {TransferLight.pdf},
+  abstract= {Traffic signal control plays a crucial role in urban mobility. However, existing methods often struggle to generalize beyond their training environments to unseen scenarios with varying traffic dynamics. We present TransferLight, a novel framework designed for robust generalization across road networks, diverse traffic conditions and intersection geometries. At its core, we propose a log-distance reward function, offering spatially aware signal prioritization while remaining adaptable to varied lane configurations, overcoming the limitations of traditional pressure-based rewards. Our hierarchical, heterogeneous, and directed graph neural network architecture effectively captures granular traffic dynamics, enabling transferability to arbitrary intersection layouts. Using a decentralized multi-agent approach, global rewards, and novel state transition priors, we develop a single, weight-tied policy that scales zero-shot to any road network without re-training. Through domain randomization during training, we additionally enhance generalization capabilities. Experimental results validate TransferLight's superior performance in unseen scenarios, advancing practical, generalizable intelligent transportation systems to meet evolving urban traffic demands.},
+  url = {https://arxiv.org/abs/2412.09719}
+}
+
+@inproceedings{Schmidt2025b,
+  title     = {Robust Canonicalization through Bootstrapped Data Re-Alignment},
+  author    = {Johann Schmidt and Sebastian Stober},
+  booktitle={Conference on Neural Information Processing Systems (European Satellite): Unifying Perspectives on Learning Biases Workshop},
+  abbr      = {EurIPS: UPLB},
+  year={2025},
+  doi = {10.48550/arXiv.2510.08178},
+  pdf       = {Bootstrapping.pdf},
+  abstract= {Fine-grained visual classification (FGVC) tasks, such as insect and bird identification, demand sensitivity to subtle visual cues while remaining robust to spatial transformations. A key challenge is handling geometric biases and noise, such as different orientations and scales of objects. Existing remedies rely on heavy data augmentation, which demands powerful models, or on equivariant architectures, which constrain expressivity and add cost. Canonicalization offers an alternative by shielding such biases from the downstream model. In practice, such functions are often obtained using canonicalization priors, which assume aligned training data. Unfortunately, real-world datasets never fulfill this assumption, causing the obtained canonicalizer to be brittle. We propose a bootstrapping algorithm that iteratively re-aligns training samples by progressively reducing variance and recovering the alignment assumption. We establish convergence guarantees under mild conditions for arbitrary compact groups, and show on four FGVC benchmarks that our method consistently outperforms equivariant and canonicalization baselines while performing on par with augmentation.},
+  url = {https://arxiv.org/abs/2510.08178}
+}
+
+@inproceedings{Schmidt2026a,
+  title     = {Geometrically Constrained and Token-Based Probabilistic Spatial Transformers},
+  author = {Schmidt, Johann and Siegl, Tom and Becker, Martin and Stober, Sebastian},
+  booktitle = {European Conference on Computer Vision: International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness},
+  abbr      = {ECCV: BISCUIT},
+  year = {2026},
+  abstract = {Spatial transformations such as rotation and scale obscure the morphological cues needed for accurate image classification. Careful consideration is required for reliable use in high-stakes settings. A model should stay robust under such transformations, expose why a correction was applied, and signal when its input is ambiguous. While geometrically equivariant architectures provide a mathematically grounded solution, they often limit model flexibility through strict symmetry constraints and incur significant computational overhead. Spatial Transformer Networks (STNs) offer a data-driven, flexible alternative for learning pseudo-equivariances to affine transformations. However, STNs have historically been restricted to convolutional architectures and suffer from training instability. To address this, we introduce a novel STN framework. It leverages the global modeling capabilities of transformers to regress the affine transformation acting on the input. For this, we decompose affine transformations into interpretable primitives, regressed under adaptable geometric constraints, thereby preventing the training instability typically caused by degenerate transformations. By sharing weights between the localization network and the classification backbone, the framework requires minimal computational overhead. Extensive experiments on challenging insect biodiversity and medical imaging benchmarks demonstrate that our approach achieves superior predictive performance under diverse spatial transformations while maintaining high efficiency.},
+  url = {https://openreview.net/forum?id=8C4vVAbMW8},
+  pdf = {TokenSTN.pdf},
+  code = {https://github.com/johSchm/TokenSTN},
+}
+
+@inproceedings{Schmidt2026b,
+    author = {Johann Schmidt and Sebastian Stober and Joachim Denzler and Paul Bodesheim},
+    title = {PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification},
+    year = {2026},
+    abstract = {Fine-grained visual classification benefits from high-resolution inputs to resolve subtle, localized cues, but at the cost of large compute and memory budgets. Inspired by human saccadic vision, we propose a lightweight extension that turns any pretrained backbone with spatial feature maps into a saccadic classifier through glimpse-induced inference. The only architectural additions are a small priority head and a single cross-attention fusion block. The same weight-tied encoder encodes a downsampled peripheral glance, exposes the spatial feature map from which the priority head predicts a glimpse-priority distribution and re-encodes high-resolution glimpse crops sampled from that distribution in parallel. A sequential sampler with non-maximum suppression draws a runtime-configurable number of glimpses. A residual multi-head cross-attention block then fuses the glance against the glimpses. To improve the quality of the priority maps, we train the priority head by a per-glimpse information-gain target from a lightweight per-image memory bank. This requires no reinforcement learning. Complexity is linear in the number of glimpses and peak memory is decoupled from input resolution. Across nine benchmarks our framework improves consistently over its backbones.},
+    booktitle = {British Machine Vision Conference},
+    abbr      = {BMVC},
+    url = {https://arxiv.org/abs/2509.15688},
+    pdf = {PPS.pdf},
+    code = {https://github.com/johSchm/Saccader},
+}
+
+@inproceedings{Lindner2026,
+  title     = {Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring},
+  author    = {Lindner, Dominik and Schmidt, Johann and Siegl, Tom and Becker, Martin and Stober, Sebastian},
+  booktitle={Machine Learning and Knowledge Discovery in Databases},
+  doi = {10.1007/978-3-032-37673-2_10},
+  abbr      = {ECML-PKDD},
+  pages = {168--185},
+  volume = {},
+  year={2026},
+  pdf       = {ITS2.pdf},
+  abstract= {Pretrained vision models often misclassify inputs that are rotated, scaled, or sheared, even though these affine transformations leave the object class unchanged. Robustness is usually restored either by building equivariance into the architecture or by retraining with augmentation, both of which require changing or retraining the model. Test-time canonicalization instead leaves the classifier untouched. It undoes the transformation of each input, mapping it to a canonical form near the training distribution before classification. Existing canonicalizers, however, rely on a narrow set of logit-based energy scores and bespoke search procedures, leaving the design space of scoring functions and optimizers unexplored. We reframe canonicalization as out-of-distribution (OOD) detection, which lets any OOD score serve as the energy minimized over transformations. Across benchmarks ranging from handwritten characters and sketches to natural images and 3D point clouds, we systematically evaluate around twenty OOD scores and nine search algorithms, finding that distance-based scores paired with random search and local refinement perform best overall. Because canonicalizing an already-aligned input can hurt accuracy, we add a gated mechanism that transforms an input only when its OOD score indicates this is needed, preserving most in-distribution accuracy while retaining the robustness gains on transformed inputs.},
+  code = {https://github.com/johschm/its},
+  url = {https://link.springer.com/chapter/10.1007/978-3-032-37673-2_10}
+}
+

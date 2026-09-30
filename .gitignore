@@ -2,3 +2,17 @@ docs
 themes
 images/demos
 demos.html
+
+# Source PDFs for publication previews (not published)
+res/papers/
+__pycache__/
+
+# Certificates (signatures, personal data; not published)
+res/certificates/
+
+# Supervised theses (not public, partly under NDA)
+res/bachelor/thesis/
+res/master/thesis/
+
+res/papers/
+res/projects/
