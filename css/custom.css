@@ -778,3 +778,148 @@ button.thesis-item-head:focus-visible {
 		transition: none;
 	}
 }
+
+/* AI at Work: lead line and three principle cards. The icon tilts and the
+   faint number turns accent on hover, as on the other cards. */
+.ai-lead {
+	font-size: 1.75rem;
+	font-weight: 600;
+}
+.ai-card {
+	transition: transform .35s var(--ease-out), box-shadow .35s ease;
+}
+.ai-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .35);
+}
+.ai-card-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.ai-card-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.5rem;
+	height: 3.5rem;
+	font-size: 1.5rem;
+	transition: transform .35s var(--ease-out);
+}
+.ai-card:hover .ai-card-icon {
+	transform: rotate(-6deg) scale(1.06);
+}
+.ai-card-num {
+	color: rgba(255, 255, 255, .15);
+	font-size: 2rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	transition: color .35s ease;
+}
+.ai-card:hover .ai-card-num {
+	color: var(--accent);
+}
+.ai-points li {
+	position: relative;
+	padding-left: 1.25rem;
+	color: rgba(255, 255, 255, .75);
+}
+.ai-points li + li {
+	margin-top: .4rem;
+}
+.ai-points li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: .7em;
+	width: .5rem;
+	height: 2px;
+	border-radius: 2px;
+	background: var(--accent);
+	transition: width .3s var(--ease-out);
+}
+.ai-card:hover .ai-points li::before {
+	width: .75rem;
+}
+@media (prefers-reduced-motion: reduce) {
+	.ai-card,
+	.ai-card-icon,
+	.ai-card-num,
+	.ai-points li::before {
+		transition: none;
+	}
+	.ai-card:hover,
+	.ai-card:hover .ai-card-icon {
+		transform: none;
+	}
+}
+
+/* Thesis: animated canonicalization figure (drawn by js/canon-viz.js).
+   Caption steps light up in sync with the animation. */
+.canon-viz canvas {
+	display: block;
+	width: 100%;
+	height: clamp(220px, 40vw, 380px);
+}
+.canon-viz-steps {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.25rem;
+	list-style: none;
+	margin: 1.25rem 0 0;
+	padding: 0;
+}
+.canon-viz-step {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: .15rem;
+	padding-top: .75rem;
+	border-top: 2px solid rgba(255, 255, 255, .1);
+	opacity: .45;
+	transition: opacity .5s var(--ease-out);
+}
+.canon-viz-step::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--accent);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform .6s var(--ease-out);
+}
+.canon-viz-step.is-active {
+	opacity: 1;
+}
+.canon-viz-step.is-active::before {
+	transform: scaleX(1);
+}
+.canon-viz-step-num {
+	color: var(--accent);
+	font-size: .75rem;
+	font-weight: 600;
+	letter-spacing: .05em;
+}
+.canon-viz-step-title {
+	color: #fff;
+	font-weight: 600;
+}
+.canon-viz-step-text {
+	color: rgba(255, 255, 255, .5);
+	font-size: .875rem;
+}
+@media (max-width: 767.98px) {
+	.canon-viz-steps {
+		grid-template-columns: 1fr;
+		gap: .75rem;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.canon-viz-step,
+	.canon-viz-step::before {
+		transition: none;
+	}
+}
