@@ -32,7 +32,7 @@ when: current
 icon: fas fa-robot
 cv: llama.cpp for local models, Claude Code with MCP, agents and skills
 
-I use large language models as development tools, both hosted and on my own hardware.
+I use large language models as development tools, both hosted and on my own hardware. How I work with them is described under [AI at Work](#ai).
 
 - Local models: llama.cpp
 - Coding agents: Claude Code with MCP, agents and skills

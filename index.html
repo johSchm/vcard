@@ -4,7 +4,10 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="images/favicon.png" rel="icon" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<meta name="theme-color" content="#212529" />
 <title>Johann Schmidt</title>
 <meta name="description" content="Johann Schmidt, research scientist in deep learning in Magdeburg, Germany: projects, publications, talks and CV.">
 <meta name="author" content="Johann Schmidt">
@@ -70,6 +73,7 @@
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#talks">Talks</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#service">Service</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#coding">Coding</a></li>
+            <li class="nav-item"><a class="nav-link smooth-scroll" href="#ai">AI at Work</a></li>
           </ul>
         </div>
         <ul class="social-icons social-icons-muted social-icons-sm mt-lg-auto ms-auto ms-lg-0 d-flex">
@@ -360,6 +364,16 @@
         <p class="text-primary mb-4">Otto von Guericke University Magdeburg · submission planned for the end of 2026</p>
         <p class="text-white-50 mb-4">Vision models fail on inputs a person finds trivial. Rotate or rescale an image and a strong classifier can change its answer. In my experiments a ResNet-50 falls from 66% to 39% accuracy on ImageNet-200 once the test images are rotated. The standard fixes are expensive. Retraining with augmented data cost that model five points on upright images. Symmetry-aware architectures give guarantees but have to be designed for each transformation and trained from scratch. Neither helps a team that already owns a large pretrained model.</p>
         <p class="text-white-50 mb-4">My thesis develops canonicalization as a third route. A small module in front of the model undoes the transformation of each input and hands over a familiar view. People do the same when they step closer to see an object of interest more sharply. The model stays frozen, so robustness becomes an add-on and requires no retraining or fine-tuning of the downstream model.</p>
+        <figure class="canon-viz bg-dark rounded p-4 mb-4">
+          <canvas role="img" aria-label="A wire-frame surface over the input space. The frozen model solves the problem only in the highlighted training region. Test queries come from another region, and canonicalization maps all of them along trajectories to the same spot in the training region."></canvas>
+          <figcaption>
+            <ol class="canon-viz-steps">
+              <li class="canon-viz-step"><span class="canon-viz-step-num">01</span><span class="canon-viz-step-title">Training</span><span class="canon-viz-step-text">The model solves the problem in the region it was trained on.</span></li>
+              <li class="canon-viz-step"><span class="canon-viz-step-num">02</span><span class="canon-viz-step-title">Testing</span><span class="canon-viz-step-text">Queries come from a region the model has never seen, and it fails on them.</span></li>
+              <li class="canon-viz-step"><span class="canon-viz-step-num">03</span><span class="canon-viz-step-title">Canonicalization</span><span class="canon-viz-step-text">The whole test region is mapped to one spot in the training region. The model stays frozen.</span></li>
+            </ol>
+          </figcaption>
+        </figure>
         <h4 class="text-6 text-white fw-600 mt-5 mb-4">Main contributions</h4>
         <div class="thesis-card bg-dark rounded p-4 mb-4">
           <div class="thesis-card-head">
@@ -1358,7 +1372,7 @@
                     </div>
                     <p class="text-primary-50 mb-0">current</p>
                     <h3 class="text-white">LLM Tooling</h3>
-                    <p class="text-white-50">I use large language models as development tools, both hosted and on my own hardware.</p>
+                    <p class="text-white-50">I use large language models as development tools, both hosted and on my own hardware. How I work with them is described under <a href="#ai" class="smooth-scroll">AI at Work</a>.</p>
                     <ul class="tag-rows list-unstyled text-white-50">
                       <li><span class="pub-ref">Local models</span><span>llama.cpp</span></li>
                       <li><span class="pub-ref">Coding agents</span><span>Claude Code with MCP, agents and skills</span></li>
@@ -1431,6 +1445,75 @@
                 <!-- /BUILD:coding -->
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai" class="section bg-dark-2">
+      <div class="container px-lg-5">
+        <!-- Heading -->
+        <div class="position-relative d-flex text-center mb-5">
+          <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Mindset</h2>
+          <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">AI at Work<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+        </div>
+        <!-- Heading end-->
+        <!-- BUILD:ai-intro (generated from content/ai.md, do not edit here) -->
+        <h3 class="ai-lead text-white text-center mb-3">I work <span class="text-primary">with</span> AI, not around it.</h3>
+        <p class="text-white-50 text-center mb-5">I use AI every day to work faster and better. Three principles guide how.</p>
+        <!-- /BUILD:ai-intro -->
+
+        <div class="row">
+          <div class="col-lg-11 mx-auto">
+            <!-- BUILD:ai (generated from content/ai.md, do not edit here) -->
+            <div class="ai-grid row g-4">
+              <div class="col-lg-4">
+                <div class="ai-card bg-dark rounded p-4 h-100">
+                  <div class="ai-card-head">
+                    <span class="ai-card-icon text-primary bg-dark-1 shadow-sm rounded"><i class="fas fa-users"></i></span>
+                    <span class="ai-card-num" aria-hidden="true">01</span>
+                  </div>
+                  <h3 class="text-5 text-white mt-4 mb-2">Communication first</h3>
+                  <p class="text-white-50 mb-3">The more routine work machines take over, the more the human part counts.</p>
+                  <ul class="ai-points list-unstyled mb-0">
+                    <li>Explain ideas clearly</li>
+                    <li>Present results so others can act on them</li>
+                    <li>Lead and connect people</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="ai-card bg-dark rounded p-4 h-100">
+                  <div class="ai-card-head">
+                    <span class="ai-card-icon text-primary bg-dark-1 shadow-sm rounded"><i class="fas fa-project-diagram"></i></span>
+                    <span class="ai-card-num" aria-hidden="true">02</span>
+                  </div>
+                  <h3 class="text-5 text-white mt-4 mb-2">Agents are a team I lead</h3>
+                  <p class="text-white-50 mb-3">I work with AI agents the way I work with a team.</p>
+                  <ul class="ai-points list-unstyled mb-0">
+                    <li>Delegate tasks with clear context</li>
+                    <li>Agents research, code and report back</li>
+                    <li>I decide what is used</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="ai-card bg-dark rounded p-4 h-100">
+                  <div class="ai-card-head">
+                    <span class="ai-card-icon text-primary bg-dark-1 shadow-sm rounded"><i class="fas fa-balance-scale"></i></span>
+                    <span class="ai-card-num" aria-hidden="true">03</span>
+                  </div>
+                  <h3 class="text-5 text-white mt-4 mb-2">Critical judgment</h3>
+                  <p class="text-white-50 mb-3">I learned my craft before AI, so I can check the results myself.</p>
+                  <ul class="ai-points list-unstyled mb-0">
+                    <li>Verify against primary sources</li>
+                    <li>Cross-check claims</li>
+                    <li>Reject hallucinations, learn from what holds</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /BUILD:ai -->
           </div>
         </div>
       </div>
@@ -1747,6 +1830,7 @@
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
 <!-- Custom Script --> 
 <script src="js/theme.js"></script>
+<script src="js/canon-viz.js"></script>
 <script>
   // Resume cards: expand / collapse
   document.querySelectorAll('.resume-card-header').forEach(function (header) {
@@ -1774,7 +1858,8 @@
       '#publications .pub-card',
       '#talks > .container > p, #talks .talk-card',
       '#service > .container > p, #service .service-card',
-      '#coding > .container > p, #coding .coding-card'
+      '#coding > .container > p, #coding .coding-card',
+      '#ai > .container > h3, #ai > .container > p, #ai .ai-grid > div'
     ];
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

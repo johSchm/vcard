@@ -299,12 +299,33 @@ def resume(doc: Node, f: str, entries: list[dict]) -> str:
     return "\n".join(cards)
 
 
+# Animated figures for the thesis intro (`figure: <name>` in thesis.md).
+# The animation itself lives in js/canon-viz.js.
+FIGURES = {
+    "canonicalization": """<figure class="canon-viz bg-dark rounded p-4 mb-4">
+  <canvas role="img" aria-label="A wire-frame surface over the input space. The frozen model solves the problem only in the highlighted training region. Test queries come from another region, and canonicalization maps all of them along trajectories to the same spot in the training region."></canvas>
+  <figcaption>
+    <ol class="canon-viz-steps">
+      <li class="canon-viz-step"><span class="canon-viz-step-num">01</span><span class="canon-viz-step-title">Training</span><span class="canon-viz-step-text">The model solves the problem in the region it was trained on.</span></li>
+      <li class="canon-viz-step"><span class="canon-viz-step-num">02</span><span class="canon-viz-step-title">Testing</span><span class="canon-viz-step-text">Queries come from a region the model has never seen, and it fails on them.</span></li>
+      <li class="canon-viz-step"><span class="canon-viz-step-num">03</span><span class="canon-viz-step-title">Canonicalization</span><span class="canon-viz-step-text">The whole test region is mapped to one spot in the training region. The model stays frozen.</span></li>
+    </ol>
+  </figcaption>
+</figure>""",
+}
+
+
 def thesis(doc: Node, f: str, entries: list[dict]) -> str:
     where = doc.props.get("where")
     parts = [f'<h3 class="text-white {"mb-2" if where else "mb-4"}">{inline(doc.need("title", f))}</h3>']
     if where:
         parts.append(f'<p class="text-primary mb-4">{inline(where)}</p>')
     parts.append(prose(doc.body, "text-white-50 mb-4"))
+    figure = doc.props.get("figure")
+    if figure:
+        if figure not in FIGURES:
+            raise ContentError(f"{f}: unknown figure '{figure}', use one of: {', '.join(FIGURES)}")
+        parts.append(FIGURES[figure])
     if doc.children:
         parts.append(f'<h4 class="text-6 text-white fw-600 mt-5 mb-4">'
                      f'{inline(doc.props.get("heading", "Main contributions"))}</h4>')
@@ -342,6 +363,35 @@ def coding(doc: Node, f: str) -> str:
   </div>
 </div>""")
     return "\n".join(cards)
+
+
+def ai_intro(doc: Node, f: str) -> str:
+    return (f'<h3 class="ai-lead text-white text-center mb-3">{inline(doc.need("lead", f))}</h3>\n'
+            + prose(doc.body, "text-white-50 text-center mb-5"))
+
+
+def ai(doc: Node, f: str) -> str:
+    """Principle cards, three per row: number, icon, title, one sentence, short points."""
+    cols = []
+    for n, e in enumerate(doc.children, 1):
+        parts = []
+        for kind, data in blocks(e.body):
+            if kind == "p":
+                parts.append(f'<p class="text-white-50 mb-3">{inline(data)}</p>')
+            elif kind in ("ul", "ol"):
+                items = "\n".join(f"  <li>{inline(i)}</li>" for i in data)
+                parts.append(f'<ul class="ai-points list-unstyled mb-0">\n{items}\n</ul>')
+        cols.append(f"""<div class="col-lg-4">
+  <div class="ai-card bg-dark rounded p-4 h-100">
+    <div class="ai-card-head">
+      <span class="ai-card-icon text-primary bg-dark-1 shadow-sm rounded"><i class="{escape(e.need("icon", f))}"></i></span>
+      <span class="ai-card-num" aria-hidden="true">{n:02d}</span>
+    </div>
+    <h3 class="text-5 text-white mt-4 mb-2">{inline(e.title)}</h3>
+{indent(chr(10).join(parts), 4)}
+  </div>
+</div>""")
+    return '<div class="ai-grid row g-4">\n' + indent("\n".join(cols), 2) + "\n</div>"
 
 
 def talks_intro(doc: Node, f: str) -> str:
@@ -537,7 +587,7 @@ def main() -> int:
         entries = publications.load()
         ENTRIES[:] = entries
         docs = {name: parse(CONTENT / f"{name}.md")
-                for name in ("home", "about", "resume", "thesis", "talks", "service", "coding", "legal")}
+                for name in ("home", "about", "resume", "thesis", "talks", "service", "coding", "ai", "legal")}
         sections = [
             ("home", "content/home.md", home(docs["home"], "home.md")),
             ("about", "content/about.md", about_intro(docs["about"], "about.md")),
@@ -551,6 +601,8 @@ def main() -> int:
             ("service", "content/service.md", service(docs["service"], "service.md")),
             ("coding-intro", "content/coding.md", coding_intro(docs["coding"], "coding.md")),
             ("coding", "content/coding.md", coding(docs["coding"], "coding.md")),
+            ("ai-intro", "content/ai.md", ai_intro(docs["ai"], "ai.md")),
+            ("ai", "content/ai.md", ai(docs["ai"], "ai.md")),
             ("publications", "publications.bib", publications.render(entries)),
             ("legal", "content/legal.md", legal(docs["legal"], "legal.md")),
         ]

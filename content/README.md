@@ -18,6 +18,7 @@ which file and line, and leaves the page unchanged.
 | `talks.md`  | Talks introduction and cards                     |
 | `service.md`| Service introduction and cards (reviewing, supervision) |
 | `coding.md` | Coding introduction and cards (stack, tools, languages) |
+| `ai.md`     | AI at Work (lead line, short intro, three principle cards) |
 | `legal.md`  | Terms & Policy / Disclaimer pop-ups in the footer |
 | `cv.md`     | settings for the CV (header, publications to list, section order) |
 
