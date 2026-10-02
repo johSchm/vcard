@@ -4,6 +4,7 @@
   title:     the thesis title (required)
   where:     university, shown under the title (optional)
   heading:   heading above the contribution cards (optional, default "Main contributions")
+  figure:    animated figure after the introduction (optional): canonicalization
 
   The paragraphs before the first ## are the introduction.
 
@@ -15,6 +16,7 @@
 title: Robust and Efficient Discriminative Deep Learning by Canonicalizing and Lifting Symmetry-Degenerated Signals
 where: Otto von Guericke University Magdeburg · submission planned for the end of 2026
 heading: Main contributions
+figure: canonicalization
 
 Vision models fail on inputs a person finds trivial. Rotate or rescale an image and a strong classifier can change its answer. In my experiments a ResNet-50 falls from 66% to 39% accuracy on ImageNet-200 once the test images are rotated. The standard fixes are expensive. Retraining with augmented data cost that model five points on upright images. Symmetry-aware architectures give guarantees but have to be designed for each transformation and trained from scratch. Neither helps a team that already owns a large pretrained model.
 
