@@ -17,10 +17,16 @@
   headline:   the line under the name (required)
   photo:      path of your photo, shown as a circle at the top (optional)
   location:   where you live (optional)
+  pronouns:   shown under the headline, CV only (optional)
+  born:       year of birth, shown under the headline, CV only (optional)
   website:    your website (optional)
   github:     GitHub profile (optional)
   scholar:    Google Scholar profile (optional)
-  languages:  spoken languages, shown as the last row under Skills (optional)
+  researchgate: ResearchGate profile (optional, website only)
+  topics:     research topics, separated by commas; listed as "knowsAbout" in the
+              page's machine-readable profile (optional, website only)
+  languages:  spoken languages, shown as a row under Skills (optional)
+  mobility:   driving licence and travel, shown as the last row under Skills, CV only (optional)
   papers:     the publications to list: keys from publications.bib (or PDF names),
               separated by commas. They are sorted by year, newest first. Leave the
               line out to list all publications.
@@ -31,8 +37,13 @@ name: Johann Schmidt
 headline: Research Scientist in Deep Learning
 photo: images/profile.jpg
 location: Magdeburg, Germany
+pronouns: he/him
+born: 1995
 website: https://johann-schmidt.com
 github: https://github.com/johSchm
 scholar: https://scholar.google.com/citations?user=VmKtXYoAAAAJ
+researchgate: https://www.researchgate.net/profile/Johann-Schmidt-5
+topics: Deep learning, Computer vision, Robustness of pretrained models, Canonicalization, Reinforcement learning, Graph neural networks, Production scheduling, Traffic signal control, Audio classification, Edge deployment
 languages: German (native), English (daily working language)
+mobility: German driving licence; willing to travel regularly, including international trips
 papers: Schmidt2026b, Lindner2026, Schmidt2026a, Schmidt2025a, Schmidt2024b, Schmidt2024a, Lang2021
