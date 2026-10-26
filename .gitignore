@@ -16,3 +16,6 @@ res/master/thesis/
 
 res/papers/
 res/projects/
+# Cover letters (personal, per application; not published). Only the template is committed.
+letters/*
+!letters/_template.md

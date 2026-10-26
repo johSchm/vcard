@@ -1,0 +1,299 @@
+# Johann Schmidt
+
+> Applied research scientist in deep learning with six years of full-time R&D alongside industry partners. I take problems from framing to a working system, from production scheduling at an electronics manufacturer to traffic signal control and acoustic sensing on edge hardware. My PhD makes frozen pretrained vision models robust to new perspectives of the input signal without retraining. This is key for safe and reliable inference of foundation models. I was named a Top Reviewer at NeurIPS 2026 and have publications at top-tier venues like ICML. Open to senior applied scientist roles from early 2027, with the long-term goal of leading applied research in industry.
+
+- Role: Research Scientist in Deep Learning
+- Location: Magdeburg, Germany
+- Status: based in Magdeburg, Germany. Open to senior applied scientist roles from early 2027.
+- Languages: German (native), English (daily working language)
+- Email: johSchm@protonmail.com
+- LinkedIn: https://www.linkedin.com/in/johann-schmidt/
+- GitHub: https://github.com/johSchm
+- Google Scholar: https://scholar.google.com/citations?user=VmKtXYoAAAAJ
+- ResearchGate: https://www.researchgate.net/profile/Johann-Schmidt-5
+- Website: https://johann-schmidt.com
+- CV (PDF): https://johann-schmidt.com/res/CV_Johann_Schmidt.pdf
+
+## About
+
+Since 2020 I have worked full time as a research scientist at the Artificial Intelligence Lab (AILab) of Otto von Guericke University Magdeburg (OVGU), Germany. I build deep learning systems in collaboration with universities, research institutes and industry partners. These projects range from production scheduling to traffic signal control and acoustic traffic sensing.
+
+I pursue my PhD alongside this work. A strong vision model can change its answer once the view of an object changes. I develop small modules that sit in front of a frozen pretrained model and undo such transformations, which makes the model more robust to them.
+
+I am looking for a senior applied scientist role with the long-term goal of leading applied research in industry. I will submit my thesis at the end of 2026 and am open to new roles from then on. My current funding ends in April 2027. I am a father of two, so a family-friendly employer matters to me. I speak German (native) and English (daily working language).
+
+- 6+ Years Work Experience
+- 18+ Theses Supervised
+- 15+ Papers Reviewed
+- 12+ Papers Published
+
+## Experience and education
+
+### Bachelor: Electrical Engineering (2014 - 2018)
+Magdeburg-Stendal University of Applied Sciences, Germany
+
+I studied electrical engineering with a specialization in process automation. The program covered control theory, robotics, sensor technology, signal processing, and high- and low-voltage engineering. I programmed SIMATIC S7 PLCs, and microcontrollers in C, C++ and Assembler, including object-oriented programming. Much of the work was hands-on in the lab. Bringing circuits to life with software drew me to computer science.
+
+#### Internships and Student Jobs (2013 - 2016), TCS AG Genthin, Bachmann GmbH Magdeburg, Enercon GmbH Magdeburg
+
+I first came into contact with the development and assembly of electrical circuit boards. I analyzed and evaluated wind turbine data and helped with the cabling of wind turbine control cabinets.
+
+#### Bachelor Thesis (2017 - 2018), Institute for Automation and Communication (ifak) e.V. Magdeburg, Germany
+
+I developed a GUI in C for a clamp-on ultrasonic sensor system on an embedded controller, and analyzed and evaluated the overall measurement system.
+
+### Master: Digital Engineering (2018 - 2020)
+Otto von Guericke University Magdeburg, Germany
+
+Coming from electrical engineering, I took advanced computer science courses and caught up on the foundations through self-study. Besides machine learning and data science, I learned databases and SQL, clean code, Git and continuous integration, and worked on robotics and robot swarms. Many courses were hands-on projects, some on my own and many in teams. I specialized in artificial intelligence, specifically deep learning.
+
+#### Master Thesis (2019 - 2020), Fraunhofer Institute for Factory Operation and Automation IFF, Magdeburg, Germany
+
+I developed and integrated a vision-based deep learning model for real-time human action recognition, used for human-machine interaction in an industrial environment.
+
+### Research Scientist at OVGU (2020 - 2027)
+AILab, Otto von Guericke University Magdeburg, Germany
+
+Full-time position on funded R&D projects with industry partners. The projects set the topics, so my work spans several fields, from production scheduling to traffic signal control and acoustic sensing. I pursue my PhD alongside this work.
+
+#### SENECA (2020 - 2022), with Thorsis Technologies GmbH and TECTRON GmbH
+
+Real-time decision support for production scheduling at the electronics manufacturer Tectron, an NP-hard problem with up to 200 open orders per planning run. The methods of three papers come from this project (ESWA 2021, IFAC INCOM 2021 and HICSS 2024). We found that permutation-invariant networks trained on optimal schedules solve small instances but did not scale. At the end we handed Tectron a tool in which the planner chooses between heuristic and pure deep learning methods, including deep reinforcement learning and a genetic algorithm. In Tectron's production, it beat manual planning on late orders and total tardiness. On 170 real Tectron orders, the simulated annealing method from the project planned with no late orders, 23% fewer major setups and a 4.5% shorter makespan than a genetic algorithm, in 0.7 s instead of 66 s.
+
+#### AI-Engineering (2022), joint project of five universities in Saxony-Anhalt
+
+A new Bachelor's program that combines AI with engineering, built jointly by five universities. Students learn through team projects with regional companies and open course material instead of classic lectures. The program has been running since 2023. I contributed to the curriculum in the first project year. My main part was the platform. I led the development of OERport, the first platform that lets students and teachers share course material across the five universities. It runs on an Apache server, with a React/Next.js front end in Tailwind CSS, Shibboleth SAML single sign-on for all universities and a MySQL database of the course modules.
+
+#### Sustainable Supply Chain DeepHack (2022), 2nd place, Transatlantic AI Hackathon
+
+In one weekend our team built a system that estimates the volume of parcels automatically and uses it to pack delivery vehicles more efficiently. The route is planned together with the loading order. Parcels are loaded first in, last out, so the next delivery is always within reach.
+
+#### PASCAL (2022 - 2025), with Thorsis Technologies GmbH
+
+AI-based traffic signal control on real-time V2X data, built for Magdeburg's urban testbed. I developed the core component, TransferLight, with a Master's student I supervised. It is a single reinforcement learning policy on a hierarchical graph neural network that controls any intersection layout. Trained only on synthetic road networks, it transfers zero-shot to real ones (Cologne, Ingolstadt). It outperforms heuristic and learned baselines on travel time, waiting time and CO₂ emissions. On a real Cologne intersection it never saw in training, it left 54% fewer vehicles standing than fixed-time control and 16% fewer than MaxPressure.
+
+I deployed the demonstrator on two NVIDIA Jetson AGX Orin 64GB edge devices, each a node in a multi-node server network. One node runs the traffic density regression, the other the signal phase prediction. Both serve their models through FastAPI with Uvicorn as the ASGI server. The demonstrator was first rolled out in a SUMO traffic simulation, which I wrote for the most part. After the project ended, Thorsis took it further into practice.
+
+#### KIVA-NET (2025 - 2027), with Thorsis Technologies GmbH
+
+Follow-up to PASCAL with the same industry partner. We are building a low-cost acoustic sensor that counts and classifies vehicles and rates traffic flow from sound alone, in real time on edge hardware. A video tracker labels the audio automatically and has labeled more than 16,000 vehicle passes so far.
+
+The pipeline is heterogeneous on purpose. Cheap analytical signal processing finds the moments a vehicle passes and filters out the rest. Only these short windows reach a frozen audio foundation model, and a linear probe on its embeddings classifies them. This saves cost and time on the edge hardware and needs little training data. To size the model for the device, I benchmark foundation models and compact CNNs from 0.1 to 87 million parameters. our audio-based vehicle detection reaches 96.5% accuracy. Components from PASCAL and KIVA-NET are now the basis of a smart multi-modal sensor system for traffic monitoring that Thorsis is currently developing.
+
+### PhD in Deep Learning at OVGU (2022 - 2026)
+Otto von Guericke University Magdeburg, Germany
+
+Thesis research since 2022, alongside my full-time project work. It began with the work on radial beam sampling. I will submit the thesis at the end of 2026.
+
+#### OxML Summer School (August 2025), Oxford, United Kingdom
+
+I attended the Oxford Machine Learning Summer School (OxML) on Representation Learning.
+
+#### PhD Thesis, AILab, Otto von Guericke University Magdeburg, Germany
+
+Robust and Efficient Discriminative Deep Learning by Canonicalizing and Lifting Symmetry-Degenerated Signals. A strong vision model can change its answer once the view of an object changes. My thesis develops canonicalization modules as a remedy. A small module in front of a frozen pretrained model undoes the transformation of each input, so robustness becomes an add-on that does not require retraining the downstream model. Read the summary.
+
+## PhD thesis
+
+**Robust and Efficient Discriminative Deep Learning by Canonicalizing and Lifting Symmetry-Degenerated Signals**
+
+Otto von Guericke University Magdeburg · submission planned for the end of 2026
+
+Vision models fail on inputs a person finds trivial. Rotate or rescale an image and even foundation models can fail to classify it correctly. The standard fixes like augmentation are expensive as they require retraining. Symmetry-aware architectures give guarantees but have to be designed for each transformation and trained from scratch. My thesis develops canonicalization as an alternative. A small module (the canonicalizer) in front of the model undoes the transformation of each input and hands over a familiar view. Humans do the same when they step closer or tilt their head to align what they see with their mental representations of that object. The model stays frozen, so robustness becomes an add-on and requires no retraining or fine-tuning of the downstream model. We let the model itself decide what perspective it prefers.
+
+### A rotation canonicalizer that is capable and cheap (ArXiv 2023; EurIPS: UPLB 2025; Under review)
+
+A canonicalizer is usually trained with a prior that treats every training image as upright. Real datasets break this assumption. My bootstrapping algorithm re-aligns the training samples step by step, with convergence guarantees under mild conditions for arbitrary compact groups. On four fine-grained benchmarks it outperforms equivariant and canonicalization baselines and performs on par with augmentation. A second approach replaces the prior itself. For each training image I precompute the orientations at which the pretrained model errs least. Symmetric objects get several equally good orientations instead of one forced choice. I distill these targets into a small network that is rotation-equivariant by construction, so it needs no augmentation. The large model never enters the training loop, so training costs a fraction of what other learned canonicalizers need, whatever the size of the model. A precomputed polar lookup makes the input transform 44 times faster. The same ResNet-50 recovers from 39% to 63% on rotated images and loses one point on upright ones. On five of six backbones the cost on upright images stays below two points, and on a fine-grained benchmark with a Swin-B it improves both upright and rotated accuracy.
+
+### Robustness at test time with no training (ICML 2024; ECML-PKDD 2026)
+
+Inverse Transformation Search shows a frozen model several transformed versions of an input and keeps the one it finds most familiar. To my knowledge it was the first canonicalizer that needs no training. It only needs query access to the model. A follow-up treats the problem as out-of-distribution detection, so any of about twenty detection scores can drive the search. Benchmarking nine search algorithms showed that simple random search with local refinement is enough, and that limiting the search range raises accuracy. Together this lifts accuracy on transformed MNIST from 38% to 90%. A gate corrects only inputs that look unfamiliar, which preserves most of the accuracy on normal ones. All settings can be chosen without labels for the test data.
+
+### Stable spatial transformers and saccadic canonicalization (ECCV: BISCUIT 2026; BMVC 2026)
+
+Learned image canonicalization without inductive biases is brittle and likely to collapse during training. Standard spatial transformers push the object out of the frame for up to half or all of the test images. I split the transformation into bounded primitives such as rotation and scale, and prove that the bounds rule out degenerate warps. In my tests the bounded version keeps every image in frame. The module shares weights with a vision transformer. With translation and scale alone, the same idea yields a multi-view spatial transformer that zooms in like a saccade. When a label-aware oracle picks a single crop, a pretrained ConvNeXtV2-L reaches 98% on ImageNet. The features are there, but the model looks in the wrong place. My saccader learns where to look with a small priority head on the frozen encoder. It is trained with an information-gain signal rather than reinforcement learning. It selects a few high-resolution regions, and their number can be set at inference time to trade accuracy against latency. One attention block fuses the crops with the global view. This improves on the plain backbone across nine fine-grained benchmarks with few exceptions, and memory no longer grows with input resolution.
+
+## Publications
+
+12 papers: 7 conference, 1 journal, 1 preprint, 3 workshop
+
+- 2026, conference: [Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring](https://link.springer.com/chapter/10.1007/978-3-032-37673-2_10). D. Lindner, J. Schmidt, T. Siegl, M. Becker, S. Stober. Joint European Conference on Machine Learning and Knowledge Discovery in Databases (ECML-PKDD).
+- 2026, conference: [PPS: Plug-and-Play Saccadic Vision for Fine-Grained Classification](https://arxiv.org/abs/2509.15688). J. Schmidt, S. Stober, J. Denzler, P. Bodesheim. British Machine Vision Conference (BMVC).
+- 2026, workshop: [Geometrically Constrained and Token-Based Probabilistic Spatial Transformers](https://openreview.net/forum?id=8C4vVAbMW8). J. Schmidt, T. Siegl, M. Becker, S. Stober. European Conference on Computer Vision: International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness (ECCV: BISCUIT).
+- 2025, workshop: [Robust Canonicalization through Bootstrapped Data Re-Alignment](https://arxiv.org/abs/2510.08178). J. Schmidt, S. Stober. Conference on Neural Information Processing Systems (European Satellite): Unifying Perspectives on Learning Biases Workshop (EurIPS: UPLB).
+- 2025, workshop: [TransferLight: Zero-Shot Traffic Signal Control on any Road-Network](https://arxiv.org/abs/2412.09719). J. Schmidt, F. Dreyer, S. A. Hashimi, S. Stober. Association for the Advancement of Artificial Intelligence: Multi-Agent Reinforcement Learning for Transportation Autonomy Workshop (AAAI: MALTA).
+- 2024, conference: [Tilt your Head: Activating the Hidden Spatial-Invariance of Classifiers](https://proceedings.mlr.press/v235/schmidt24a.html). J. Schmidt, S. Stober. International Conference on Machine Learning (ICML).
+- 2024, conference: [Pursuing the Perfect Projection: A Projection Pursuit Framework for Deep Learning](https://link.springer.com/chapter/10.1007/978-3-031-67159-3_6). J. Perschewski, J. Schmidt, S. Stober. International Workshop on Self-Organizing Maps and Learning Vector Quantization, Clustering and Data Visualization (WSOM+).
+- 2024, conference: [Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling](https://aisel.aisnet.org/hicss-57/da/digital_twins/3/). J. Schmidt, B. Köhler, H. Borstell. Hawaii International Conference on System Sciences (HICSS).
+- 2023, preprint: [Learning Continuous Rotation Canonicalization with Radial Beam Sampling](https://arxiv.org/abs/2206.10690). J. Schmidt, S. Stober. ArXiv.
+- 2021, conference: [Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning](https://www.sciencedirect.com/science/article/pii/S2405896321008417). J. Schmidt, S. Stober. IFAC Symposium on Information Control Problems in Manufacturing (IFAC INCOM).
+- 2021, journal: [NeuroEvolution of augmenting topologies for solving a two-stage hybrid flow shop scheduling problem: A comparison of different solution strategies](https://www.sciencedirect.com/science/article/pii/S095741742100107X). S. Lang, T. Reggelin, J. Schmidt, M. Müller, A. Nahhas. Expert Systems with Applications (ESWA).
+- 2021, conference: [Human Action Recognition as part of a Natural Machine Operation Framework](https://ieeexplore.ieee.org/document/9613331). S. Bexten, J. Schmidt, C. Walter, N. Elkmann. IEEE International Conference on Emerging Technologies and Factory Automation (ETFA).
+
+## Skills
+
+These are the tools I work with every day, followed by the languages I have picked up since 2014.
+
+### Tasks and Data (since 2019)
+
+The kinds of data and tasks I have worked on, in my papers and projects and in the theses I supervised.
+
+- Time series: gasket failure forecasting (thesis)
+- Semantic segmentation: 2D images
+- Classification: ICML 2024, BMVC 2026, ECML-PKDD 2026
+- Multi-dim. regression: rotation angles in ArXiv 2023, affine transformations in ECCV: BISCUIT 2026
+- Ranking and permutations: IFAC INCOM 2021, HICSS 2024, SENECA
+- 3D point clouds: classification in ECML-PKDD 2026
+- Object detection: 3D point clouds for robot safety and with YOLO11 (theses), 2D images in KIVA-NET
+- Audio: classification and event detection in KIVA-NET
+- Graphs: encoding and classification of road networks in AAAI: MALTA 2025 and PASCAL
+- Image generation: head and gaze controllable motions, VAE interpolation (theses)
+- Head and gaze tracking: head and gaze controllable motions (thesis)
+- Quantum gates: control pulses with reinforcement learning (thesis)
+- 3D modeling: NeRFs in robotics (thesis)
+
+### LLM Tooling (current)
+
+I use large language models as development tools, both hosted and on my own hardware. How I work with them is described under AI at Work.
+
+- Local models: llama.cpp
+- Coding agents: Claude Code with MCP, agents and skills
+
+### Deep Learning Stack (since 2020)
+
+New projects run on PyTorch. My earlier projects and papers were built with TensorFlow.
+
+- Training: PyTorch, PyTorch Lightning, Hugging Face (Hub, Accelerate), Torch Hub, timm
+- Vision: torchvision, OpenCV, Kornia, einops
+- Geometry: escnn / e2cnn (equivariant networks), PyTorch Geometric
+- Experiments and MLOps: Weights & Biases, MLflow, Optuna, Hydra, TorchMetrics
+- Data and analysis: NumPy, pandas, SciPy, scikit-learn, Matplotlib, seaborn
+- Earlier work: TensorFlow
+
+### Software Engineering and Backend (since 2018)
+
+Every project lives in its own repository. In PASCAL I built the multi-node system with FastAPI. I track experiment results in SQL databases, which also back the open educational resources platform of the AI-Engineering project.
+
+- Version control: Git, GitHub, self-hosted GitLab
+- Practices: CI pipelines, clean code, DevOps
+- Services: FastAPI, Flask
+- Databases: PostgreSQL, MySQL
+- Web: Next.js, Tailwind CSS, Shibboleth SAML SSO (AI-Engineering platform)
+
+### Project Organization (since 2020)
+
+I break a problem into subproblems, each with a result that can be checked, and plan them as milestones. This is how I structure the funded projects with industry partners.
+
+- Process: agile workflow, Scrum
+- Tools: Jira, Confluence, Trello
+
+### Simulation and Optimization (since 2020)
+
+Simulators provide the environments to train and test in, and solvers for combinatorial problems.
+
+- Discrete event simulation: logistics
+- Traffic simulation: SUMO
+- Combinatorial optimization: Google OR-Tools
+
+### Multi-GPU Training (since 2020)
+
+I train my models directly on a multi-node, multi-zone heterogeneous Ubuntu GPU cluster, in parallel across several GPUs with Hugging Face Accelerate.
+
+- Compute: multi-node heterogeneous Ubuntu GPU cluster, distributed training with Accelerate
+- Deployment: TensorRT, edge hardware
+
+### Operating Systems (since 2016)
+
+Linux has been my own operating system since my Bachelor's degree, and I work in the shell every day. I have also worked with Windows and currently use macOS.
+
+- Linux: Arch (my favorite), Ubuntu, Mint, Kali
+- Others: Windows, macOS (current)
+
+### Programming Languages (since 2014)
+
+- Python: my main language for research and project work, since my Master's
+- C / C++: microcontrollers in C and Assembler, an embedded GUI in C for my Bachelor thesis, a Rubik's Cube solver in C++
+- Java: Android apps in Android Studio, on GitHub
+- C#: game development with Unity, on GitHub
+- Web: JavaScript, HTML5, CSS, Tailwind CSS, Jekyll, Hexo, Node.js, small browser games
+- This website: Python build scripts from Markdown, HTML5, Sass / CSS, Bootstrap, jQuery, Canvas animation, LaTeX for the CV
+
+## AI at work
+
+I work with AI, not around it.
+
+I use AI every day to work faster and better. Three principles guide how.
+
+### Communication first
+
+The more routine work machines take over, the more the human part counts.
+
+- Explain ideas clearly
+- Present results so others can act on them
+- Lead and connect people
+
+### Agents are a team I lead
+
+I work with AI agents the way I work with a team.
+
+- Delegate tasks with clear context
+- Agents research, code and report back
+- I decide what is used
+
+### Critical judgment
+
+I learned my craft before AI, so I can check the results myself.
+
+- Verify against primary sources
+- Cross-check claims
+- Reject hallucinations, learn from what holds
+
+## Talks and teaching
+
+- September 2026, Conference Oral: Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring. ECML-PKDD (Main Research Track and QCDS Workshop).
+- December 2025, Invited Talk: Iterative Spatial Canonicalization Modules for Deep Neural Networks. Friedrich Schiller University Jena.
+- February 2025, Conference Oral: TransferLight: Zero-Shot Traffic Signal Control on any Road-Network. AAAI (MALTA Workshop).
+- Winter Semester 2024/25, Seminar: Deep Learning Project Seminar: Smart Traffic Light Control. Otto von Guericke University Magdeburg, Germany.
+- January 2024, Conference Oral: Reviving Simulated Annealing: Lifting its Degeneracies for Real-Time Job Scheduling. HICSS.
+- March 2023, Training: Presentation Seminar. National Institute for Science Communication (NaWik), Germany.
+- September 2021, Training: University Teaching Workshops. Herbstakademie, Otto von Guericke University Magdeburg, Germany.
+- June 2021, Conference Oral: Approaching Scheduling Problems via a Deep Hybrid Greedy Model and Supervised Learning. IFAC INCOM.
+
+## Service and supervision
+
+### Reviewing
+
+I review full and short papers for machine learning and computer vision conferences.
+
+- ICLR 2027: 3 full papers
+- NeurIPS 2026: 4 full papers, Top Reviewer
+- ECCV 2026: 1 full paper
+- ECCV: BISCUIT 2026: 3 full papers (workshop)
+- NLDL 2026: 4 short papers
+
+### Paper Club (2022 - 2026)
+
+A biweekly paper club at OVGU on recent machine learning papers, which I initiated and moderated with colleagues.
+
+### Thesis Supervision
+
+I supervise Bachelor's and Master's theses at the AILab, many of them together with partners from industry and research institutes. The theses themselves are not public. Select a title to read its abstract.
+
+- Master thesis, March 2026, with Fraunhofer IFF: Ablation Study: Adaptation of YOLO11 for 3D Object Detection on Point Cloud Data
+- Master thesis, December 2025, with University of Rostock: Canonicalization-Based Adaptation of Pretrained Models to Affine Transformations via Out-of-Distribution Detection
+- Master thesis, May 2025: Transformation-Invariant Neural Networks through Modulation
+- Master thesis, April 2025, with Casablanca.AI GmbH: Head and Gaze Controllable Implicit Motions
+- Master thesis, September 2024, with Fraunhofer IFF: Employing Hand and Object Information for Human Action Recognition in Industrial Assembly Scenarios
+- Bachelor thesis, May 2024: Untersuchung von künstlichen neuronalen Netzen zur Detektion von Abweichungen in der Spurerkennung einer querführenden Fahrerassistenzfunktion
+- Bachelor thesis, March 2024: Improving Interpolation in VAE using Riemannian Geometry
+- Master thesis, December 2023, with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg: Domain Randomization of Deep Reinforcement Learning Environments for Zero-Shot Traffic Signal Control
+- Master thesis, October 2023, with SaxonQ: Deep Reinforcement Learning for Universal Quantum Gates
+- Master thesis, August 2023, with Fraunhofer IFF: Employing Neural Radiance Fields in Robotics
+- Master thesis, June 2023, with Trumpf: Solving Sequencing Problems Using Deep Reinforcement Learning
+- Bachelor thesis, May 2023, with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg: Ampelsteuerung mit Graph Attention Networks und Deep Reinforcement Learning für Fahrzeitminimierung
+- Master thesis, May 2023, with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg: Deep Reinforcement Learning-Based Proactive Traffic Light Control with Graph Neural Networks to Minimize CO2 Emissions
+- Bachelor thesis, May 2023, with Faculty of Mechanical Engineering, Otto von Guericke University Magdeburg: Proaktive Ampelschaltung mithilfe von Deep Multi-Agent Reinforcement Learning zur Fahrzeitminimierung
+- Master thesis, April 2023: Sim-to-Real Transfer für eine mit Reinforcement-Learning programmierte Robotersteuerung
+- Bachelor thesis, March 2023, with Fraunhofer IFF: A Neural Network Performance Study: 3D Object Detection on Point Cloud Data for a Fenceless Robot Safety Application
+- Master thesis, January 2023: Visualization and Evaluation of High-Dimensional Structures as Associations of Clusters in Subspaces
+- Master thesis, March 2022, with Dr. Ecklebe GmbH: Forecasting Gasket Failures in H2 Refueling Stations Using Deep Multi-Task Learning

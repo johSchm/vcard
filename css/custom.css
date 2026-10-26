@@ -570,6 +570,17 @@ a.pub-ref:focus-visible {
 .pub-card.is-highlighted {
 	box-shadow: 0 0 0 2px var(--accent), 0 .75rem 2rem rgba(0, 0, 0, .35);
 }
+/* project heading or supervised thesis an in-text link jumped to */
+.resume-card h3[id],
+.thesis-item {
+	transition: color .4s ease, background-color .4s ease;
+}
+.resume-card h3.is-highlighted {
+	color: var(--accent) !important;
+}
+.thesis-item.is-highlighted {
+	background-color: rgba(32, 201, 151, .08);
+}
 
 /* Service: reviewing rows (tag + detail) */
 .tag-rows {
