@@ -5,10 +5,10 @@
   (leave one out to hide it).
 -->
 greeting: Welcome
-tagline: based in Magdeburg, Germany.\\Open to research lead roles in industry from 2027.
+tagline: based in Magdeburg, Germany.\\Open to senior applied scientist roles from early 2027.
 button: Get in contact
 linkedin: https://www.linkedin.com/in/johann-schmidt/
-email: johann.schmidt@ovgu.de
+email: johSchm@protonmail.com
 
 - I'm Johann Schmidt.
 - I'm a Research Scientist.
