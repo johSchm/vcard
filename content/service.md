@@ -29,22 +29,22 @@ Research depends on people who read, question and guide the work of others. This
 
 ## Reviewing
 icon: fas fa-search
-cv: {reviewed} papers for {rows}.
+cv: {reviewed} papers for {rows}. Recognized as **Top Reviewer** at NeurIPS 2026.
 
 I review full and short papers for machine learning and computer vision conferences.
 
-- ICLR 2027: 6 full papers
-- NeurIPS 2026: 4 full papers
+- ICLR 2027: 3 full papers
+- NeurIPS 2026: 4 full papers, *Top Reviewer*
 - ECCV 2026: 1 full paper
 - ECCV: BISCUIT 2026: 3 full papers (workshop)
 - NLDL 2026: 4 short papers
 
-## Machine Learning Paper Club
+## Paper Club
 when: 2022 - 2026
 icon: fas fa-comments
-cv: Initiated the machine learning paper club at OVGU and moderated it with colleagues, every two weeks from 2022 to 2026.
+cv: Initiated and co-moderated a biweekly paper club at OVGU.
 
-I initiated the paper club at Otto von Guericke University Magdeburg and moderated it together with colleagues. We met every two weeks to present and discuss recent papers in machine learning.
+A biweekly paper club at OVGU on recent machine learning papers, which I initiated and moderated with colleagues.
 
 ## Thesis Supervision
 icon: fas fa-user-graduate
