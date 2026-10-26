@@ -7,6 +7,7 @@ index.html only holds the layout. The text lives in content/*.md and the
 publications in publications.bib; this script renders both and writes them
 between the <!-- BUILD:name --> ... <!-- /BUILD:name --> markers in
 index.html. Never edit between those markers by hand, it gets overwritten.
+It also writes llms.txt, the same content as plain Markdown (tools/llms.py).
 
 The Markdown format is described in content/README.md.
 """
@@ -22,6 +23,7 @@ import publications  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 PAGE = ROOT / "index.html"
+LLMS_TXT = ROOT / "llms.txt"  # the same content as plain Markdown, see tools/llms.py
 
 
 class ContentError(Exception):
@@ -37,6 +39,33 @@ def paper(name: str, where: str) -> dict:
     if not entry:
         raise ContentError(f"{where}: paper '{name}' is neither a key nor a PDF name in publications.bib")
     return entry
+
+
+# Projects (### parts in resume.md) and supervised theses (### in service.md) the text
+# can link to with [label](project:Title) and [label](thesis:Title), set in main().
+TARGETS: dict[str, dict[str, str]] = {"project": {}, "thesis": {}}  # kind -> title -> anchor
+
+
+def slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def set_targets(docs: dict[str, "Node"]) -> None:
+    TARGETS["project"] = {sub.title: "project-" + slug(sub.title)
+                          for e in docs["resume"].children for sub in e.children}
+    TARGETS["thesis"] = {t.title: "thesis-" + slug(t.title)
+                         for e in docs["service"].children for t in e.children}
+
+
+def target(kind: str, name: str, where: str) -> tuple[str, str]:
+    """(title, anchor) of the project or thesis whose title is `name` or starts with it."""
+    titles = TARGETS[kind]
+    hits = [t for t in titles if t.lower() == name.lower()] or \
+           [t for t in titles if t.lower().startswith(name.lower())]
+    if len(hits) != 1:
+        problem = "matches several" if hits else "matches no"
+        raise ContentError(f"{where}: '{name}' {problem} {kind} title")
+    return hits[0], titles[hits[0]]
 
 
 # --- Markdown parsing -------------------------------------------------------
@@ -102,13 +131,17 @@ def inline(text: str) -> str:
             entry = paper(url[6:], f"link '[{label}]({url})'")
             title = escape(publications.latex_to_text(entry["fields"]["title"]))
             return f'<a class="pub-jump" href="#{publications.anchor_of(entry)}" title="{title}">{label}</a>'
+        if url.startswith(("project:", "thesis:")):  # jumps to the project or the supervised thesis
+            kind, _, name = url.partition(":")
+            title, anchor = target(kind, name, f"link '[{label}]({url})'")
+            return f'<a class="pub-jump" href="#{anchor}" title="{escape(title)}">{label}</a>'
         external = url.startswith(("http://", "https://"))
         attrs = ' target="_blank" rel="noopener"' if external else ""
         if url.startswith("#"):
             attrs = ' class="smooth-scroll"'  # same animated scroll as the menu
         return f'<a href="{escape(url)}"{attrs}>{label}</a>'
 
-    s = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", link, s)
+    s = re.sub(r"\[([^\]]+)\]\(((?:project|thesis):[^)]+|[^)\s]+)\)", link, s)  # titles may have spaces
     s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
     s = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r'<span class="text-primary">\1</span>', s)
     return s
@@ -245,7 +278,7 @@ def about_stats(doc: Node, f: str, counts: dict[str, int]) -> str:
             raise ContentError(f"{f}: numbers must look like '- 10+ Years Coding Experience', "
                                f"'- {{years since 2014}}+ Years ...' or '- {{publications}} Papers ...', got '{item}'")
         num, plus, label = m.groups()
-        cols.append(f"""<div class="col-6 col-md-3">
+        cols.append(f"""<div class="col-6 col-md">
   <div class="featured-box text-center">
     <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="{num}"{since}>{num}</span>{plus}</h4>
     <p class="text-light mb-0">{inline(label)}</p>
@@ -274,7 +307,8 @@ def resume(doc: Node, f: str, entries: list[dict]) -> str:
         for sub in e.children:
             when = (f' <span class="badge bg-danger text-2 fw-400 align-middle ms-1">{inline(sub.props["when"])}</span>'
                     if "when" in sub.props else "")
-            parts.append(f'<h3 class="text-5 text-white mt-4">{inline(sub.title)}{when}</h3>')
+            parts.append(f'<h3 class="text-5 text-white mt-4" id="project-{slug(sub.title)}">'
+                         f'{inline(sub.title)}{when}</h3>')
             if "where" in sub.props:
                 parts.append(f'<p class="text-primary">{inline(sub.props["where"])}</p>')
             parts.append(paper_tags(sub, f, entries))
@@ -447,13 +481,18 @@ def service_intro(doc: Node, f: str) -> str:
     return prose(doc.body, "text-white-50 mb-5")
 
 
+def split_row(item: str) -> tuple[str, str]:
+    """'Label: detail' at the last ': ' outside of [links](...), so link labels may contain one."""
+    masked = re.sub(r"\[[^\]]*\]\([^)]*\)", lambda m: "x" * len(m.group(0)), item)
+    i = masked.rfind(": ")
+    return (item[:i], item[i + 2:]) if i >= 0 else (item, "")
+
+
 def tag_rows(items: list[str]) -> str:
     """'- Label: detail' lines as rows with the label as a tag."""
     rows = []
     for item in items:
-        label, sep, detail = item.rpartition(": ")
-        if not sep:
-            label, detail = item, ""
+        label, detail = split_row(item)
         rows.append(f'  <li><span class="pub-ref">{inline(label)}</span><span>{inline(detail)}</span></li>')
     return '<ul class="tag-rows list-unstyled text-white-50">\n' + "\n".join(rows) + "\n</ul>"
 
@@ -482,7 +521,7 @@ def thesis_list(card: Node, f: str, first_id: int) -> str:
                 f'    </span>')
         abstract = " ".join(data for kind, data in blocks(t.body) if kind == "p")
         if abstract:
-            items.append(f"""<li class="thesis-item">
+            items.append(f"""<li class="thesis-item" id="thesis-{slug(t.title)}">
   <button class="thesis-item-head" type="button" aria-expanded="false" aria-controls="thesis-abstract-{n}">
     {text}
     <i class="fas fa-chevron-down" aria-hidden="true"></i>
@@ -494,7 +533,7 @@ def thesis_list(card: Node, f: str, first_id: int) -> str:
   </div>
 </li>""")
         else:
-            items.append(f"""<li class="thesis-item">
+            items.append(f"""<li class="thesis-item" id="thesis-{slug(t.title)}">
   <div class="thesis-item-head">
     {text}
   </div>
@@ -583,16 +622,19 @@ def fill(page: str, name: str, source: str, html: str) -> str:
 
 
 def main() -> int:
+    import llms  # here, not at the top: llms imports this module
     try:
         entries = publications.load()
         ENTRIES[:] = entries
         docs = {name: parse(CONTENT / f"{name}.md")
-                for name in ("home", "about", "resume", "thesis", "talks", "service", "coding", "ai", "legal")}
+                for name in ("home", "about", "resume", "thesis", "talks", "service", "coding", "ai", "legal",
+                             "cv")}
+        set_targets(docs)
+        counts = {"publications": len(entries), **service_counts(docs["service"])}
         sections = [
             ("home", "content/home.md", home(docs["home"], "home.md")),
             ("about", "content/about.md", about_intro(docs["about"], "about.md")),
-            ("about-numbers", "content/about.md", about_stats(docs["about"], "about.md", {
-                "publications": len(entries), **service_counts(docs["service"])})),
+            ("about-numbers", "content/about.md", about_stats(docs["about"], "about.md", counts)),
             ("resume", "content/resume.md", resume(docs["resume"], "resume.md", entries)),
             ("thesis", "content/thesis.md", thesis(docs["thesis"], "thesis.md", entries)),
             ("talks-intro", "content/talks.md", talks_intro(docs["talks"], "talks.md")),
@@ -605,10 +647,14 @@ def main() -> int:
             ("ai", "content/ai.md", ai(docs["ai"], "ai.md")),
             ("publications", "publications.bib", publications.render(entries)),
             ("legal", "content/legal.md", legal(docs["legal"], "legal.md")),
+            ("jsonld", "content/*.md", llms.person_jsonld(docs, entries)),
         ]
+        profile = llms.profile_markdown(docs, entries, counts)
         page = PAGE.read_text(encoding="utf-8")
         for name, source, html in sections:
             page = fill(page, name, source, html)
+        # the footer year is updated by a script too, this keeps it right for readers without JavaScript
+        page = re.sub(r'(<span class="current-year">)\d{4}', rf"\g<1>{date.today().year}", page)
     except publications.BibError as e:
         print(f"publications.bib has problems, index.html was not changed:\n  {e}")
         return 1
@@ -616,7 +662,8 @@ def main() -> int:
         print(f"{e}\nindex.html was not changed.")
         return 1
     PAGE.write_text(page, encoding="utf-8")
-    print(f"Built index.html ({len(entries)} publications)")
+    LLMS_TXT.write_text(profile, encoding="utf-8")
+    print(f"Built index.html ({len(entries)} publications) and llms.txt")
     return 0
 
 

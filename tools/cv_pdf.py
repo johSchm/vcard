@@ -100,7 +100,7 @@ SPECIAL = {"\\": r"\textbackslash{}", "&": r"\&", "%": r"\%", "$": r"\$", "#": r
            "{": r"\{", "}": r"\}", "~": r"\textasciitilde{}", "^": r"\textasciicircum{}",
            "₂": r"\textsubscript{2}", "<": r"\textless{}", ">": r"\textgreater{}", "|": r"\textbar{}",
            '"': r"\textquotedbl{}"}
-MARKUP = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)"                               # [label](url)
+MARKUP = re.compile(r"\[([^\]]+)\]\(((?:project|thesis):[^)]+|[^)\s]+)\)"                               # [label](url)
                     r"|\*\*(.+?)\*\*"                                          # **bold**
                     r"|(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])")             # *italic*
 
@@ -164,8 +164,9 @@ CONTACT_ICONS = {"email": r"\faEnvelope", "location": r"\faMapMarker*", "website
                  "linkedin": r"\faLinkedin", "github": r"\faGithub", "scholar": r"\faGraduationCap"}
 
 
-def header(docs: dict[str, Node], photo: bool) -> str:
-    """Photo, name and headline on the left, contact details with icons on the right."""
+def header(docs: dict[str, Node], photo: bool, personal: bool = True) -> str:
+    """Photo, name and headline on the left, contact details with icons on the right.
+    `personal` adds pronouns and year of birth under the headline (the CV, not a cover letter)."""
     cv, home = docs["cv"], docs["home"]
     contact = []  # (icon, text)
     if home.props.get("email"):
@@ -179,6 +180,10 @@ def header(docs: dict[str, Node], photo: bool) -> str:
     if cv.props.get("scholar"):
         contact.append(("scholar", href(cv.props["scholar"], "Google Scholar")))
     rows = r"\\".join(r"{\color{accent}%s} & %s" % (CONTACT_ICONS[icon], text) for icon, text in contact)
+    details = [tex(cv.props["pronouns"])] if personal and cv.props.get("pronouns") else []
+    if personal and cv.props.get("born"):
+        details.append("born " + tex(cv.props["born"]))
+    extra = r"\\[5pt]{\small\color{muted}%s}" % r" \textperiodcentered{} ".join(details) if details else ""
     picture = ""
     if photo:  # circle showing the top square of the picture
         picture = (r"\begin{tikzpicture}[baseline={([yshift=-.6ex]current bounding box.center)}]"
@@ -188,7 +193,7 @@ def header(docs: dict[str, Node], photo: bool) -> str:
     return "\n".join([
         picture + r"\begin{tabular}{@{}l@{}}{\fontsize{25}{27}\selectfont\bfseries %s}\\[7pt]"
         % tex(cv.need("name", "cv.md")),
-        r"{\fontsize{12.5}{15}\selectfont\color{accent}%s}\end{tabular}\hfill" % tex(cv.need("headline", "cv.md")),
+        r"{\fontsize{12.5}{15}\selectfont\color{accent}%s}%s\end{tabular}\hfill" % (tex(cv.need("headline", "cv.md")), extra),
         r"{\small\color{muted}\begin{tabular}{@{}c@{\hspace{.6em}}l@{}}%s\end{tabular}}\par\vspace{7pt}" % rows,
         r"{\color{accent}\rule{\linewidth}{1.2pt}}\par",
     ])
@@ -273,8 +278,12 @@ def publications_(docs, entries, counts) -> str:
             authors.append(r"{\color{black}%s}" % esc(name) if name == publications.ME else esc(name))
         title = esc(publications.latex_to_text(f["title"]))
         link = publications.link_of(f)
-        detail = ", ".join(authors) + ". " + esc(publications.venue_of(f)) + "."
-        label = f"{publications.latex_to_text(f.get('abbr', ''))} {f['year']}".strip()
+        abbr = publications.latex_to_text(f.get("abbr", ""))
+        # "... Sciences (HICSS)": the abbreviation is already the label on the left
+        venue = re.sub(r"\s*\(([^()]*)\)$", lambda m: "" if m.group(1) in abbr else m.group(0),
+                       publications.venue_of(f))
+        detail = ", ".join(authors) + ". " + esc(venue) + "."
+        label = f"{abbr} {f['year']}".strip()
         rows.append(r"\cvrow{\textcolor{accent}{%s}}{%s\newline{\small\color{muted}%s}}"
                     % (esc(label), href(link, title) if link else title, detail))
     if not rows:
@@ -294,6 +303,8 @@ def skills(docs, entries, counts) -> str:
         rows.append(r"\cvrow{%s}{%s}" % (tex(card.title), tex(text)))
     if docs["cv"].props.get("languages"):
         rows.append(r"\cvrow{Spoken Languages}{%s}" % tex(docs["cv"].props["languages"]))
+    if docs["cv"].props.get("mobility"):
+        rows.append(r"\cvrow{Mobility}{%s}" % tex(docs["cv"].props["mobility"]))
     return r"\cvsection{Skills}" + "\n" + "\n".join(rows) if rows else ""
 
 
@@ -303,7 +314,7 @@ def service(docs, entries, counts) -> str:
         text = cv_text(card)
         if not text:
             continue
-        labels = ", ".join(item.rpartition(": ")[0] or item for item in build.list_items(card.body))
+        labels = ", ".join(build.split_row(item)[0] for item in build.list_items(card.body))
         rows.append(r"\cvrow{%s}{%s}" % (tex(card.title), tex(fill(text, counts, labels))))
     return r"\cvsection{Leadership and Service}" + "\n" + "\n".join(rows) if rows else ""
 
